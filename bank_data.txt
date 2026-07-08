@@ -1,171 +1,65 @@
-Câu hỏi: Cửa hàng bán những loại trái cây gì? Danh mục hoa quả của shop gồm những gì?
-Trả lời: Dạ, shop chúng tôi tự hào cung cấp đa dạng các loại trái cây (hoa quả) tươi ngon, chuẩn VietGAP và hàng nhập khẩu cao cấp bao gồm: Táo, Cam, Xoài, Chuối, Nho, Thanh long, Dưa hấu, Bơ, Ổi, Măng cụt, Sầu riêng, Vải, Nhãn, Chôm chôm, Chanh dây, Bưởi, Lê, Đu đủ, Dâu tây. Anh/chị đang tìm mua loại hoa quả nào ạ?
+Câu hỏi: GoldBot là gì? Bot này làm được những gì?
+Trả lời: GoldBot là trợ lý kiến thức và phân tích xu hướng thị trường vàng, xây dựng như một bài tập training nội bộ tại Saigonbank. Bot có thể giải thích cơ chế giá vàng, các yếu tố ảnh hưởng, bối cảnh quản lý vàng tại Việt Nam, và trình bày xu hướng ngắn hạn từ một mô hình dự đoán nội bộ. Bot không đưa ra khuyến nghị đầu tư và không thay thế tư vấn tài chính chính thức.
 
-Câu hỏi: Xoài bao nhiêu tiền một kg? Giá các loại xoài hôm nay?
-Trả lời: Dạ, danh sách giá các loại xoài (xoài chín, xoài xanh) tươi ngon tại shop hôm nay như sau:
-- Xoài cát Hòa Lộc (loại 1): Giá 45.000đ/kg.
-- Xoài Đài Loan: Giá 35.000đ/kg.
-- Xoài keo: Giá 25.000đ/kg.
-Tất cả đều đảm bảo độ ngọt và tươi mới. Anh/chị muốn lấy loại xoài nào để em chốt đơn ạ?
+Câu hỏi: GC=F là gì? Khác gì với giá vàng giao ngay (spot)?
+Trả lời: GC=F là mã hợp đồng tương lai vàng (gold futures) giao dịch trên sàn COMEX (Mỹ), quy định mức giá thỏa thuận để giao nhận vàng vào một ngày đáo hạn trong tương lai. Giá vàng giao ngay (spot, thường ký hiệu XAUUSD) là giá mua bán vàng để giao nhận ngay lập tức. Hai mức giá này thường rất sát nhau nhưng không luôn bằng nhau, do chênh lệch phản ánh chi phí lưu kho, lãi suất, và kỳ vọng thị trường tới ngày đáo hạn hợp đồng.
 
-Câu hỏi: Táo tây nhập khẩu giá bao nhiêu? Giá táo Mỹ, táo Envy, táo xanh?
-Trả lời: Dạ, bảng giá các loại táo nhập khẩu cao cấp (táo Mỹ, táo New Zealand) đang có sẵn tại shop:
-- Táo tây nhập khẩu (Táo Envy, Táo New Zealand): Giá 120.000đ/kg.
-- Táo Mỹ Royal Gala: Giá 95.000đ/kg.
-- Táo xanh Granny Smith: Giá 85.000đ/kg.
-Táo luôn được bảo quản lạnh chuẩn nhiệt độ, đảm bảo giòn ngọt, không xốp ạ.
+Câu hỏi: Vàng vật chất khác gì vàng tài khoản/chứng chỉ vàng?
+Trả lời: Vàng vật chất là vàng miếng, vàng nhẫn, trang sức - có thể cầm nắm, cất trữ trực tiếp. Vàng tài khoản (hay chứng chỉ vàng) là hình thức sở hữu vàng dưới dạng số dư ghi nhận tại tổ chức tài chính, không cầm vàng thật, thường thanh khoản nhanh hơn và không tốn chi phí bảo quản, nhưng phụ thuộc vào uy tín và cơ chế vận hành của tổ chức phát hành. Tại Việt Nam, sản phẩm vàng tài khoản chưa phổ biến rộng rãi như vàng vật chất.
 
-Câu hỏi: Shop có bán sầu riêng không? Sầu riêng Ri6, Musang King giá bao nhiêu?
-Trả lời: Dạ shop có sẵn sầu riêng bao ăn, múc chín vàng, hạt lép ạ! Bảng giá sầu riêng hôm nay:
-- Sầu riêng Musang King Thái Lan: Giá 280.000đ/kg.
-- Sầu riêng Ri6 Đắk Lắk: Giá 150.000đ/kg.
-- Sầu riêng Cái Mơn: Giá 120.000đ/kg.
-Shop cam kết trái chín cây tự nhiên, không nhúng thuốc ép chín ạ.
+Câu hỏi: 1 lượng vàng bằng bao nhiêu gram? Sao lại có đơn vị "lượng", "chỉ", "phân"?
+Trả lời: Tại Việt Nam, vàng thường được đo bằng lượng (còn gọi là "cây"), 1 lượng = 37,5 gram. 1 lượng = 10 chỉ, 1 chỉ = 10 phân. Trên thị trường quốc tế, vàng được đo bằng troy ounce (oz), 1 troy ounce ≈ 31,1035 gram. Khi so sánh giá vàng trong nước (theo lượng) với giá vàng thế giới (theo ounce), cần quy đổi đúng đơn vị trước khi so sánh, nếu không sẽ ra kết luận sai.
 
-Câu hỏi: Bưởi da xanh, bưởi Năm Roi bao nhiêu tiền?
-Trả lời: Dạ, bưởi tại shop là hàng tuyển chọn, múi mọng nước, không bị the đắng. Giá bưởi hiện tại:
-- Bưởi da xanh Bến Tre: Giá 55.000đ/trái (Trọng lượng chuẩn từ 1,2kg đến 1,5kg).
-- Bưởi Năm Roi: Giá 40.000đ/trái.
-Nếu anh/chị cần, shop có thể hỗ trợ gọt sẵn vỏ hoặc cắt lát ạ!
+Câu hỏi: Những yếu tố nào ảnh hưởng đến giá vàng thế giới?
+Trả lời: Bốn nhóm yếu tố chính thường được nhắc đến: (1) Sức mạnh đồng USD (thường đo qua chỉ số DXY) - USD mạnh thường đi kèm giá vàng giảm và ngược lại, vì vàng được định giá bằng USD; (2) Lãi suất thực (lãi suất danh nghĩa trừ lạm phát) - lãi suất thực tăng làm vàng (tài sản không sinh lãi) kém hấp dẫn hơn so với gửi tiết kiệm/trái phiếu; (3) Kỳ vọng lạm phát - vàng thường được xem là công cụ phòng ngừa lạm phát dài hạn, dù mối quan hệ này không phải lúc nào cũng chặt chẽ trong ngắn hạn; (4) Nhu cầu trú ẩn an toàn (safe haven) khi có bất ổn kinh tế, địa chính trị, hoặc khủng hoảng tài chính.
 
-Câu hỏi: Thanh long ruột đỏ, thanh long ruột trắng giá thế nào?
-Trả lời: Dạ, thanh long Bình Thuận vừa cập bến sáng nay, hàng cắt tại vườn cực tươi mát. Bảng giá:
-- Thanh long ruột đỏ: Giá 35.000đ/kg.
-- Thanh long ruột trắng: Giá 25.000đ/kg.
+Câu hỏi: Vì sao chỉ số DXY (US Dollar Index) lại liên quan đến giá vàng?
+Trả lời: Vàng được giao dịch quốc tế chủ yếu bằng USD. Khi DXY tăng (USD mạnh lên so với các đồng tiền khác), vàng trở nên đắt hơn đối với người mua dùng đồng tiền khác, làm giảm nhu cầu và thường kéo giá vàng xuống. Ngược lại khi DXY giảm, vàng thường có xu hướng tăng. Đây là mối tương quan phổ biến trong lịch sử nhưng không phải lúc nào cũng đúng tuyệt đối, vì còn nhiều yếu tố khác tác động cùng lúc.
 
-Câu hỏi: Shop có bán nho Mỹ, nho không hạt không? Giá các loại nho nhập khẩu?
-Trả lời: Dạ có ạ! Shop chuyên cung cấp nho nhập khẩu nguyên container, bảo quản lạnh cuống còn xanh tươi. Giá nho:
-- Nho Mỹ không hạt: Giá 220.000đ/kg.
-- Nho đỏ Mỹ: Giá 200.000đ/kg.
-- Nho xanh Mỹ: Giá 190.000đ/kg.
+Câu hỏi: Lãi suất/lợi suất trái phiếu ảnh hưởng đến giá vàng như thế nào?
+Trả lời: Vàng không trả lãi hay cổ tức khi nắm giữ. Khi lãi suất thực (đặc biệt là lợi suất trái phiếu chính phủ Mỹ kỳ hạn 10 năm) tăng, chi phí cơ hội của việc giữ vàng thay vì gửi tiết kiệm/mua trái phiếu cũng tăng theo, khiến vàng kém hấp dẫn hơn - đây là lý do vàng và lợi suất trái phiếu thực thường có tương quan nghịch.
 
-Câu hỏi: Cam sành, cam vắt nước bao nhiêu 1kg? Giá cam Vinh, cam xoàn?
-Trả lời: Dạ, cam tại shop cam kết là hàng chính gốc, vỏ mỏng, vắt cực kỳ nhiều nước và ngọt thanh. Bảng giá cam:
-- Cam sành Hà Giang: Giá 50.000đ/kg.
-- Cam xoàn: Giá 45.000đ/kg.
-- Cam Vinh (Nghệ An): Giá 35.000đ/kg.
+Câu hỏi: Ngân hàng trung ương các nước mua vàng dự trữ có ảnh hưởng đến giá không?
+Trả lời: Có. Từ sau năm 2022, nhiều ngân hàng trung ương (đặc biệt ở các thị trường mới nổi) đã tăng mua vàng dự trữ để đa dạng hóa danh mục ngoại hối, giảm phụ thuộc vào USD. Nhu cầu mua liên tục và khối lượng lớn từ nhóm này được xem là một trong những lực đỡ giá vàng trong trung và dài hạn, độc lập với các yếu tố lãi suất/USD ngắn hạn.
 
-Câu hỏi: Shop có giao hàng tận nhà không? Phí ship hoa quả tính thế nào? Có freeship không?
-Trả lời: Dạ shop có dịch vụ giao hàng (ship) tận nhà siêu tốc để đảm bảo độ tươi của trái cây theo chính sách sau:
-- Thời gian giao: Khu vực nội thành giao nhanh trong 2-4 giờ. Ngoại thành giao trong ngày.
-- Phí vận chuyển (Ship): Đồng giá 20.000đ cho các đơn hàng từ 100.000đ.
-- Ưu đãi: HOÀN TOÀN MIỄN PHÍ SHIP (Freeship) cho các đơn hàng có tổng giá trị từ 300.000đ trở lên.
+Câu hỏi: Vàng miếng SJC là gì? NHNN quản lý vàng miếng ra sao?
+Trả lời: SJC là thương hiệu vàng miếng được Ngân hàng Nhà nước (NHNN) chọn làm thương hiệu vàng miếng quốc gia từ năm 2012 theo Nghị định 24/2012/NĐ-CP, với mục tiêu ban đầu là chống "vàng hóa" nền kinh tế. Trong hơn một thập kỷ, Nhà nước độc quyền sản xuất vàng miếng qua thương hiệu này.
 
-Câu hỏi: Shop có bán hoa quả lẵng, trái cây theo giỏ quà tặng, giỏ biếu lễ tết không?
-Trả lời: Dạ có ạ! Shop chuyên thiết kế các giỏ quà tặng trái cây cao cấp, sang trọng dùng để biếu tặng, thăm hỏi. Bảng giá giỏ quà:
-- Giỏ Quà 299.000đ: Gồm Táo, Cam, Lê, Nho.
-- Giỏ Quà 499.000đ: Gồm Xoài, Bưởi, Thanh long, Dưa hấu, Vải.
-- Giỏ Quà Cao Cấp 699.000đ: Gồm Sầu riêng, Măng cụt, Chôm chôm, Cherry.
-Tất cả giỏ quà đều được trang trí lưới bọc, nơ lụa và TẶNG KÈM thiệp chúc mừng ghi theo yêu cầu của anh/chị ạ!
+Câu hỏi: Cơ chế độc quyền vàng miếng SJC có còn hiệu lực không? (Cập nhật quan trọng)
+Trả lời: Không còn nguyên vẹn như trước. Nghị định 232/2025/NĐ-CP (có hiệu lực từ 10/10/2025) đã chính thức bãi bỏ quy định "Nhà nước độc quyền sản xuất vàng miếng, xuất khẩu vàng nguyên liệu và nhập khẩu vàng nguyên liệu để sản xuất vàng miếng" tại Nghị định 24/2012/NĐ-CP. Cơ chế chuyển từ ĐỘC QUYỀN sang CẤP PHÉP: các ngân hàng thương mại và doanh nghiệp đủ điều kiện có thể được NHNN cấp Giấy phép sản xuất vàng miếng, không còn giới hạn ở một mình SJC. NHNN vẫn giữ vai trò quản lý thông qua cấp phép và hạn mức xuất nhập khẩu.
 
-Câu hỏi: Cherry nhập khẩu giá bao nhiêu? Giá cherry Úc, cherry Mỹ?
-Trả lời: Dạ, cherry tại shop là hàng air (đi đường hàng không) size to, đỏ tươi, cuống xanh, vị ngọt đậm. Bảng giá cherry:
-- Cherry Úc: Giá 550.000đ/kg.
-- Cherry Mỹ: Giá 450.000đ/kg.
-- Cherry Chile: Giá 350.000đ/kg.
+Câu hỏi: Vì sao giá vàng trong nước (SJC) thường chênh lệch với giá vàng thế giới?
+Trả lời: Chênh lệch xuất phát chủ yếu từ nguồn cung bị giới hạn (trước đây do cơ chế độc quyền, thiết bị sản xuất của SJC được cho là đã lỗi thời, hạn mức nhập khẩu vàng nguyên liệu bị kiểm soát chặt) trong khi nhu cầu trong nước vẫn cao. Ở một số thời điểm 2024-2025, mức chênh lệch từng lên tới hàng chục triệu đồng/lượng so với giá quy đổi quốc tế - đây chính là một trong những lý do chính khiến NHNN thúc đẩy sửa đổi Nghị định 24. Mức chênh lệch cụ thể thay đổi liên tục theo thời gian, không phải một con số cố định.
 
-Câu hỏi: Shop có bán dưa hấu không? Dưa hấu bao nhiêu tiền 1kg?
-Trả lời: Dạ có ạ! Dưa hấu của shop vỏ mỏng, chín tự nhiên không tiêm hóa chất ép đỏ. Trọng lượng mỗi trái từ 2-4kg. Bảng giá dưa hấu:
-- Dưa hấu ruột vàng (dưa mật): Giá 30.000đ/kg.
-- Dưa hấu ruột đỏ: Giá 20.000đ/kg.
+Câu hỏi: Việt Nam có đang xây dựng sàn giao dịch vàng quốc gia không?
+Trả lời: Có - đây là một chủ trương đang được Chính phủ và NHNN tích cực thúc đẩy từ cuối 2025 sang 2026, với mục tiêu minh bạch hóa thị trường, thu hẹp chênh lệch giá trong nước - quốc tế, và giảm đầu cơ/thao túng. Tuy nhiên, mốc thời gian vận hành chính thức đã nhiều lần được điều chỉnh trong các chỉ đạo của Chính phủ. Đây là một chính sách đang trong quá trình triển khai - nên kiểm tra thông tin cập nhật mới nhất từ NHNN hoặc Cổng thông tin Chính phủ nếu cần biết tình trạng hiện tại, thay vì xem đây là đã hoàn tất.
 
-Câu hỏi: Vải thiều còn hàng không? Giá vải thiều bao nhiêu?
-Trả lời: Dạ, Vải thiều Thanh Hà (Hải Dương) đang đúng vụ, được hái từ sáng sớm và giao ngay trong ngày nên cực kỳ tươi. Giá vải thiều hiện tại là 45.000đ/kg. Quả vải chín đều, cùi dày, hạt nhỏ, vị ngọt thanh mát ạ!
+Câu hỏi: Mua bán vàng có quy định gì về thanh toán không?
+Trả lời: Theo quy định hiện hành, giao dịch mua bán vàng miếng có giá trị từ 20 triệu đồng/ngày trở lên phải thanh toán qua tài khoản ngân hàng (không dùng tiền mặt), nhằm tăng tính minh bạch và kiểm soát nguồn gốc giao dịch.
 
-Câu hỏi: Bơ sáp, bơ 034 giá bao nhiêu 1kg?
-Trả lời: Dạ, bơ tại shop cam kết cắt già, chín dẻo, không bị sượng đắng. Bảng giá các loại bơ:
-- Bơ Hass nhập khẩu: Giá 150.000đ/kg.
-- Bơ sáp Đắk Lắk: Giá 70.000đ/kg.
-- Bơ 034 (quả dài, siêu sáp dẻo): Giá 60.000đ/kg.
-Bơ shop giao là bơ chín tới, anh/chị có thể ăn liền hoặc để tủ lạnh vài ngày đều được ạ.
+Câu hỏi: Rủi ro khi nắm giữ/đầu tư vàng là gì?
+Trả lời: Một số rủi ro chính: (1) Biến động giá trong ngắn hạn có thể lớn, không có gì đảm bảo tăng liên tục; (2) Vàng không sinh lãi/cổ tức trong khi nắm giữ, khác với gửi tiết kiệm hay cổ phiếu trả cổ tức; (3) Với vàng vật chất, có chênh lệch giá mua vào - bán ra (spread) và chi phí bảo quản/an toàn; (4) Với vàng miếng trong nước, còn chịu thêm rủi ro từ chênh lệch giá trong nước - quốc tế có thể co giãn theo chính sách quản lý.
 
-Câu hỏi: Shop có bán chanh dây (chanh leo) không? Giá bao nhiêu?
-Trả lời: Dạ có ạ! Chanh dây (chanh leo) rất thích hợp làm nước ép hoặc sinh tố giải nhiệt. Bảng giá chanh dây:
-- Chanh dây vàng Thái Lan: Giá 60.000đ/kg.
-- Chanh dây Đắk Lắk: Giá 40.000đ/kg (Khoảng 8-10 trái/kg).
+Câu hỏi: Mô hình dự đoán của GoldBot hoạt động như thế nào?
+Trả lời: Mô hình sử dụng dữ liệu giá vàng (hợp đồng tương lai GC=F) cùng các chỉ số liên quan (US Dollar Index, lợi suất trái phiếu chính phủ Mỹ kỳ hạn 10 năm) trong một khoảng thời gian gần đây để ước tính XU HƯỚNG ngắn hạn tiếp theo (tăng/giảm/đi ngang), không phải một điểm giá cụ thể. Kết quả luôn được so sánh với một baseline đơn giản (ví dụ: giả định giá không đổi) và, khi có thể, với dự báo của các ngân hàng/tổ chức phân tích chuyên nghiệp.
 
-Câu hỏi: Măng cụt giá bao nhiêu? Măng cụt miền Tây?
-Trả lời: Dạ, Măng cụt miền Tây đang vào mùa rộ nhất. Măng cụt loại 1 (trái to, chín già, vỏ mỏng, múi trắng, vị chua ngọt tự nhiên) hiện có giá 55.000đ/kg. Ăn măng cụt rất thanh mát và tốt cho sức khỏe ạ.
+Câu hỏi: Mô hình dự đoán này chính xác đến đâu? Có nên tin tuyệt đối không?
+Trả lời: Không nên tin tuyệt đối. Không có mô hình nào - kể cả của các tổ chức tài chính lớn - có thể dự đoán chính xác giá vàng trong tương lai một cách chắc chắn, vì giá vàng chịu ảnh hưởng của rất nhiều yếu tố khó lường (địa chính trị, chính sách tiền tệ, tâm lý thị trường). Mô hình của GoldBot được đánh giá bằng cách so sánh với baseline ngây thơ và dự báo chuyên gia, nhưng đây là một bài tập kỹ thuật/học thuật, không phải công cụ giao dịch. Đây là thông tin mang tính học thuật/kỹ thuật từ một bài tập nội bộ, không phải khuyến nghị đầu tư hay tư vấn tài chính chính thức từ Saigonbank.
 
-Câu hỏi: Nhãn xuồng cơm vàng, nhãn Ido bao nhiêu tiền?
-Trả lời: Dạ, nhãn tại shop cam kết chín tự nhiên trên cây, cơm dày, hạt nhỏ, giòn và ngọt lịm. Bảng giá nhãn:
-- Nhãn Ido (nhãn chín muộn): Giá 40.000đ/kg.
-- Nhãn xuồng cơm vàng (Tiền Giang): Giá 35.000đ/kg.
+Câu hỏi: 3 tháng tới giá vàng sẽ tăng hay giảm?
+Trả lời: GoldBot không đưa ra một con số dự đoán cố định cho một mốc thời gian cụ thể. Thay vào đó, dựa trên xu hướng ngắn hạn gần nhất từ dữ liệu, mô hình đưa ra một xu hướng có xác suất (ví dụ: nghiêng về tăng nhẹ, đi ngang, hoặc giảm nhẹ) kèm mức độ không chắc chắn, được so sánh với baseline và dự báo chuyên gia. Đây là thông tin mang tính học thuật/kỹ thuật từ một bài tập nội bộ, không phải khuyến nghị đầu tư hay tư vấn tài chính chính thức từ Saigonbank.
 
-Câu hỏi: Shop có bán tổ yến, nước yến, yến sào không?
-Trả lời: Dạ thưa anh/chị, hiện tại shop CHỈ CHUYÊN bán trái cây và hoa quả tươi, KHÔNG bán tổ yến hay các sản phẩm nước yến sào ạ. Tuy nhiên, nếu anh/chị cần, shop có thể gợi ý cho anh/chị một vài địa chỉ uy tín chuyên bán yến sào ạ!
+Câu hỏi: Giá vàng hôm nay là bao nhiêu?
+Trả lời: Giá vàng "hôm nay" là dữ liệu thay đổi liên tục, không được lưu cố định trong phần kiến thức nền này. Số liệu hiện tại (nếu có) được hệ thống truyền vào riêng tại thời điểm bạn hỏi, dựa trên dữ liệu thực tế được cập nhật gần nhất.
 
-Câu hỏi: Shop trái cây mở cửa đến mấy giờ? Thời gian hoạt động của shop?
-Trả lời: Dạ, thời gian hoạt động của shop cực kỳ linh hoạt để phục vụ khách hàng. Shop mở cửa liên tục từ 7h00 sáng đến 22h00 tối. Shop bán TẤT CẢ các ngày trong tuần, phục vụ xuyên suốt kể cả ngày Chủ nhật và các ngày Lễ tết. Anh/chị có thể đến mua trực tiếp tại cửa hàng hoặc đặt online bất cứ lúc nào ạ!
+Câu hỏi: Tôi có nên mua vàng vào lúc này không?
+Trả lời: GoldBot không đưa ra khuyến nghị nên mua hay bán ở thời điểm cụ thể - đây là quyết định tài chính cá nhân phụ thuộc vào mục tiêu, khả năng chấp nhận rủi ro, và hoàn cảnh riêng của mỗi người. Bạn có thể tham khảo xu hướng ngắn hạn và các yếu tố ảnh hưởng giá vàng mà GoldBot cung cấp, nhưng nên tự đưa ra quyết định hoặc trao đổi với chuyên viên tư vấn tài chính được cấp phép. Đây là thông tin mang tính học thuật/kỹ thuật từ một bài tập nội bộ, không phải khuyến nghị đầu tư hay tư vấn tài chính chính thức từ Saigonbank.
 
-Câu hỏi: Shop có áp dụng voucher giảm giá, mã khuyến mãi không?
-Trả lời: Dạ có ạ! Shop luôn có các chương trình ưu đãi hấp dẫn dành cho khách mua trái cây:
-- Giảm 10% tổng bill cho khách đặt đơn hàng đầu tiên.
-- Giảm 15% tổng bill cho đơn hàng từ 500.000đ.
-- Giảm 20% tổng bill cho đơn hàng từ 1.000.000đ.
-- Tặng Voucher Miễn phí ship (Freeship) cho mọi hóa đơn từ 300.000đ trở lên.
+Câu hỏi: Saigonbank có sản phẩm gửi tiết kiệm vàng hoặc mua bán vàng miếng không?
+Trả lời: Về sản phẩm/dịch vụ cụ thể liên quan đến vàng của Saigonbank, bạn vui lòng liên hệ hotline chính thức hoặc chi nhánh gần nhất để được tư vấn chính xác - GoldBot không có dữ liệu xác thực về danh mục sản phẩm hiện hành của ngân hàng để trả lời chi tiết câu này.
 
-Câu hỏi: Shop thanh toán bằng hình thức gì? Có quẹt thẻ, chuyển khoản không?
-Trả lời: Dạ, để thuận tiện cho khách hàng, shop hỗ trợ đa dạng 5 hình thức thanh toán sau:
-1. Tiền mặt (COD) khi nhận hàng.
-2. Chuyển khoản ngân hàng (Vietcombank, Techcombank, MB Bank).
-3. Thanh toán qua ví Momo.
-4. Thanh toán qua ZaloPay.
-5. Thanh toán qua ViettelPay.
-Anh/chị thấy hình thức thanh toán nào tiện lợi nhất ạ?
+Câu hỏi: GoldBot khác gì so với việc đọc báo giá vàng hoặc website ngân hàng?
+Trả lời: GoldBot không phải nguồn giá chính thức hay dịch vụ tư vấn - đây là một bài tập kỹ thuật minh họa cách xây dựng chatbot có kiến thức nền (RAG) kết hợp một mô hình dự đoán xu hướng đơn giản, với trọng tâm là trình bày phương pháp luận một cách minh bạch (baseline, benchmark, giới hạn mô hình) hơn là cung cấp thông tin thị trường theo thời gian thực đầy đủ như các nguồn chuyên biệt.
 
-Câu hỏi: Shop có bán trái cây theo combo gộp chung nhiều loại không?
-Trả lời: Dạ có ạ! Để khách hàng thưởng thức đa dạng và tiết kiệm 15-20% so với mua lẻ, shop có các Combo trái cây tươi như sau:
-- Combo 1 (149.000đ): Gồm Táo (1kg) + Cam (1kg) + Chuối (1kg).
-- Combo 2 (249.000đ): Gồm Xoài (1kg) + Thanh long (1kg) + Bơ (1kg) + Ổi (1kg).
-- Combo Vip 3 (349.000đ): Gồm Nho (500g) + Cherry (500g) + Vải (500g) + Chôm chôm (500g).
-
-Câu hỏi: Chôm chôm bao nhiêu 1kg? Giá chôm chôm Thái, Java?
-Trả lời: Dạ, chôm chôm tại shop được chọn lọc kỹ, quả tươi, gai xanh không bị dập, thịt dày tróc hạt và ngọt mát. Bảng giá:
-- Chôm chôm Thái (Chôm chôm đường vàng): Giá 45.000đ/kg.
-- Chôm chôm Java: Giá 40.000đ/kg.
-
-Câu hỏi: Lê Hàn Quốc, lê Nam Phi giá bao nhiêu?
-Trả lời: Dạ, lê nhập khẩu tại shop giòn, ngọt lịm và rất nhiều nước, phù hợp giải nhiệt hoặc chưng cúng. Bảng giá lê:
-- Lê Nhật Bản: Giá 250.000đ/kg.
-- Lê Hàn Quốc nhập khẩu: Giá 180.000đ/kg (Trái lớn, khoảng 2-3 trái/kg).
-- Lê xanh Ninh Thuận (Lê trong nước): Giá 65.000đ/kg.
-
-Câu hỏi: Shop có hỗ trợ gọt sẵn, gọt vỏ, cắt miếng, ép nước trái cây không?
-Trả lời: Dạ CHẮC CHẮN CÓ ạ! Để anh/chị tiện thưởng thức, shop hỗ trợ gọt vỏ, cắt miếng và đóng hộp nhựa HOÀN TOÀN MIỄN PHÍ theo yêu cầu. Ngoài ra, shop có nhận ép nước hoa quả nguyên chất, đóng chai thủy tinh sạch sẽ với mức giá chỉ từ 25.000đ đến 45.000đ/chai tùy loại trái cây.
-
-Câu hỏi: Ổi bao nhiêu tiền 1kg? Giá ổi Nữ Hoàng, ổi ruột hồng?
-Trả lời: Dạ, ổi tại shop cam kết hái tận vườn, quả cứng, giòn, thơm, ít hạt. Bảng giá các loại ổi:
-- Ổi xá lị Đà Lạt: Giá 40.000đ/kg.
-- Ổi ruột hồng (Ổi Nữ hoàng): Giá 35.000đ/kg.
-- Ổi Đài Loan (ruột trắng): Giá 25.000đ/kg.
-(Đặc biệt: Khách mua ổi sẽ được tặng kèm muối tôm chua cay cực ngon ạ).
-
-Câu hỏi: Mít Thái, mít ruột đỏ có bán không? Mít lột sẵn giá bao nhiêu?
-Trả lời: Dạ có ạ! Mít tại shop là hàng tuyển, múi dày, vàng ươm, vị ngọt đậm và rất thơm. Shop có bán nguyên trái hoặc hỗ trợ tách múi sẵn hộp sạch sẽ. Bảng giá mít:
-- Mít ruột đỏ: Giá 65.000đ/kg.
-- Mít Thái siêu sớm: Giá 45.000đ/kg.
-
-Câu hỏi: Shop có bán trái cây đông lạnh, hoa quả sấy không?
-Trả lời: Dạ thưa anh/chị, tiêu chí của shop là "Tươi Mới Mỗi Ngày", do đó hiện tại shop CHỈ BÁN hoa quả tươi nguyên trái, KHÔNG bán trái cây đông lạnh hay hoa quả sấy khô ạ. Tuy nhiên, khi mua hoa quả tươi về, shop có thể tư vấn cho anh/chị cách cấp đông bảo quản bằng tủ lạnh tại nhà cực kỳ dễ dàng ạ!
-
-Câu hỏi: Trái cây hoa quả của shop có nguồn gốc xuất xứ rõ ràng không? Có sạch không?
-Trả lời: Dạ shop XIN CAM KẾT 100% về chất lượng ạ! Tất cả trái cây nội địa tại shop đều có nguồn gốc chuẩn từ các nhà vườn chuẩn VietGAP/GlobalGAP uy tín (Đà Lạt, Bến Tre, Đắk Lắk, Hà Giang...). Riêng hàng nhập khẩu đi theo đường chính ngạch, có đầy đủ hóa đơn, chứng từ CO, CQ. Tuyệt đối không bán hàng trôi nổi không rõ nguồn gốc.
-
-Câu hỏi: Có thể đặt trái cây theo yêu cầu đặc biệt (chọn quả xanh, quả chín) không?
-Trả lời: Dạ hoàn toàn được ạ! Anh/chị có quyền đưa ra mọi yêu cầu đặc biệt như: Chọn trái vừa chín tới để ăn ngay, chọn trái xanh già để thắp hương vài ngày, chọn quả to làm quà biếu... Chỉ cần anh/chị ghi chú lại, nhân viên nhặt hàng của shop sẽ tuyển chọn bằng tay từng trái đúng y như ý anh/chị muốn!
-
-Câu hỏi: Shop có chương trình khách hàng thân thiết, thẻ thành viên, thẻ VIP không?
-Trả lời: Dạ có ạ! Shop rất trân trọng khách hàng quen thuộc. Chính sách thẻ VIP như sau:
-- Điều kiện: Khách mua trên 10 lần HOẶC tích lũy hóa đơn trên 2.000.000đ sẽ tự động thăng hạng Thẻ VIP.
-- Quyền lợi Thẻ VIP: Tự động giảm 5% trên mọi hóa đơn trọn đời, Ưu tiên được miễn phí giao hàng, và nhận được 1 giỏ quà trái cây miễn phí vào dịp Sinh nhật hàng năm.
-
-Câu hỏi: Tôi muốn mua trái cây, tư vấn cho tôi.
-Trả lời: Dạ em chào anh/chị! Chào mừng anh/chị đến với FreshBot - Cửa hàng Trái cây tươi cao cấp. Hiện tại trên kệ của shop đang có sẵn các mặt hàng tươi rói: Táo, Cam, Xoài, Nho, Sầu riêng, Bưởi, Thanh long, Bơ, Măng cụt, Vải, Nhãn, Chôm chôm, Cherry, Lê, Dưa hấu, Mít, Ổi... 
-Trời đang vào lúc cần bổ sung vitamin, anh/chị muốn tìm loại trái cây nào để giải nhiệt hay làm quà biếu ạ? Em sẽ báo giá chi tiết và lên đơn giao tận nhà cho mình ngay nhé!
-
-Câu hỏi: Hướng dẫn cách đặt hàng, cách chốt đơn mua trái cây, đặt giỏ quà.
-Trả lời: Dạ, để đặt mua trái cây hoặc giỏ quà, anh/chị chỉ cần thực hiện 2 bước đơn giản qua chat:
-Bước 1: Nhắn tin cho em danh sách trái cây cần mua (Ví dụ: Cho em 2kg xoài cát, 1kg táo Mỹ).
-Bước 2: Cung cấp thông tin nhận hàng gồm: Tên người nhận, Số điện thoại, và Địa chỉ giao hàng.
-Sau đó, nhân viên chốt đơn sẽ báo tổng tiền và cho shipper giao trái cây tươi mát đến tận tay anh/chị trong vòng 2 giờ tới ạ!
+Câu hỏi: Bạn có thể nói về chính trị, chứng khoán công ty cụ thể, hoặc lập trình không?
+Trả lời: Tôi là trợ lý kiến thức về thị trường vàng, không có thông tin đáng tin cậy về các chủ đề ngoài phạm vi này. Bạn có câu hỏi nào khác về vàng hoặc xu hướng thị trường vàng không?
