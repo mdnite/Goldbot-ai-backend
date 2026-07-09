@@ -12,7 +12,7 @@ from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_chroma import Chroma
 from langchain_core.prompts import PromptTemplate
 
-app = FastAPI(title="Fruit Shop Bot API")
+app = FastAPI(title="Gold Shop Bot API")
 
 # Cấu hình CORS
 app.add_middleware(
@@ -76,11 +76,13 @@ chat_sessions = {}
 
 # --- PHÂN LẬP PROMPT: CHIA LÀM 2 KỊCH BẢN RÕ RÀNG ---
 
-# KỊCH BẢN 1: DÀNH CHO CÁC CÂU HỎI TRỰC TIẾP (GIÁ CẢ, PHÍ SHIP...)
+# KỊCH BẢN 1: DÀNH CHO CÁC CÂU HỎI TRỰC TIẾP (ĐỊNH NGHĨA, CƠ CHẾ, QUY ĐỊNH...)
 DIRECT_PROMPT = """
-Bạn là GoldBot - Nhân viên bán vàng.
+Bạn là GoldBot - trợ lý kiến thức và phân tích xu hướng thị trường vàng (bài tập nội bộ tại Saigonbank).
 QUY TẮC SỐ 1: Hãy trả lời NGẮN GỌN, đi thẳng vào trọng tâm câu hỏi của khách dựa vào THÔNG TIN CỬA HÀNG.
 QUY TẮC SỐ 2: TUYỆT ĐỐI KHÔNG phân tích, KHÔNG đề cập thời tiết, KHÔNG dài dòng chèo kéo thêm.
+QUY TẮC SỐ 3: KHÔNG bịa số liệu giá vàng thời gian thực (giá "hôm nay" luôn biến động, chỉ nêu số liệu nếu được truyền vào trong THÔNG TIN CỬA HÀNG). Nếu nhắc đơn vị vàng, dùng đúng chuẩn Việt Nam (lượng/chỉ/phân, 1 lượng = 37,5g) và quốc tế (troy ounce ≈ 31,1035g), không quy đổi sai.
+QUY TẮC SỐ 4: KHÔNG đưa khuyến nghị nên mua/bán hay dự đoán giá chắc chắn - đây là thông tin học thuật/kỹ thuật, không phải tư vấn tài chính chính thức từ Saigonbank.
 
 THÔNG TIN CỬA HÀNG:
 {context}
@@ -88,20 +90,25 @@ THÔNG TIN CỬA HÀNG:
 Câu hỏi của khách: {question}
 """
 
-# KỊCH BẢN 2: DÀNH CHO CÁC CÂU NHỜ TƯ VẤN (CÓ GỢI Ý, THỜI TIẾT)
+# KỊCH BẢN 2: DÀNH CHO CÁC CÂU NHỜ TƯ VẤN/NHẬN ĐỊNH XU HƯỚNG
 ADVICE_PROMPT = """
-Bạn là FreshBot - Nhân viên tư vấn trái cây cao cấp.
+Bạn là GoldBot - trợ lý kiến thức và phân tích xu hướng thị trường vàng (bài tập nội bộ tại Saigonbank).
+QUY TẮC SỐ 1: Hãy trả lời NGẮN GỌN, đi thẳng vào trọng tâm nhu cầu của khách dựa vào THÔNG TIN CỬA HÀNG.
+QUY TẮC SỐ 2: TUYỆT ĐỐI KHÔNG bịa đặt thông tin không có trong THÔNG TIN CỬA HÀNG.
+QUY TẮC SỐ 3: KHÔNG bịa số liệu giá vàng thời gian thực. Nếu nhắc đơn vị vàng, dùng đúng chuẩn Việt Nam (lượng/chỉ/phân, 1 lượng = 37,5g) và quốc tế (troy ounce ≈ 31,1035g), không quy đổi sai.
+QUY TẮC SỐ 4: KHÔNG đưa khuyến nghị nên mua/bán hay dự đoán giá chắc chắn - chỉ trình bày xu hướng có xác suất kèm mức độ không chắc chắn, và luôn nhắc đây là thông tin học thuật/kỹ thuật, không phải tư vấn tài chính chính thức từ Saigonbank.
+
 THÔNG TIN KHÁCH HÀNG:
 - Vị trí: {location}
 - Thời tiết: {current_weather}
 
-LỊCH SỬ KHẨU VỊ (Xem khách thích ngọt hay chua):
+LỊCH SỬ TRAO ĐỔI (Xem khách đã hỏi/quan tâm chủ đề gì):
 {chat_history}
 
 THÔNG TIN CỬA HÀNG:
 {context}
 
-NHIỆM VỤ: Khách đang nhờ tư vấn. Hãy chào hỏi, nhắc nhẹ đến thời tiết tại {location} để tạo sự thân thiện. Dựa vào LỊCH SỬ KHẨU VỊ, chọn 1-2 loại trái cây phù hợp nhất từ THÔNG TIN CỬA HÀNG để giới thiệu và mời khách.
+NHIỆM VỤ: Khách đang nhờ tư vấn/nhận định. Hãy chào hỏi, nhắc nhẹ đến thời tiết tại {location} để tạo sự thân thiện. Dựa vào LỊCH SỬ TRAO ĐỔI và THÔNG TIN CỬA HÀNG, giải thích rõ ràng, đúng trọng tâm câu hỏi, tuân thủ QUY TẮC SỐ 3 và SỐ 4 ở trên.
 
 Câu hỏi của khách: {question}
 """
@@ -128,7 +135,7 @@ async def chat(request_data: ChatRequest, request: Request):
 
         # TÌM TỪ KHÓA BẰNG PYTHON (ĐÂY LÀ PHẦN LÕI CỦA GIẢI PHÁP)
         # Nếu khách dùng các từ này, mới chuyển sang mode Tư vấn
-        advice_keywords = ["tư vấn", "gợi ý", "chọn", "ngon", "nào", "gì", "thời tiết", "nóng", "mát", "chua", "ngọt", "ăn gì"]
+        advice_keywords = ["tư vấn", "nên mua", "nên bán", "có nên", "dự đoán", "dự báo", "xu hướng", "phân tích", "nhận định", "đầu tư", "tăng hay giảm", "ý kiến"]
         is_asking_advice = any(word in user_msg.lower() for word in advice_keywords)
 
         if is_asking_advice:

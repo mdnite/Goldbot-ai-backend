@@ -1,4 +1,6 @@
 import os
+import shutil
+import argparse
 from langchain_community.document_loaders import TextLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
@@ -13,20 +15,43 @@ CHUNK_OVERLAP = 150     # Tăng độ nối giữa các đoạn để không m�
 EMBEDDING_MODEL_NAME = "keepitreal/vietnamese-sbert"
 TEXT_FILE_PATH = "bank_data.txt"
 
+# --- 0. Đọc flag dòng lệnh ---
+# MẶC ĐỊNH GIỜ LÀ "REBUILD SẠCH" (xoá DB cũ, nạp lại từ đầu).
+# Lý do đổi mặc định: bản gốc mặc định APPEND, nên mỗi lần chạy lại script
+# (vd: rerun cell trong Colab, hoặc chạy lại sau khi sửa bank_data.txt) sẽ
+# CỘNG DỒN dữ liệu cũ + mới, dẫn đến trùng lặp chunk (đã xác nhận: DB đi kèm
+# trong repo có 106 chunk nhưng chỉ 25 chunk là duy nhất — một số bị lặp 5 lần,
+# và vẫn còn lẫn 4 chunk dữ liệu Saigonbank thật + 2 chunk nội dung "ABC Bank"
+# không rõ nguồn gốc từ những lần ingest trước đó chưa từng bị xoá).
+# Muốn giữ hành vi cũ (cộng dồn có chủ đích) thì chạy: python ingest_data.py --append
+parser = argparse.ArgumentParser()
+parser.add_argument(
+    "--append",
+    action="store_true",
+    help="Cộng dồn vào DB cũ thay vì xoá và tạo mới (hành vi mặc định của bản gốc).",
+)
+args = parser.parse_args()
+
 # --- 1. Load mô hình Embedding (Chuyển chữ thành Vector) ---
 print("📥 Đang tải mô hình ngôn ngữ (Embedding)...")
 embedding_model = HuggingFaceEmbeddings(model_name=EMBEDDING_MODEL_NAME)
 
-# --- 2. Load Vector Database CŨ từ ổ cứng (Nếu có) ---
-print(f"🔍 Đang tìm kiếm Database cũ tại thư mục '{PERSIST_DIRECTORY}'...")
-if os.path.exists(PERSIST_DIRECTORY) and os.listdir(PERSIST_DIRECTORY):
-    vector_db = Chroma(
-        persist_directory=PERSIST_DIRECTORY,
-        embedding_function=embedding_model
-    )
-    print(f"   ✅ Đã tải Database cũ. Đang có sẵn {vector_db._collection.count()} đoạn dữ liệu.")
+# --- 2. Xử lý Database cũ (nếu có) ---
+if args.append:
+    print(f"🔍 Đang tìm kiếm Database cũ tại thư mục '{PERSIST_DIRECTORY}' (chế độ --append)...")
+    if os.path.exists(PERSIST_DIRECTORY) and os.listdir(PERSIST_DIRECTORY):
+        vector_db = Chroma(
+            persist_directory=PERSIST_DIRECTORY,
+            embedding_function=embedding_model
+        )
+        print(f"   ✅ Đã tải Database cũ. Đang có sẵn {vector_db._collection.count()} đoạn dữ liệu.")
+    else:
+        print("   ⚠️ Không tìm thấy Database cũ. Hệ thống sẽ tạo một DB hoàn toàn mới.")
+        vector_db = None
 else:
-    print("   ⚠️ Không tìm thấy Database cũ. Hệ thống sẽ tạo một DB hoàn toàn mới.")
+    if os.path.exists(PERSIST_DIRECTORY) and os.listdir(PERSIST_DIRECTORY):
+        print(f"🗑️  Chế độ mặc định = rebuild sạch. Đang xoá Database cũ tại '{PERSIST_DIRECTORY}'...")
+        shutil.rmtree(PERSIST_DIRECTORY)
     vector_db = None
 
 # --- 3. Đọc và băm nhỏ dữ liệu MỚI từ file txt ---
