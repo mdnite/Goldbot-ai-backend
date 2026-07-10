@@ -3,16 +3,13 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import Response
 from pydantic import BaseModel
 import os
-import datetime
-import pytz
-import requests
 
 from langchain_ollama import OllamaLLM
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_chroma import Chroma
 from langchain_core.prompts import PromptTemplate
 
-app = FastAPI(title="Gold Shop Bot API")
+app = FastAPI(title="GoldBot API")
 
 # Cấu hình CORS
 app.add_middleware(
@@ -29,37 +26,6 @@ app.add_middleware(
 async def preflight():
     return Response(status_code=200)
 
-def get_location_from_ip(ip: str):
-    if ip in ["127.0.0.1", "::1", "localhost"]:
-        return 10.823, 106.629, "Hồ Chí Minh"
-    try:
-        res = requests.get(f"http://ip-api.com/json/{ip}", timeout=3).json()
-        if res.get("status") == "success":
-            return res["lat"], res["lon"], res["city"]
-    except:
-        pass
-    return 10.823, 106.629, "Hồ Chí Minh"
-
-def get_real_weather(lat, lon):
-    try:
-        url = f"https://api.open-meteo.com/v1/forecast?latitude={lat}&longitude={lon}&current_weather=true"
-        response = requests.get(url, timeout=3)
-        data = response.json()
-        current = data.get("current_weather", {})
-        temp = current.get("temperature", "không rõ")
-        code = current.get("weathercode", 0)
-
-        weather_desc = "quang mây, tạnh ráo"
-        if code in [1, 2, 3]: weather_desc = "có mây"
-        elif code in [45, 48]: weather_desc = "có sương mù"
-        elif code in [51, 53, 55, 56, 57]: weather_desc = "mưa lất phất"
-        elif code in [61, 63, 65, 66, 67]: weather_desc = "mưa rào"
-        elif code in [80, 81, 82]: weather_desc = "mưa to"
-        elif code in [95, 96, 99]: weather_desc = "mưa dông sấm chớp"
-        return f"{temp}°C, trời {weather_desc}"
-    except:
-        return "không rõ thời tiết"
-
 llm = OllamaLLM(model="GoldBot")
 embedding_model = HuggingFaceEmbeddings(model_name="keepitreal/vietnamese-sbert")
 if os.path.exists("./chroma_db"):
@@ -74,39 +40,45 @@ class ChatRequest(BaseModel):
 
 chat_sessions = {}
 
+# Câu disclaimer CỐ ĐỊNH, phải khớp nguyên văn với rule 3 trong Modelfile.
+# Không để model tự diễn giải lại - enforce bằng code ở dưới.
+FIXED_DISCLAIMER = (
+    "Đây là thông tin mang tính học thuật/kỹ thuật từ một bài tập nội bộ, "
+    "không phải lời khuyên đầu tư. Mọi quyết định đầu tư đều do khách tự chịu trách nhiệm."
+)
+
 # --- PHÂN LẬP PROMPT: CHIA LÀM 2 KỊCH BẢN RÕ RÀNG ---
 
 # KỊCH BẢN 1: DÀNH CHO CÁC CÂU HỎI TRỰC TIẾP (ĐỊNH NGHĨA, CƠ CHẾ, QUY ĐỊNH...)
 DIRECT_PROMPT = """
 Bạn là GoldBot - trợ lý kiến thức và phân tích xu hướng thị trường vàng (bài tập nội bộ tại Saigonbank).
-QUY TẮC SỐ 1: Hãy trả lời NGẮN GỌN, đi thẳng vào trọng tâm câu hỏi của khách dựa vào THÔNG TIN CỬA HÀNG.
-QUY TẮC SỐ 2: TUYỆT ĐỐI KHÔNG phân tích xu hướng, KHÔNG dự đoán tăng/giảm, KHÔNG đề cập thời tiết, KHÔNG dài dòng chèo kéo thêm - đây là câu hỏi khái niệm/quy định, chỉ cần trả lời đúng và đủ.
+QUY TẮC SỐ 1: Hãy trả lời NGẮN GỌN, đi thẳng vào trọng tâm câu hỏi của khách dựa vào THÔNG TIN THAM KHẢO.
+QUY TẮC SỐ 2: TUYỆT ĐỐI KHÔNG phân tích xu hướng, KHÔNG dự đoán tăng/giảm, KHÔNG dài dòng chèo kéo thêm - đây là câu hỏi khái niệm/quy định, chỉ cần trả lời đúng và đủ.
 QUY TẮC SỐ 3: KHÔNG bịa số liệu giá vàng thời gian thực. Nếu nhắc đơn vị vàng, dùng đúng chuẩn Việt Nam (lượng/chỉ/phân, 1 lượng = 37,5g) và quốc tế (troy ounce ≈ 31,1035g), không quy đổi sai.
 
-THÔNG TIN CỬA HÀNG:
+THÔNG TIN THAM KHẢO:
 {context}
 
 Câu hỏi của khách: {question}
 """
 
 # KỊCH BẢN 2: DÀNH CHO CÁC CÂU NHỜ TƯ VẤN/NHẬN ĐỊNH XU HƯỚNG
+# ĐÃ SỬA: bỏ hoàn toàn phần thời tiết/vị trí - không liên quan gì đến phân tích vàng,
+# là phần leftover từ persona FreshBot gốc chưa được dọn.
 ADVICE_PROMPT = """
 Bạn là GoldBot - trợ lý kiến thức và phân tích xu hướng thị trường vàng (bài tập nội bộ tại Saigonbank).
-QUY TẮC SỐ 1: Khách đang hỏi nhận định/xu hướng nên ĐƯỢC PHÉP giải thích, phân tích các yếu tố ảnh hưởng (USD, lãi suất, lạm phát, safe haven...) dựa vào THÔNG TIN CỬA HÀNG, không cần ngắn gọn như câu hỏi thông thường.
-QUY TẮC SỐ 2: TUYỆT ĐỐI KHÔNG bịa đặt thông tin không có trong THÔNG TIN CỬA HÀNG, KHÔNG bịa số liệu giá vàng thời gian thực.
-QUY TẮC SỐ 3: KHÔNG khẳng định chắc chắn giá sẽ tăng/giảm hay khuyến nghị nên mua/bán - chỉ trình bày xu hướng có xác suất kèm mức độ không chắc chắn, và luôn nhắc đây là thông tin học thuật/kỹ thuật, không phải tư vấn tài chính chính thức từ Saigonbank.
-
-THÔNG TIN KHÁCH HÀNG:
-- Vị trí: {location}
-- Thời tiết: {current_weather}
+QUY TẮC SỐ 1: Khách đang hỏi nhận định/xu hướng nên ĐƯỢC PHÉP giải thích, phân tích các yếu tố ảnh hưởng (USD, lãi suất, lạm phát, safe haven...) dựa vào THÔNG TIN THAM KHẢO, không cần ngắn gọn như câu hỏi thông thường.
+QUY TẮC SỐ 2: TUYỆT ĐỐI KHÔNG bịa đặt thông tin không có trong THÔNG TIN THAM KHẢO, KHÔNG bịa số liệu giá vàng thời gian thực.
+QUY TẮC SỐ 3: KHÔNG khẳng định chắc chắn giá sẽ tăng/giảm hay khuyến nghị nên mua/bán - chỉ trình bày xu hướng có xác suất kèm mức độ không chắc chắn.
+QUY TẮC SỐ 4: Giọng điệu chuyên nghiệp, rõ ràng - KHÔNG chào hỏi kiểu bán hàng, KHÔNG nhắc thời tiết hay chủ đề không liên quan.
 
 LỊCH SỬ TRAO ĐỔI (Xem khách đã hỏi/quan tâm chủ đề gì):
 {chat_history}
 
-THÔNG TIN CỬA HÀNG:
+THÔNG TIN THAM KHẢO:
 {context}
 
-NHIỆM VỤ: Khách đang nhờ tư vấn/nhận định. Hãy chào hỏi, nhắc nhẹ đến thời tiết tại {location} để tạo sự thân thiện. Dựa vào LỊCH SỬ TRAO ĐỔI và THÔNG TIN CỬA HÀNG, giải thích rõ ràng, đúng trọng tâm câu hỏi, tuân thủ QUY TẮC SỐ 2 và SỐ 3 ở trên.
+NHIỆM VỤ: Khách đang nhờ tư vấn/nhận định. Dựa vào LỊCH SỬ TRAO ĐỔI và THÔNG TIN THAM KHẢO, giải thích rõ ràng, đúng trọng tâm câu hỏi, tuân thủ QUY TẮC SỐ 2, 3, 4 ở trên.
 
 Câu hỏi của khách: {question}
 """
@@ -137,20 +109,14 @@ async def chat(request_data: ChatRequest, request: Request):
         is_asking_advice = any(word in user_msg.lower() for word in advice_keywords)
 
         if is_asking_advice:
-            # Mode Tư vấn: Bơm vị trí, thời tiết, lịch sử
-            client_ip = request.client.host
-            lat, lon, city = get_location_from_ip(client_ip)
-            current_weather = get_real_weather(lat, lon)
-            
+            # Mode Tư vấn: KHÔNG còn bơm vị trí/thời tiết (đã bỏ)
             final_prompt = ADVICE_PROMPT.format(
-                location=city,
-                current_weather=current_weather,
                 context=context,
                 chat_history=history_text,
                 question=user_msg
             )
         else:
-            # Mode Trực tiếp: CẮT ĐỨT HOÀN TOÀN THỜI TIẾT KHỎI PROMPT
+            # Mode Trực tiếp: không liên quan thời tiết
             final_prompt = DIRECT_PROMPT.format(
                 context=context,
                 question=user_msg
@@ -159,6 +125,11 @@ async def chat(request_data: ChatRequest, request: Request):
         # Gọi AI
         bot_reply = llm.invoke(final_prompt).strip()
 
+        # ĐÃ THÊM: enforce disclaimer bằng code cho nhánh advice, không phụ thuộc
+        # hoàn toàn vào việc model tự nhớ đúng nguyên văn qua prompt.
+        if is_asking_advice and FIXED_DISCLAIMER not in bot_reply:
+            bot_reply = f"{bot_reply}\n\n{FIXED_DISCLAIMER}"
+
         chat_sessions[session_id].append({"role": "Khách", "content": user_msg})
         chat_sessions[session_id].append({"role": "Bot", "content": bot_reply})
 
@@ -166,4 +137,5 @@ async def chat(request_data: ChatRequest, request: Request):
 
     except Exception as e:
         print(f"Lỗi AI: {e}")
-        return {"reply": "Dạ, hệ thống đang bận một chút, anh/chị thử lại sau nhé ạ."}
+        # ĐÃ SỬA: bỏ giọng điệu "Dạ...anh/chị" kiểu bán hàng, không khớp persona GoldBot
+        return {"reply": "Xin lỗi, hệ thống đang gặp sự cố. Bạn vui lòng thử lại sau."}
