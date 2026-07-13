@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 import os
 
 load_dotenv()
-fred = Fred(api_key=os.getenv("FRED_API_KEY"))
+fred = Fred(api_key=os.getenv("FRED_API_KEY")) # key ở trong env
 
 # Gold
 gold = yf.download("GC=F", start="2010-01-01", auto_adjust=True)
@@ -28,5 +28,20 @@ df = df.sort_index()
 print("Số dòng sau khi gộp:", len(df))
 print(df.tail(5))
 print()
-print("Ma trận tương quan:")
+print("Ma trận tương quan (GIÁ THÔ - chỉ để tham khảo, KHÔNG dùng để kết luận):")
 print(df.corr())
+
+# Giá thô (level) có xu hướng dài hạn -> tương quan Pearson trên level dễ bị "giả"
+# (spurious correlation) do cùng trend, không phản ánh quan hệ ngày-qua-ngày thật.
+# Gold/DXY là GIÁ -> dùng % thay đổi (pct_change). real_yield/fed_rate là LÃI SUẤT
+# (có thể gần 0 hoặc âm) -> dùng hiệu số tuyệt đối (diff), không dùng %.
+returns = pd.DataFrame({
+    "gold": df["gold"].pct_change(),
+    "dxy": df["dxy"].pct_change(),
+    "real_yield": df["real_yield"].diff(),
+    "fed_rate": df["fed_rate"].diff(),
+}).dropna()
+
+print()
+print("Ma trận tương quan (% THAY ĐỔI / DIFF - dùng cái này để kết luận):")
+print(returns.corr())
