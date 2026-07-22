@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import Response
 from pydantic import BaseModel
 import os
+import sqlite3
 
 from langchain_ollama import OllamaLLM
 from langchain_huggingface import HuggingFaceEmbeddings
@@ -47,6 +48,77 @@ FIXED_DISCLAIMER = (
     "không phải lời khuyên đầu tư. Mọi quyết định đầu tư đều do khách tự chịu trách nhiệm."
 )
 
+# --- GIAI ĐOẠN 2: DỮ LIỆU ĐỊNH LƯỢNG THẬT TỪ indicators.db ---
+# Chỉ inject SỐ THÔ (%change/diff), KHÔNG dùng nhãn dự đoán của trend_model.joblib -
+# model đó đã xác nhận thua baseline trên test (xem giai_doan_1_5_report.md), rủi ro
+# trình bày sai cho khách hàng ngân hàng lớn hơn giá trị thêm vào.
+DB_PATH = "indicators.db"
+MARKET_DATA_HORIZON = 21  # phiên giao dịch, khớp HORIZON dùng trong train_trend_model.py
+
+
+def _nearest_value(cur, indicator, as_of_date):
+    """Giá trị GẦN NHẤT của indicator tính đến as_of_date (<=). Trả None nếu không có."""
+    cur.execute(
+        "SELECT date, value FROM indicators WHERE indicator=? AND date<=? ORDER BY date DESC LIMIT 1",
+        (indicator, as_of_date),
+    )
+    return cur.fetchone()
+
+
+def get_market_data():
+    """%change (gold, dxy) / diff (real_yield, fed_rate) giữa mốc mới nhất và
+    MARKET_DATA_HORIZON phiên trước, đọc từ indicators.db. None nếu lỗi/thiếu dữ liệu -
+    caller phải xử lý None bằng cách bỏ qua khối số liệu, không crash chatbot."""
+    conn = None
+    try:
+        conn = sqlite3.connect(DB_PATH)
+        cur = conn.cursor()
+
+        cur.execute(
+            "SELECT date, value FROM indicators WHERE indicator='gold' ORDER BY date DESC LIMIT 1"
+        )
+        row_now = cur.fetchone()
+        cur.execute(
+            "SELECT date, value FROM indicators WHERE indicator='gold' ORDER BY date DESC LIMIT 1 OFFSET ?",
+            (MARKET_DATA_HORIZON,),
+        )
+        row_past = cur.fetchone()
+        if row_now is None or row_past is None:
+            return None
+        date_now, gold_now = row_now
+        date_past, gold_past = row_past
+
+        others = {}
+        for indicator in ("dxy", "real_yield", "fed_rate"):
+            r_now = _nearest_value(cur, indicator, date_now)
+            r_past = _nearest_value(cur, indicator, date_past)
+            if r_now is None or r_past is None:
+                return None
+            others[indicator] = (r_now[1], r_past[1])
+
+        gold_pct = (gold_now - gold_past) / gold_past * 100
+        dxy_pct = (others["dxy"][0] - others["dxy"][1]) / others["dxy"][1] * 100
+        real_yield_diff = others["real_yield"][0] - others["real_yield"][1]
+        fed_rate_diff = others["fed_rate"][0] - others["fed_rate"][1]
+
+        return (
+            f"Tính đến ngày {date_now} (so với {date_past}, khoảng {MARKET_DATA_HORIZON} phiên giao dịch trước):\n"
+            f"- Vàng (gold futures): {gold_pct:+.2f}%\n"
+            f"- Chỉ số USD (DXY): {dxy_pct:+.2f}%\n"
+            f"- Lợi suất thực 10 năm (real yield): {real_yield_diff:+.2f} điểm %\n"
+            f"- Lãi suất Fed (fed funds rate): {fed_rate_diff:+.2f} điểm %"
+        )
+    except sqlite3.Error as e:
+        print(f"[get_market_data] Lỗi truy vấn indicators.db: {e}")
+        return None
+    except Exception as e:
+        print(f"[get_market_data] Lỗi không xác định khi lấy dữ liệu định lượng: {e}")
+        return None
+    finally:
+        if conn is not None:
+            conn.close()
+
+
 # --- PHÂN LẬP PROMPT: CHIA LÀM 2 KỊCH BẢN RÕ RÀNG ---
 
 # KỊCH BẢN 1: DÀNH CHO CÁC CÂU HỎI TRỰC TIẾP (ĐỊNH NGHĨA, CƠ CHẾ, QUY ĐỊNH...)
@@ -68,7 +140,7 @@ Câu hỏi của khách: {question}
 ADVICE_PROMPT = """
 Bạn là GoldBot - trợ lý kiến thức và phân tích xu hướng thị trường vàng (bài tập nội bộ tại Saigonbank).
 QUY TẮC SỐ 1: Khách đang hỏi nhận định/xu hướng nên ĐƯỢC PHÉP giải thích, phân tích các yếu tố ảnh hưởng (USD, lãi suất, lạm phát, safe haven...) dựa vào THÔNG TIN THAM KHẢO, không cần ngắn gọn như câu hỏi thông thường.
-QUY TẮC SỐ 2: TUYỆT ĐỐI KHÔNG bịa đặt thông tin không có trong THÔNG TIN THAM KHẢO, KHÔNG bịa số liệu giá vàng thời gian thực.
+QUY TẮC SỐ 2: TUYỆT ĐỐI KHÔNG bịa đặt thông tin không có trong THÔNG TIN THAM KHẢO. Được phép dùng số liệu trong khối DỮ LIỆU ĐỊNH LƯỢNG bên dưới để diễn giải xu hướng, nhưng KHÔNG bịa thêm bất kỳ số liệu giá vàng/thị trường thời gian thực nào khác ngoài khối đó.
 QUY TẮC SỐ 3: KHÔNG khẳng định chắc chắn giá sẽ tăng/giảm hay khuyến nghị nên mua/bán - chỉ trình bày xu hướng có xác suất kèm mức độ không chắc chắn.
 QUY TẮC SỐ 4: Giọng điệu chuyên nghiệp, rõ ràng - KHÔNG chào hỏi kiểu bán hàng, KHÔNG nhắc thời tiết hay chủ đề không liên quan.
 
@@ -78,7 +150,10 @@ LỊCH SỬ TRAO ĐỔI (Xem khách đã hỏi/quan tâm chủ đề gì):
 THÔNG TIN THAM KHẢO:
 {context}
 
-NHIỆM VỤ: Khách đang nhờ tư vấn/nhận định. Dựa vào LỊCH SỬ TRAO ĐỔI và THÔNG TIN THAM KHẢO, giải thích rõ ràng, đúng trọng tâm câu hỏi, tuân thủ QUY TẮC SỐ 2, 3, 4 ở trên.
+DỮ LIỆU ĐỊNH LƯỢNG (thời gian thực, do hệ thống cung cấp):
+{market_data}
+
+NHIỆM VỤ: Khách đang nhờ tư vấn/nhận định. Dựa vào LỊCH SỬ TRAO ĐỔI, THÔNG TIN THAM KHẢO và DỮ LIỆU ĐỊNH LƯỢNG, giải thích rõ ràng, đúng trọng tâm câu hỏi, tuân thủ QUY TẮC SỐ 2, 3, 4 ở trên.
 
 Câu hỏi của khách: {question}
 """
@@ -110,9 +185,12 @@ async def chat(request_data: ChatRequest, request: Request):
 
         if is_asking_advice:
             # Mode Tư vấn: KHÔNG còn bơm vị trí/thời tiết (đã bỏ)
+            # Giai đoạn 2: inject số thô 4 indicator, None -> báo rõ thiếu dữ liệu, không bịa.
+            market_data = get_market_data() or "Không có dữ liệu định lượng khả dụng cho câu hỏi này."
             final_prompt = ADVICE_PROMPT.format(
                 context=context,
                 chat_history=history_text,
+                market_data=market_data,
                 question=user_msg
             )
         else:
