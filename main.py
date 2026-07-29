@@ -96,17 +96,21 @@ def get_market_data():
                 return None
             others[indicator] = (r_now[1], r_past[1])
 
+        dxy_now, dxy_past = others["dxy"]
+        real_yield_now, real_yield_past = others["real_yield"]
+        fed_rate_now, fed_rate_past = others["fed_rate"]
+
         gold_pct = (gold_now - gold_past) / gold_past * 100
-        dxy_pct = (others["dxy"][0] - others["dxy"][1]) / others["dxy"][1] * 100
-        real_yield_diff = others["real_yield"][0] - others["real_yield"][1]
-        fed_rate_diff = others["fed_rate"][0] - others["fed_rate"][1]
+        dxy_pct = (dxy_now - dxy_past) / dxy_past * 100
+        real_yield_diff = real_yield_now - real_yield_past
+        fed_rate_diff = fed_rate_now - fed_rate_past
 
         return (
             f"Tính đến ngày {date_now} (so với {date_past}, khoảng {MARKET_DATA_HORIZON} phiên giao dịch trước):\n"
-            f"- Vàng (gold futures): {gold_pct:+.2f}%\n"
-            f"- Chỉ số USD (DXY): {dxy_pct:+.2f}%\n"
-            f"- Lợi suất thực 10 năm (real yield): {real_yield_diff:+.2f} điểm %\n"
-            f"- Lãi suất Fed (fed funds rate): {fed_rate_diff:+.2f} điểm %"
+            f"- Vàng (gold futures): hiện tại {gold_now:.2f} USD/oz, thay đổi {gold_pct:+.2f}%\n"
+            f"- Chỉ số USD (DXY): hiện tại {dxy_now:.2f}, thay đổi {dxy_pct:+.2f}%\n"
+            f"- Lợi suất thực 10 năm (real yield): hiện tại {real_yield_now:.2f}%, thay đổi {real_yield_diff:+.2f} điểm %\n"
+            f"- Lãi suất Fed (fed funds rate): hiện tại {fed_rate_now:.2f}%, thay đổi {fed_rate_diff:+.2f} điểm %"
         )
     except sqlite3.Error as e:
         print(f"[get_market_data] Lỗi truy vấn indicators.db: {e}")

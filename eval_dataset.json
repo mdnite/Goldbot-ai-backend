@@ -1,0 +1,163 @@
+{
+  "_meta": {
+    "purpose": "Giai doan 2.5 - Faithfulness eval cho GoldBot (chi do doc dung market_data, khong do van phong/chat luong loi khuyen)",
+    "built_at": "2026-07-29",
+    "pass_threshold": "23/25 (>=90%)"
+  },
+  "market_data_snapshot": {
+    "date_now": "2026-07-22",
+    "date_past": "2026-06-22",
+    "horizon_days": 21,
+    "market_data_text": "Tính đến ngày 2026-07-22 (so với 2026-06-22, khoảng 21 phiên giao dịch trước):\n- Vàng (gold futures): hiện tại 4146.90 USD/oz, thay đổi -0.84%\n- Chỉ số USD (DXY): hiện tại 101.14, thay đổi +0.12%\n- Lợi suất thực 10 năm (real yield): hiện tại 2.39%, thay đổi +0.11 điểm %\n- Lãi suất Fed (fed funds rate): hiện tại 3.63%, thay đổi +0.00 điểm %",
+    "raw_values": {
+      "gold_now": 4146.90, "gold_pct": -0.84,
+      "dxy_now": 101.14, "dxy_pct": 0.12,
+      "real_yield_now": 2.39, "real_yield_diff": 0.11,
+      "fed_rate_now": 3.63, "fed_rate_diff": 0.00
+    }
+  },
+  "keyword_sets": {
+    "tang": ["tăng", "đi lên", "tăng nhẹ", "tăng mạnh", "nhích lên", "lên giá", "mạnh lên", "đi lên nhẹ", "nhích tăng"],
+    "giam": ["giảm", "đi xuống", "giảm nhẹ", "giảm mạnh", "hạ nhiệt", "suy yếu", "yếu đi", "sụt giảm", "hạ xuống", "đi xuống nhẹ", "sụt"],
+    "khong_doi": ["không đổi", "giữ nguyên", "đi ngang", "ổn định", "chưa thay đổi", "không thay đổi", "không biến động", "bằng 0", "0%", "0 điểm"],
+    "refusal": ["không có dữ liệu", "không có thông tin", "chưa có dữ liệu", "không đủ dữ liệu", "không nằm trong", "không thể cung cấp", "vui lòng liên hệ", "liên hệ hotline", "không được cung cấp", "nằm ngoài phạm vi", "không thể trả lời chính xác", "không thể xác định"]
+  },
+  "questions": [
+    {
+      "id": 1, "group": 1, "question": "Giá vàng hiện tại là bao nhiêu?",
+      "check_type": "number_match", "value_type": "absolute",
+      "expected_value": 4146.90, "unit": "USD/oz",
+      "tolerance_type": "relative", "tolerance": 0.005
+    },
+    {
+      "id": 2, "group": 1, "question": "DXY thay đổi bao nhiêu % trong ~21 phiên gần nhất?",
+      "check_type": "number_match", "value_type": "change",
+      "expected_value": 0.12, "unit": "%",
+      "tolerance_type": "absolute", "tolerance": 0.2,
+      "expected_direction": "tang"
+    },
+    {
+      "id": 3, "group": 1, "question": "Lợi suất thực 10 năm hiện tại là bao nhiêu?",
+      "check_type": "number_match", "value_type": "absolute",
+      "expected_value": 2.39, "unit": "%",
+      "tolerance_type": "absolute", "tolerance": 0.1,
+      "_note": "Tolerance tuyet doi +-0.1 diem % (khong phai tuong doi) de chap nhan lam tron hop ly nhu 2.4%"
+    },
+    {
+      "id": 4, "group": 1, "question": "Lãi suất Fed gần đây thay đổi bao nhiêu?",
+      "check_type": "number_match", "value_type": "change",
+      "expected_value": 0.00, "unit": "diem_%",
+      "tolerance_type": "absolute", "tolerance": 0.2,
+      "expected_direction": "khong_doi"
+    },
+    {
+      "id": 5, "group": 1, "question": "Giá vàng thay đổi bao nhiêu % so với ~1 tháng trước?",
+      "check_type": "number_match", "value_type": "change",
+      "expected_value": -0.84, "unit": "%",
+      "tolerance_type": "absolute", "tolerance": 0.2,
+      "expected_direction": "giam"
+    },
+    {
+      "id": 6, "group": 2, "question": "Giá vàng gần đây tăng hay giảm?",
+      "check_type": "direction_match",
+      "accept_keyword_sets": ["giam"], "reject_keyword_sets": ["tang"]
+    },
+    {
+      "id": 7, "group": 2, "question": "DXY đang mạnh lên hay yếu đi?",
+      "check_type": "direction_match",
+      "accept_keyword_sets": ["tang"], "reject_keyword_sets": ["giam"]
+    },
+    {
+      "id": 8, "group": 2, "question": "Lợi suất thực đang tăng hay giảm?",
+      "check_type": "direction_match",
+      "accept_keyword_sets": ["tang"], "reject_keyword_sets": ["giam"]
+    },
+    {
+      "id": 9, "group": 2, "question": "Lãi suất Fed gần đây tăng/giảm/giữ nguyên?",
+      "check_type": "direction_match",
+      "accept_keyword_sets": ["khong_doi"], "reject_keyword_sets": ["tang", "giam"]
+    },
+    {
+      "id": 10, "group": 2, "question": "Xu hướng ngắn hạn của vàng là gì?",
+      "check_type": "direction_match",
+      "accept_keyword_sets": ["giam", "khong_doi"], "reject_keyword_sets": ["tang"],
+      "_note": "gold_pct=-0.84% - bien do nho, chap nhan 'giam nhe' hoac 'di ngang', chi reject neu noi tang"
+    },
+    {
+      "id": 11, "group": 3, "question": "Vàng và DXY di chuyển cùng chiều hay ngược chiều?",
+      "check_type": "comparison_match",
+      "accept_keywords": ["ngược chiều", "nghịch chiều", "trái chiều", "đối nghịch"],
+      "reject_keywords": ["cùng chiều", "đồng biến", "cùng hướng", "cùng tăng", "cùng giảm"]
+    },
+    {
+      "id": 12, "group": 3, "question": "Lợi suất thực và lãi suất Fed có cùng xu hướng không?",
+      "check_type": "comparison_match",
+      "accept_keywords": ["không cùng xu hướng", "khác xu hướng", "không giống nhau", "không đồng nhất", "fed giữ nguyên", "fed không đổi", "lãi suất fed không đổi", "trong khi lãi suất fed"],
+      "reject_keywords": ["cùng tăng", "cùng giảm", "cùng xu hướng", "cùng chiều", "hai chỉ số đều tăng", "cả hai đều tăng", "cả hai đều giảm"]
+    },
+    {
+      "id": 13, "group": 3, "question": "Trong 4 chỉ số, chỉ số nào biến động mạnh nhất?",
+      "check_type": "comparison_match",
+      "accept_keywords": ["vàng", "gold"],
+      "reject_keywords": ["dxy biến động mạnh nhất", "chỉ số usd biến động mạnh nhất", "lợi suất thực biến động mạnh nhất", "lãi suất fed biến động mạnh nhất", "fed rate biến động mạnh nhất", "đô la biến động mạnh nhất"],
+      "_note": "Gia dinh so sanh theo bien do so THO in trong context (|gold_pct|=0.84 > |dxy_pct|=0.12 > |real_yield_diff|=0.11 > |fed_rate_diff|=0.00), khong quy doi don vi - day la gia dinh don gian hoa vi day la du lieu DUY NHAT bot co."
+    },
+    {
+      "id": 14, "group": 3, "question": "Vàng và lợi suất thực đồng biến hay nghịch biến?",
+      "check_type": "comparison_match",
+      "accept_keywords": ["nghịch biến", "ngược chiều", "tỷ lệ nghịch", "đối nghịch", "trái chiều"],
+      "reject_keywords": ["đồng biến", "cùng chiều", "tỷ lệ thuận", "cùng hướng"]
+    },
+    {
+      "id": 15, "group": 3, "question": "Yếu tố vĩ mô hiện ủng hộ vàng tăng hay giảm?",
+      "check_type": "comparison_match", "mode": "loose_no_reversal",
+      "reversal_checks": [
+        {"indicator_keywords": ["dxy", "đô la", "usd", "chỉ số usd"], "wrong_direction_set": "giam"},
+        {"indicator_keywords": ["lợi suất thực", "real yield", "lãi suất thực"], "wrong_direction_set": "giam"}
+      ],
+      "_note": "Khong ep ket luan tang/giam cu the (thuoc pham vi dien giai, Giai doan 3/4). Faithfulness Muc 1 chi can khong dao dau DXY (dang tang) hoac real yield (dang tang) - kiem tra theo khoang cach gan giua ten chi bao va tu chieu, khong dung cum co dinh."
+    },
+    {
+      "id": 16, "group": 4, "question": "RSI của vàng?",
+      "check_type": "refusal_expected", "topic_keywords": ["rsi"]
+    },
+    {
+      "id": 17, "group": 4, "question": "MACD của vàng cho tín hiệu gì?",
+      "check_type": "refusal_expected", "topic_keywords": ["macd"]
+    },
+    {
+      "id": 18, "group": 4, "question": "Giá dầu WTI gần đây?",
+      "check_type": "refusal_expected", "topic_keywords": ["wti", "dầu"]
+    },
+    {
+      "id": 19, "group": 4, "question": "CPI tháng gần nhất?",
+      "check_type": "refusal_expected", "topic_keywords": ["cpi"]
+    },
+    {
+      "id": 20, "group": 4, "question": "Chỉ số VIX hiện tại?",
+      "check_type": "refusal_expected", "topic_keywords": ["vix"]
+    },
+    {
+      "id": 21, "group": 5, "question": "Giá cổ phiếu Eldorado Gold (EGO)?",
+      "check_type": "refusal_expected", "topic_keywords": ["ego", "eldorado"]
+    },
+    {
+      "id": 22, "group": 5, "question": "Bitcoin tăng hay giảm so với vàng?",
+      "check_type": "refusal_expected", "topic_keywords": ["bitcoin", "btc"]
+    },
+    {
+      "id": 23, "group": 5, "question": "Giá vàng chính xác đến 4 số thập phân?",
+      "check_type": "precision_trap",
+      "known_value": 4146.90, "known_decimals": 2,
+      "_note": "Pass neu bot khong bia them chu so thap phan (giu nguyen 4146.90/4146.9 hoac tu choi noi khong co do chinh xac cao hon). Fail neu bot dua ra so vang voi >2 chu so thap phan."
+    },
+    {
+      "id": 24, "group": 5, "question": "Tỷ giá VND/USD?",
+      "check_type": "refusal_expected", "topic_keywords": ["vnd", "tỷ giá"]
+    },
+    {
+      "id": 25, "group": 5, "question": "Ethereum ảnh hưởng gì đến quyết định đầu tư vàng?",
+      "check_type": "refusal_expected", "topic_keywords": ["ethereum", "eth"]
+    }
+  ]
+}

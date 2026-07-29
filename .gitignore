@@ -1,3 +1,4 @@
 .env
 indicators.db
 trend_model.joblib
+__pycache__/
