@@ -102,26 +102,79 @@ def check_number_match(question, normalized_reply):
     return direction_ok, None if direction_ok else "sai chiều/dấu so với số liệu"
 
 
-PROXIMITY_WINDOW = 20  # ký tự, đủ chứa "đang"/"hiện" giữa tên chỉ báo và từ chỉ chiều
+PROXIMITY_WINDOW = 50  # ký tự - tăng từ 20 sau Vòng 2 (ID 8/10 bị bỏ sót vì câu
+                       # Bot diễn giải dài hơn cửa sổ cũ giữa tên chỉ báo và từ chỉ chiều)
 
 
-def _keyword_near_indicator(normalized_reply, indicator_keywords, target_words):
+def build_entity_groups(dataset):
+    """Gom TẤT CẢ indicator_keywords xuất hiện trong eval_dataset.json (cả ở câu
+    direction_match lẫn reversal_checks của câu loose_no_reversal) thành các nhóm
+    đồng nghĩa duy nhất - lấy tự động từ dataset, không hardcode tay - dùng cho
+    Boundary Check bên dưới."""
+    groups = []
+    seen = set()
+    for q in dataset["questions"]:
+        candidates = []
+        if q.get("indicator_keywords"):
+            candidates.append(q["indicator_keywords"])
+        for check in q.get("reversal_checks", []):
+            candidates.append(check["indicator_keywords"])
+        for kws in candidates:
+            key = tuple(sorted(normalize_text(k) for k in kws))
+            if key not in seen:
+                seen.add(key)
+                groups.append(kws)
+    return groups
+
+
+def _nearest_entity_group(normalized_reply, position, entity_groups):
+    """Nhóm thực thể (trong entity_groups) có một lần xuất hiện GẦN position
+    nhất trong normalized_reply. None nếu entity_groups rỗng hoặc không nhóm
+    nào xuất hiện trong văn bản."""
+    best_group, best_dist = None, None
+    for group in entity_groups:
+        for kw in group:
+            kw_norm = normalize_text(kw)
+            for m in re.finditer(re.escape(kw_norm), normalized_reply):
+                if position < m.start():
+                    dist = m.start() - position
+                elif position > m.end():
+                    dist = position - m.end()
+                else:
+                    dist = 0
+                if best_dist is None or dist < best_dist:
+                    best_dist, best_group = dist, group
+    return best_group
+
+
+def _keyword_near_indicator(normalized_reply, indicator_keywords, target_words, entity_groups=None):
     """True nếu có từ trong target_words xuất hiện trong cửa sổ PROXIMITY_WINDOW
     ký tự quanh một lần xuất hiện bất kỳ của indicator_keywords - dùng để tránh
-    nhiễu khi Bot nhắc nhiều chỉ báo trong cùng câu trả lời."""
+    nhiễu khi Bot nhắc nhiều chỉ báo trong cùng câu trả lời. Boundary Check: một
+    từ chỉ chiều chỉ được tính LÀ CỦA chỉ báo neo nếu chỉ báo GẦN từ đó nhất
+    (xét trên toàn bộ câu trả lời) chính là chỉ báo neo - tránh gán nhầm từ chỉ
+    chiều của một chỉ báo khác đứng gần nó hơn, dù xuôi ("DXY tăng khiến vàng
+    giảm") hay ngược thứ tự câu ("vàng giảm, ... lợi suất thực tăng")."""
+    own_norm = {normalize_text(k) for k in indicator_keywords}
+
     for kw in indicator_keywords:
         kw_norm = normalize_text(kw)
-        for m in re.finditer(re.escape(kw_norm), normalized_reply):
-            start = max(0, m.start() - PROXIMITY_WINDOW)
-            end = m.end() + PROXIMITY_WINDOW
-            window = normalized_reply[start:end]
-            if any(w in window for w in target_words):
-                return True
+        for anchor in re.finditer(re.escape(kw_norm), normalized_reply):
+            win_start = max(0, anchor.start() - PROXIMITY_WINDOW)
+            win_end = anchor.end() + PROXIMITY_WINDOW
+            for target in target_words:
+                for hit in re.finditer(re.escape(target), normalized_reply[win_start:win_end]):
+                    target_start = win_start + hit.start()
+                    if entity_groups:
+                        nearest = _nearest_entity_group(normalized_reply, target_start, entity_groups)
+                        if nearest is not None and not ({normalize_text(k) for k in nearest} & own_norm):
+                            continue  # từ chỉ chiều này gần một chỉ báo KHÁC hơn
+                    return True
     return False
 
 
-def _has_reversal(normalized_reply, indicator_keywords, wrong_direction_words):
-    return _keyword_near_indicator(normalized_reply, indicator_keywords, wrong_direction_words)
+def _has_reversal(normalized_reply, indicator_keywords, wrong_direction_words, entity_groups=None):
+    return _keyword_near_indicator(normalized_reply, indicator_keywords, wrong_direction_words, entity_groups)
 
 
 def check_direction_match(question, normalized_reply):
@@ -132,8 +185,8 @@ def check_direction_match(question, normalized_reply):
     if indicator_keywords:
         # Chỉ tìm từ chỉ chiều GẦN tên chỉ báo đang hỏi - tránh bắt nhầm từ
         # chỉ chiều của một chỉ báo khác được nhắc kèm trong cùng câu trả lời.
-        has_accept = _keyword_near_indicator(normalized_reply, indicator_keywords, accept_words)
-        has_reject = _keyword_near_indicator(normalized_reply, indicator_keywords, reject_words)
+        has_accept = _keyword_near_indicator(normalized_reply, indicator_keywords, accept_words, ENTITY_GROUPS)
+        has_reject = _keyword_near_indicator(normalized_reply, indicator_keywords, reject_words, ENTITY_GROUPS)
     else:
         has_accept = any(w in normalized_reply for w in accept_words)
         has_reject = any(w in normalized_reply for w in reject_words)
@@ -156,7 +209,7 @@ def check_comparison_match(question, normalized_reply):
     if question.get("mode") == "loose_no_reversal":
         for check in question.get("reversal_checks", []):
             wrong_words = [normalize_text(w) for w in KEYWORD_SETS.get(check["wrong_direction_set"], [])]
-            if _has_reversal(normalized_reply, check["indicator_keywords"], wrong_words):
+            if _has_reversal(normalized_reply, check["indicator_keywords"], wrong_words, ENTITY_GROUPS):
                 return False, f"đảo chiều chỉ báo: {check['indicator_keywords'][0]}"
         return True, None
 
@@ -180,9 +233,15 @@ def check_comparison_match(question, normalized_reply):
     return direction_ok, None if direction_ok else "không khớp accept/reject keyword (đã xét phủ định)"
 
 
+REFUSAL_PATTERN = re.compile(r"(không|chưa)\s+(có\s+)?(đủ\s+)?(dữ\s+liệu|thông\s+tin|số\s+liệu)")
+
+
 def check_refusal_expected(question, normalized_reply, snapshot_numbers):
+    # Bổ sung REFUSAL_PATTERN (KHÔNG thay thế danh sách refusal_words) - vì có
+    # cụm từ chối hợp lệ (VD "không thể đưa ra nhận định chính xác") không chứa
+    # "dữ liệu/thông tin/số liệu" nên không khớp pattern, phải giữ cả 2 nhánh.
     refusal_words = [normalize_text(w) for w in KEYWORD_SETS.get("refusal", [])]
-    has_refusal = any(w in normalized_reply for w in refusal_words)
+    has_refusal = any(w in normalized_reply for w in refusal_words) or bool(REFUSAL_PATTERN.search(normalized_reply))
 
     fabricated = False
     for topic in question.get("topic_keywords", []):
@@ -247,8 +306,9 @@ def main():
     with open(SYSTEM_PROMPT_PATH, encoding="utf-8") as f:
         prompt_template = f.read()
 
-    global KEYWORD_SETS
+    global KEYWORD_SETS, ENTITY_GROUPS
     KEYWORD_SETS = dataset["keyword_sets"]
+    ENTITY_GROUPS = build_entity_groups(dataset)
     snapshot = dataset["market_data_snapshot"]
     snapshot_numbers = list(snapshot["raw_values"].values())
 
