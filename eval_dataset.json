@@ -20,7 +20,7 @@
     "tang": ["tăng", "đi lên", "tăng nhẹ", "tăng mạnh", "nhích lên", "lên giá", "mạnh lên", "đi lên nhẹ", "nhích tăng"],
     "giam": ["giảm", "đi xuống", "giảm nhẹ", "giảm mạnh", "hạ nhiệt", "suy yếu", "yếu đi", "sụt giảm", "hạ xuống", "đi xuống nhẹ", "sụt"],
     "khong_doi": ["không đổi", "giữ nguyên", "đi ngang", "ổn định", "chưa thay đổi", "không thay đổi", "không biến động", "bằng 0", "0%", "0 điểm"],
-    "refusal": ["không có dữ liệu", "không có thông tin", "chưa có dữ liệu", "không đủ dữ liệu", "không nằm trong", "không thể cung cấp", "vui lòng liên hệ", "liên hệ hotline", "không được cung cấp", "nằm ngoài phạm vi", "không thể trả lời chính xác", "không thể xác định"]
+    "refusal": ["không có dữ liệu", "không có thông tin", "chưa có dữ liệu", "không đủ dữ liệu", "không nằm trong", "không thể cung cấp", "vui lòng liên hệ", "liên hệ hotline", "không được cung cấp", "nằm ngoài phạm vi", "không thể trả lời chính xác", "không thể xác định", "không có đủ dữ liệu để phân tích", "không thể đưa ra nhận định chính xác", "không thể phân tích tác động", "chưa có đủ thông tin"]
   },
   "questions": [
     {
@@ -60,33 +60,38 @@
     {
       "id": 6, "group": 2, "question": "Giá vàng gần đây tăng hay giảm?",
       "check_type": "direction_match",
-      "accept_keyword_sets": ["giam"], "reject_keyword_sets": ["tang"]
+      "accept_keyword_sets": ["giam"], "reject_keyword_sets": ["tang"],
+      "indicator_keywords": ["vàng", "gold"]
     },
     {
       "id": 7, "group": 2, "question": "DXY đang mạnh lên hay yếu đi?",
       "check_type": "direction_match",
-      "accept_keyword_sets": ["tang"], "reject_keyword_sets": ["giam"]
+      "accept_keyword_sets": ["tang"], "reject_keyword_sets": ["giam"],
+      "indicator_keywords": ["dxy", "đô la", "usd", "chỉ số usd"]
     },
     {
       "id": 8, "group": 2, "question": "Lợi suất thực đang tăng hay giảm?",
       "check_type": "direction_match",
-      "accept_keyword_sets": ["tang"], "reject_keyword_sets": ["giam"]
+      "accept_keyword_sets": ["tang"], "reject_keyword_sets": ["giam"],
+      "indicator_keywords": ["lợi suất thực", "real yield", "lãi suất thực"]
     },
     {
       "id": 9, "group": 2, "question": "Lãi suất Fed gần đây tăng/giảm/giữ nguyên?",
       "check_type": "direction_match",
-      "accept_keyword_sets": ["khong_doi"], "reject_keyword_sets": ["tang", "giam"]
+      "accept_keyword_sets": ["khong_doi"], "reject_keyword_sets": ["tang", "giam"],
+      "indicator_keywords": ["lãi suất fed", "fed funds", "fed rate"]
     },
     {
       "id": 10, "group": 2, "question": "Xu hướng ngắn hạn của vàng là gì?",
       "check_type": "direction_match",
       "accept_keyword_sets": ["giam", "khong_doi"], "reject_keyword_sets": ["tang"],
+      "indicator_keywords": ["vàng", "gold"],
       "_note": "gold_pct=-0.84% - bien do nho, chap nhan 'giam nhe' hoac 'di ngang', chi reject neu noi tang"
     },
     {
       "id": 11, "group": 3, "question": "Vàng và DXY di chuyển cùng chiều hay ngược chiều?",
       "check_type": "comparison_match",
-      "accept_keywords": ["ngược chiều", "nghịch chiều", "trái chiều", "đối nghịch"],
+      "accept_keywords": ["ngược chiều", "nghịch chiều", "trái chiều", "đối nghịch", "hướng khác nhau", "khác hướng", "không cùng hướng"],
       "reject_keywords": ["cùng chiều", "đồng biến", "cùng hướng", "cùng tăng", "cùng giảm"]
     },
     {

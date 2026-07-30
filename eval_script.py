@@ -66,13 +66,24 @@ def check_number_match(question, normalized_reply):
     # ("giảm 0.84%") chứ không phải dấu "-" trong số -> so biên độ KHÔNG DẤU
     # trước, xác định chiều riêng (qua dấu số nếu có, hoặc qua từ khóa).
     magnitude_ok = any(abs(abs(n) - abs(expected)) <= threshold for n in numbers)
-    if not magnitude_ok:
-        return False, "không tìm thấy số khớp biên độ"
 
     if direction == "khong_doi":
+        # Fallback: Bot thường diễn đạt "không đổi" thuần bằng từ (VD "giữ
+        # nguyên 3.63%") mà không viết lại số biến động "0"/"0.00%" tường
+        # minh -> chấp nhận từ khóa không đổi khi không có số khớp biên độ,
+        # miễn không lẫn từ khóa tăng/giảm.
         reject_words = [normalize_text(w) for w in KEYWORD_SETS.get("tang", []) + KEYWORD_SETS.get("giam", [])]
         has_reject = any(w in normalized_reply for w in reject_words)
-        return not has_reject, None if not has_reject else "từ khóa chỉ có thay đổi dù số liệu ~0"
+        if has_reject:
+            return False, "từ khóa chỉ có thay đổi dù số liệu ~0"
+        if magnitude_ok:
+            return True, None
+        accept_words = [normalize_text(w) for w in KEYWORD_SETS.get("khong_doi", [])]
+        has_accept = any(w in normalized_reply for w in accept_words)
+        return has_accept, None if has_accept else "không tìm thấy số khớp biên độ hoặc từ khóa không đổi"
+
+    if not magnitude_ok:
+        return False, "không tìm thấy số khớp biên độ"
 
     signed_numbers = extract_signed_numbers(normalized_reply)
     signed_match = any(abs(n - expected) <= threshold for n in signed_numbers)
@@ -91,27 +102,54 @@ def check_number_match(question, normalized_reply):
     return direction_ok, None if direction_ok else "sai chiều/dấu so với số liệu"
 
 
-def check_direction_match(question, normalized_reply):
-    accept_words = resolve_keywords(question, "accept_keyword", KEYWORD_SETS)
-    reject_words = resolve_keywords(question, "reject_keyword", KEYWORD_SETS)
-    has_accept = any(w in normalized_reply for w in accept_words)
-    has_reject = any(w in normalized_reply for w in reject_words)
-    return has_accept and not has_reject, None
-
-
 PROXIMITY_WINDOW = 20  # ký tự, đủ chứa "đang"/"hiện" giữa tên chỉ báo và từ chỉ chiều
 
 
-def _has_reversal(normalized_reply, indicator_keywords, wrong_direction_words):
+def _keyword_near_indicator(normalized_reply, indicator_keywords, target_words):
+    """True nếu có từ trong target_words xuất hiện trong cửa sổ PROXIMITY_WINDOW
+    ký tự quanh một lần xuất hiện bất kỳ của indicator_keywords - dùng để tránh
+    nhiễu khi Bot nhắc nhiều chỉ báo trong cùng câu trả lời."""
     for kw in indicator_keywords:
         kw_norm = normalize_text(kw)
         for m in re.finditer(re.escape(kw_norm), normalized_reply):
             start = max(0, m.start() - PROXIMITY_WINDOW)
             end = m.end() + PROXIMITY_WINDOW
             window = normalized_reply[start:end]
-            if any(w in window for w in wrong_direction_words):
+            if any(w in window for w in target_words):
                 return True
     return False
+
+
+def _has_reversal(normalized_reply, indicator_keywords, wrong_direction_words):
+    return _keyword_near_indicator(normalized_reply, indicator_keywords, wrong_direction_words)
+
+
+def check_direction_match(question, normalized_reply):
+    accept_words = resolve_keywords(question, "accept_keyword", KEYWORD_SETS)
+    reject_words = resolve_keywords(question, "reject_keyword", KEYWORD_SETS)
+    indicator_keywords = question.get("indicator_keywords")
+
+    if indicator_keywords:
+        # Chỉ tìm từ chỉ chiều GẦN tên chỉ báo đang hỏi - tránh bắt nhầm từ
+        # chỉ chiều của một chỉ báo khác được nhắc kèm trong cùng câu trả lời.
+        has_accept = _keyword_near_indicator(normalized_reply, indicator_keywords, accept_words)
+        has_reject = _keyword_near_indicator(normalized_reply, indicator_keywords, reject_words)
+    else:
+        has_accept = any(w in normalized_reply for w in accept_words)
+        has_reject = any(w in normalized_reply for w in reject_words)
+
+    direction_ok = has_accept and not has_reject
+    return direction_ok, None if direction_ok else "sai chiều hoặc không tìm thấy từ khóa gần tên chỉ báo"
+
+
+NEGATION_WORDS = ["không", "chẳng"]  # đã bao trùm "không thể"/"không phải" (chứa "không" làm substring)
+NEGATION_WINDOW = 40  # ký tự TRƯỚC cụm reject-keyword, đủ chứa 1 mệnh đề ngắn
+                      # kiểu "không thể khẳng định ... có cùng xu hướng"
+
+
+def _negated_before(normalized_reply, match_start):
+    window = normalized_reply[max(0, match_start - NEGATION_WINDOW):match_start]
+    return any(neg in window for neg in NEGATION_WORDS)
 
 
 def check_comparison_match(question, normalized_reply):
@@ -124,9 +162,22 @@ def check_comparison_match(question, normalized_reply):
 
     reject_words = [normalize_text(w) for w in question.get("reject_keywords", [])]
     accept_words = [normalize_text(w) for w in question.get("accept_keywords", [])]
-    has_reject = any(w in normalized_reply for w in reject_words)
+
+    # Bỏ qua một lần khớp reject-keyword nếu ngay trước nó có từ phủ định
+    # (VD "không cùng xu hướng" không phải là khẳng định "cùng xu hướng") -
+    # tránh grader "mù phủ định" (negation ignorance).
+    has_reject = False
+    for w in reject_words:
+        for m in re.finditer(re.escape(w), normalized_reply):
+            if not _negated_before(normalized_reply, m.start()):
+                has_reject = True
+                break
+        if has_reject:
+            break
+
     has_accept = any(w in normalized_reply for w in accept_words)
-    return has_accept and not has_reject, None
+    direction_ok = has_accept and not has_reject
+    return direction_ok, None if direction_ok else "không khớp accept/reject keyword (đã xét phủ định)"
 
 
 def check_refusal_expected(question, normalized_reply, snapshot_numbers):
