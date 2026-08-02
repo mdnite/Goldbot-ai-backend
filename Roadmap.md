@@ -7,5 +7,5 @@
 - Giai đoạn 1.5: huấn luyện model dự đoán xu hướng (Tăng/Giảm/Đi ngang, kèm mức tin cậy) từ return/diff của 4 indicator — bắt buộc phải xong trước Giai đoạn 2 vì Giai đoạn 2 cần biết inject gì vào prompt (số thô hay output model), không thiết kế đúng được nếu thiếu bước này.
 - Giai đoạn 2: kết nối RAG với dữ liệu định lượng thật.
 - Giai đoạn 2.5: đo và tối ưu Faithfulness Rate (bot đọc đúng market_data — không đảo chiều, không bịa số/chỉ báo) qua vòng lặp eval_script.py → sửa system_prompt_v2.txt, dừng khi ≥90%. Không đo văn phong/chất lượng lời khuyên (để dành Giai đoạn 4).
-- Giai đoạn 3: format output (cấu trúc 4 mục + disclaimer).
+- Giai đoạn 3: đo và cải thiện khả năng SUY LUẬN dự đoán ngắn hạn của LLM (đã revise so với định nghĩa gốc "format output" — cấu trúc 4 mục vẫn giữ làm khung bắt buộc nhưng chỉ là phương tiện, không phải mục tiêu đo). Backtest N=50 mốc thời gian, so 2 baseline (đóng băng từ Giai đoạn 1.5 + majority in-sample). Chi tiết đầy đủ: `giai_doan_3_report.md`.
 - Giai đoạn 4: LoRA fine-tuning (điều kiện, xem "Quyết định đã chốt" trong CLAUDE.md).

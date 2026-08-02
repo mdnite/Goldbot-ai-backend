@@ -1,0 +1,92 @@
+[
+  {
+    "as_of_date": "2024-06-17",
+    "market_data_text": "Tính đến ngày 2024-06-17 (so với 2024-05-16, khoảng 21 phiên giao dịch trước):\n- Vàng (gold futures): hiện tại 2312.40 USD/oz, thay đổi -2.84%\n- Chỉ số USD (DXY): hiện tại 105.32, thay đổi +0.82%\n- Lợi suất thực 10 năm (real yield): hiện tại 2.06%, thay đổi -0.01 điểm %\n- Lãi suất Fed (fed funds rate): hiện tại 5.33%, thay đổi +0.00 điểm %",
+    "market_data_raw": {
+      "date_now": "2024-06-17",
+      "date_past": "2024-05-16",
+      "gold_now": 2312.39990234375,
+      "gold_past": 2380.0,
+      "gold_pct": -2.840340237657563,
+      "dxy_now": 105.31999969482422,
+      "dxy_past": 104.45999908447266,
+      "dxy_pct": 0.8232822304125373,
+      "real_yield_now": 2.06,
+      "real_yield_past": 2.07,
+      "real_yield_diff": -0.009999999999999787,
+      "fed_rate_now": 5.33,
+      "fed_rate_past": 5.33,
+      "fed_rate_diff": 0.0
+    },
+    "outcome": {
+      "date_now": "2024-06-17",
+      "date_future": "2024-07-18",
+      "gold_now": 2312.39990234375,
+      "gold_future": 2451.800048828125,
+      "forward_return": 0.060283753836473074,
+      "label": "Tang"
+    },
+    "baseline_pred": "Di_ngang",
+    "bot_reply": "1. Diễn biến: Trong 21 phiên gần nhất tính đến ngày 2024-06-17, giá vàng giảm 2.84%, xuống còn 2312.40 USD/oz.\n\n2. Yếu tố vĩ mô:\n   - Chỉ số USD (DXY) tăng 0.82%: Đồng USD mạnh lên có thể tạo áp lực giảm đối với vàng.\n   - Lợi suất thực 10 năm (real yield) giảm 0.01 điểm %: Chi phí cơ hội nắm giữ vàng giảm nhẹ, nhưng tác động không lớn.\n   - Lãi suất Fed giữ nguyên ở 5.33%: Không phải yếu tố chi phối biến động giá vàng trong giai đoạn này.\n\n3. Kịch bản:\n   Dựa trên diễn biến và các yếu tố vĩ mô hiện tại, xu hướng ngắn hạn của vàng có thể đi ngang hoặc giảm nhẹ. Tuy nhiên, đây là nhận định có điều kiện: nếu đồng USD tiếp tục mạnh lên nhanh hơn so với sự giảm nhẹ của lợi suất thực, áp lực giảm giá vàng có thể tăng lên; ngược lại, nếu lợi suất thực đảo chiều tăng mạnh, áp lực giảm giá sẽ suy yếu.\n\n4. Disclaimer: [Hệ thống tự thêm câu miễn trừ trách nhiệm cố định ở đây]"
+  },
+  {
+    "as_of_date": "2024-06-20",
+    "market_data_text": "Tính đến ngày 2024-06-20 (so với 2024-05-20, khoảng 21 phiên giao dịch trước):\n- Vàng (gold futures): hiện tại 2353.80 USD/oz, thay đổi -3.29%\n- Chỉ số USD (DXY): hiện tại 105.59, thay đổi +0.98%\n- Lợi suất thực 10 năm (real yield): hiện tại 2.00%, thay đổi -0.11 điểm %\n- Lãi suất Fed (fed funds rate): hiện tại 5.33%, thay đổi +0.00 điểm %",
+    "market_data_raw": {
+      "date_now": "2024-06-20",
+      "date_past": "2024-05-20",
+      "gold_now": 2353.800048828125,
+      "gold_past": 2433.89990234375,
+      "gold_pct": -3.291008534841223,
+      "dxy_now": 105.58999633789062,
+      "dxy_past": 104.56999969482422,
+      "dxy_pct": 0.9754199541389995,
+      "real_yield_now": 2.0,
+      "real_yield_past": 2.11,
+      "real_yield_diff": -0.10999999999999988,
+      "fed_rate_now": 5.33,
+      "fed_rate_past": 5.33,
+      "fed_rate_diff": 0.0
+    },
+    "outcome": {
+      "date_now": "2024-06-20",
+      "date_future": "2024-07-22",
+      "gold_now": 2353.800048828125,
+      "gold_future": 2392.0,
+      "forward_return": 0.016229055306075563,
+      "label": "Di_ngang"
+    },
+    "baseline_pred": "Di_ngang",
+    "bot_reply": "1. Diễn biến: Trong 21 phiên gần nhất tính đến ngày 2024-06-20, giá vàng giảm 3.29%, xuống còn 2353.80 USD/oz.\n\n2. Yếu tố vĩ mô:\n   - Chỉ số USD (DXY) tăng 0.98%: Đồng USD mạnh lên có thể tạo áp lực giảm đối với vàng.\n   - Lợi suất thực 10 năm (real yield) giảm 0.11 điểm %: Chi phí cơ hội nắm giữ vàng giảm, nhưng tác động này không quá lớn so với sự tăng giá trị của đồng USD.\n\n3. Kịch bản:\n   - Dựa trên xu hướng hiện tại, khả năng đi ngang hoặc giảm nhẹ trong ngắn hạn vẫn có xác suất cao do đồng USD đang mạnh lên và lợi suất thực giảm không đáng kể.\n   - Tuy nhiên, nếu đồng USD yếu đi nhanh hơn so với sự giảm của lợi suất thực, áp lực giảm giá vàng có thể suy yếu. Ngược lại, nếu đồng USD tiếp tục mạnh lên hoặc lợi suất thực tăng trở lại, áp lực giảm giá vàng sẽ gia tăng.\n\n4. Disclaimer: Đây là nhận định dựa trên xu hướng ngắn hạn và các yếu tố vĩ mô hiện tại, không phải một cam kết chắc chắn về diễn biến thị trường trong tương lai."
+  },
+  {
+    "as_of_date": "2024-07-05",
+    "market_data_text": "Tính đến ngày 2024-07-05 (so với 2024-06-04, khoảng 21 phiên giao dịch trước):\n- Vàng (gold futures): hiện tại 2388.50 USD/oz, thay đổi +2.71%\n- Chỉ số USD (DXY): hiện tại 104.88, thay đổi +0.74%\n- Lợi suất thực 10 năm (real yield): hiện tại 2.00%, thay đổi -0.02 điểm %\n- Lãi suất Fed (fed funds rate): hiện tại 5.33%, thay đổi +0.00 điểm %",
+    "market_data_raw": {
+      "date_now": "2024-07-05",
+      "date_past": "2024-06-04",
+      "gold_now": 2388.5,
+      "gold_past": 2325.5,
+      "gold_pct": 2.709094818318641,
+      "dxy_now": 104.87999725341797,
+      "dxy_past": 104.11000061035156,
+      "dxy_pct": 0.7395991149286826,
+      "real_yield_now": 2.0,
+      "real_yield_past": 2.02,
+      "real_yield_diff": -0.020000000000000018,
+      "fed_rate_now": 5.33,
+      "fed_rate_past": 5.33,
+      "fed_rate_diff": 0.0
+    },
+    "outcome": {
+      "date_now": "2024-07-05",
+      "date_future": "2024-08-05",
+      "gold_now": 2388.5,
+      "gold_future": 2401.699951171875,
+      "forward_return": 0.00552646061204731,
+      "label": "Di_ngang"
+    },
+    "baseline_pred": "Di_ngang",
+    "bot_reply": "1. Diễn biến: Trong 21 phiên gần nhất tính đến ngày 2024-07-05, giá vàng tăng nhẹ 2.71%, lên mức 2388.50 USD/oz.\n\n2. Yếu tố vĩ mô:\n   - Chỉ số USD (DXY) tăng 0.74% (giá trị hiện tại: 104.88), xu hướng này có thể hỗ trợ giá vàng do đồng USD yếu đi.\n   - Lợi suất thực 10 năm giảm 0.02 điểm % (giá trị hiện tại: 2.00%), điều này làm giảm áp lực giảm đối với vàng, vì chi phí cơ hội nắm giữ vàng thấp hơn.\n   - Lãi suất Fed giữ nguyên ở mức 5.33%, không phải yếu tố chính giải thích biến động vừa qua.\n\n3. Kịch bản:\n   Dựa trên diễn biến và các yếu tố vĩ mô hiện tại, xu hướng ngắn hạn của giá vàng có thể đi ngang hoặc tăng nhẹ. Tuy nhiên, đây là nhận định có điều kiện: nếu lợi suất thực tiếp tục giảm mạnh hơn mức tăng của DXY, áp lực tăng đối với vàng có thể chiếm ưu thế; ngược lại, nếu DXY yếu đi nhanh hơn, xu hướng giảm giá có thể suy yếu.\n\n4. Disclaimer: [Hệ thống tự thêm câu miễn trừ trách nhiệm cố định ở đây]"
+  }
+]

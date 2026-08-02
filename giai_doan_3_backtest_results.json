@@ -1,0 +1,1502 @@
+[
+  {
+    "as_of_date": "2024-06-17",
+    "market_data_text": "Tính đến ngày 2024-06-17 (so với 2024-05-16, khoảng 21 phiên giao dịch trước):\n- Vàng (gold futures): hiện tại 2312.40 USD/oz, thay đổi -2.84%\n- Chỉ số USD (DXY): hiện tại 105.32, thay đổi +0.82%\n- Lợi suất thực 10 năm (real yield): hiện tại 2.06%, thay đổi -0.01 điểm %\n- Lãi suất Fed (fed funds rate): hiện tại 5.33%, thay đổi +0.00 điểm %",
+    "market_data_raw": {
+      "date_now": "2024-06-17",
+      "date_past": "2024-05-16",
+      "gold_now": 2312.39990234375,
+      "gold_past": 2380.0,
+      "gold_pct": -2.840340237657563,
+      "dxy_now": 105.31999969482422,
+      "dxy_past": 104.45999908447266,
+      "dxy_pct": 0.8232822304125373,
+      "real_yield_now": 2.06,
+      "real_yield_past": 2.07,
+      "real_yield_diff": -0.009999999999999787,
+      "fed_rate_now": 5.33,
+      "fed_rate_past": 5.33,
+      "fed_rate_diff": 0.0
+    },
+    "outcome": {
+      "date_now": "2024-06-17",
+      "date_future": "2024-07-18",
+      "gold_now": 2312.39990234375,
+      "gold_future": 2451.800048828125,
+      "forward_return": 0.060283753836473074,
+      "label": "Tang"
+    },
+    "baseline_pred": "Di_ngang",
+    "bot_reply": "1. Diễn biến: Trong 21 phiên gần nhất tính đến ngày 2024-06-17, giá vàng giảm 2.84%, xuống còn 2312.40 USD/oz.\n2. Yếu tố vĩ mô: Chỉ số DXY tăng 0.82% (đồng USD mạnh lên), nhưng lợi suất thực 10 năm giảm 0.01 điểm % (chi phí cơ hội nắm giữ vàng giảm nhẹ). Lãi suất Fed giữ nguyên trong giai đoạn này, không phải yếu tố chi phối biến động vừa qua.\n3. Kịch bản: Kết luận chính: Giảm (tin cậy: trung bình). Với đồng USD mạnh lên và lợi suất thực giảm nhẹ - hai yếu tố lý thuyết đều bất lợi cho vàng - kịch bản có xác suất cao hơn trong ngắn hạn là giá vàng tiếp tục chịu áp lực giảm hoặc đi ngang ở vùng thấp. Đây không phải kết luận chắc chắn: nếu lợi suất thực hoặc DXY đảo chiều (ví dụ do dữ liệu kinh tế mới làm thay đổi kỳ vọng về lãi suất Fed), áp lực giảm giá có thể suy yếu nhanh hoặc đảo ngược.\n4. Disclaimer: Hệ thống này cung cấp thông tin phân tích dựa trên các chỉ số và dữ liệu hiện hành, không đảm bảo tính chính xác tuyệt đối của kết quả. Khách hàng nên tham khảo thêm ý kiến từ các chuyên gia tài chính trước khi đưa ra quyết định đầu tư."
+  },
+  {
+    "as_of_date": "2024-06-20",
+    "market_data_text": "Tính đến ngày 2024-06-20 (so với 2024-05-20, khoảng 21 phiên giao dịch trước):\n- Vàng (gold futures): hiện tại 2353.80 USD/oz, thay đổi -3.29%\n- Chỉ số USD (DXY): hiện tại 105.59, thay đổi +0.98%\n- Lợi suất thực 10 năm (real yield): hiện tại 2.00%, thay đổi -0.11 điểm %\n- Lãi suất Fed (fed funds rate): hiện tại 5.33%, thay đổi +0.00 điểm %",
+    "market_data_raw": {
+      "date_now": "2024-06-20",
+      "date_past": "2024-05-20",
+      "gold_now": 2353.800048828125,
+      "gold_past": 2433.89990234375,
+      "gold_pct": -3.291008534841223,
+      "dxy_now": 105.58999633789062,
+      "dxy_past": 104.56999969482422,
+      "dxy_pct": 0.9754199541389995,
+      "real_yield_now": 2.0,
+      "real_yield_past": 2.11,
+      "real_yield_diff": -0.10999999999999988,
+      "fed_rate_now": 5.33,
+      "fed_rate_past": 5.33,
+      "fed_rate_diff": 0.0
+    },
+    "outcome": {
+      "date_now": "2024-06-20",
+      "date_future": "2024-07-22",
+      "gold_now": 2353.800048828125,
+      "gold_future": 2392.0,
+      "forward_return": 0.016229055306075563,
+      "label": "Di_ngang"
+    },
+    "baseline_pred": "Di_ngang",
+    "bot_reply": "1. Diễn biến: Trong 21 phiên gần nhất tính đến ngày 2024-06-20, giá vàng giảm 3.29%, xuống còn 2353.80 USD/oz.\n\n2. Yếu tố vĩ mô:\n   - Chỉ số USD (DXY) tăng 0.98%: Đồng USD mạnh lên có thể hỗ trợ giá vàng do nhu cầu mua vào để phòng ngừa rủi ro.\n   - Lợi suất thực 10 năm giảm 0.11 điểm %: Chi phí cơ hội nắm giữ vàng giảm, tạo áp lực giảm nhẹ cho giá vàng.\n   - Lãi suất Fed giữ nguyên trong giai đoạn này: Không phải yếu tố chi phối biến động vừa qua.\n\n3. Kịch bản:\n   Kết luận chính: Giảm (tin cậy: trung bình). Diễn biến giảm gần đây do đồng USD mạnh lên và lợi suất thực tăng, nhưng mức độ giảm đã chậm lại so với trước đó. Nếu DXY tiếp tục tăng mạnh hoặc lợi suất thực đảo chiều tăng mạnh hơn, áp lực giảm giá vàng có thể suy yếu nhanh hoặc đảo ngược. Trong ngắn hạn, khả năng đi ngang ở vùng thấp vẫn còn cao.\n\n4. Disclaimer: Hệ thống này cung cấp thông tin dựa trên dữ liệu thời gian thực và mô hình phân tích hiện tại, không đảm bảo tính chính xác tuyệt đối của các nhận định. Khách hàng nên tham khảo thêm nhiều nguồn thông tin trước khi đưa ra quyết định đầu tư."
+  },
+  {
+    "as_of_date": "2024-07-05",
+    "market_data_text": "Tính đến ngày 2024-07-05 (so với 2024-06-04, khoảng 21 phiên giao dịch trước):\n- Vàng (gold futures): hiện tại 2388.50 USD/oz, thay đổi +2.71%\n- Chỉ số USD (DXY): hiện tại 104.88, thay đổi +0.74%\n- Lợi suất thực 10 năm (real yield): hiện tại 2.00%, thay đổi -0.02 điểm %\n- Lãi suất Fed (fed funds rate): hiện tại 5.33%, thay đổi +0.00 điểm %",
+    "market_data_raw": {
+      "date_now": "2024-07-05",
+      "date_past": "2024-06-04",
+      "gold_now": 2388.5,
+      "gold_past": 2325.5,
+      "gold_pct": 2.709094818318641,
+      "dxy_now": 104.87999725341797,
+      "dxy_past": 104.11000061035156,
+      "dxy_pct": 0.7395991149286826,
+      "real_yield_now": 2.0,
+      "real_yield_past": 2.02,
+      "real_yield_diff": -0.020000000000000018,
+      "fed_rate_now": 5.33,
+      "fed_rate_past": 5.33,
+      "fed_rate_diff": 0.0
+    },
+    "outcome": {
+      "date_now": "2024-07-05",
+      "date_future": "2024-08-05",
+      "gold_now": 2388.5,
+      "gold_future": 2401.699951171875,
+      "forward_return": 0.00552646061204731,
+      "label": "Di_ngang"
+    },
+    "baseline_pred": "Di_ngang",
+    "bot_reply": "1. Diễn biến: Trong 21 phiên gần nhất tính đến ngày 2024-07-05, giá vàng tăng nhẹ 2.71%, lên mức 2388.50 USD/oz.\n\n2. Yếu tố vĩ mô:\n   - Chỉ số USD (DXY) tăng 0.74% (giá trị hiện tại: 104.88), tạo áp lực giảm nhẹ đối với vàng.\n   - Lợi suất thực 10 năm giảm 0.02 điểm % (giá trị hiện tại: 2.00%), giảm áp lực giảm giá đối với vàng.\n   - Lãi suất Fed giữ nguyên ở mức 5.33%, không phải yếu tố chi phối biến động gần đây.\n\n3. Kịch bản:\n   Kết luận chính: Tăng (tin cậy: trung bình). Dựa trên diễn biến tăng nhẹ của giá vàng và giảm nhẹ áp lực từ lợi suất thực, xu hướng ngắn hạn có khả năng tiếp tục đi lên hoặc duy trì mức độ tăng nhẹ. Tuy nhiên, sự thay đổi nhỏ trong chỉ số DXY và lợi suất thực không đủ mạnh để tạo ra kịch bản chắc chắn. Nếu DXY tiếp tục tăng mạnh hơn so với giảm của lợi suất thực, áp lực giảm giá có thể gia tăng; ngược lại, nếu lợi suất thực tiếp tục giảm hoặc DXY yếu đi, xu hướng tăng của vàng có thể được củng cố.\n\n4. Disclaimer: [Hệ thống tự thêm câu miễn trừ trách nhiệm cố định ở đây]"
+  },
+  {
+    "as_of_date": "2024-07-26",
+    "market_data_text": "Tính đến ngày 2024-07-26 (so với 2024-06-26, khoảng 21 phiên giao dịch trước):\n- Vàng (gold futures): hiện tại 2380.00 USD/oz, thay đổi +3.51%\n- Chỉ số USD (DXY): hiện tại 104.32, thay đổi -1.63%\n- Lợi suất thực 10 năm (real yield): hiện tại 1.93%, thay đổi -0.13 điểm %\n- Lãi suất Fed (fed funds rate): hiện tại 5.33%, thay đổi +0.00 điểm %",
+    "market_data_raw": {
+      "date_now": "2024-07-26",
+      "date_past": "2024-06-26",
+      "gold_now": 2380.0,
+      "gold_past": 2299.199951171875,
+      "gold_pct": 3.5142680299267655,
+      "dxy_now": 104.31999969482422,
+      "dxy_past": 106.05000305175781,
+      "dxy_pct": -1.6313091062234706,
+      "real_yield_now": 1.93,
+      "real_yield_past": 2.06,
+      "real_yield_diff": -0.13000000000000012,
+      "fed_rate_now": 5.33,
+      "fed_rate_past": 5.33,
+      "fed_rate_diff": 0.0
+    },
+    "outcome": {
+      "date_now": "2024-07-26",
+      "date_future": "2024-08-26",
+      "gold_now": 2380.0,
+      "gold_future": 2517.699951171875,
+      "forward_return": 0.05785712234112395,
+      "label": "Tang"
+    },
+    "baseline_pred": "Di_ngang",
+    "bot_reply": "1. Diễn biến: Trong 21 phiên gần nhất tính đến ngày 2024-07-26, giá vàng tăng nhẹ 3.51%, lên mức 2380.00 USD/oz.\n\n2. Yếu tố vĩ mô:\n   - Chỉ số USD (DXY) giảm 1.63% (đồng USD yếu đi), thường hỗ trợ giá vàng.\n   - Lợi suất thực 10 năm (real yield) giảm 0.13 điểm %, giảm áp lực giảm giá đối với vàng.\n   - Lãi suất Fed giữ nguyên trong giai đoạn này, không phải yếu tố chi phối biến động vừa qua.\n\n3. Kịch bản: Kết luận chính: Tăng (tin cậy: trung bình). Dựa trên xu hướng tăng nhẹ của giá vàng và các yếu tố vĩ mô hỗ trợ như đồng USD yếu đi cùng với lợi suất thực giảm, kịch bản có xác suất cao hơn là giá vàng tiếp tục duy trì xu hướng tăng trong ngắn hạn. Tuy nhiên, đây không phải dự đoán chắc chắn: nếu đồng USD mạnh lên nhanh chóng hoặc lợi suất thực tăng trở lại, áp lực giảm giá đối với vàng có thể gia tăng.\n\n4. Disclaimer: Hệ thống này cung cấp thông tin phân tích dựa trên dữ liệu thời gian thực và mô hình dự đoán có độ chính xác không đảm bảo. Khách hàng nên tham khảo thêm các nguồn thông tin khác trước khi đưa ra quyết định đầu tư."
+  },
+  {
+    "as_of_date": "2024-08-09",
+    "market_data_text": "Tính đến ngày 2024-08-09 (so với 2024-07-11, khoảng 21 phiên giao dịch trước):\n- Vàng (gold futures): hiện tại 2432.10 USD/oz, thay đổi +0.71%\n- Chỉ số USD (DXY): hiện tại 103.14, thay đổi -1.24%\n- Lợi suất thực 10 năm (real yield): hiện tại 1.84%, thay đổi -0.11 điểm %\n- Lãi suất Fed (fed funds rate): hiện tại 5.33%, thay đổi +0.00 điểm %",
+    "market_data_raw": {
+      "date_now": "2024-08-09",
+      "date_past": "2024-07-11",
+      "gold_now": 2432.10009765625,
+      "gold_past": 2415.0,
+      "gold_pct": 0.7080785778985508,
+      "dxy_now": 103.13999938964844,
+      "dxy_past": 104.44000244140625,
+      "dxy_pct": -1.2447367113833134,
+      "real_yield_now": 1.84,
+      "real_yield_past": 1.95,
+      "real_yield_diff": -0.10999999999999988,
+      "fed_rate_now": 5.33,
+      "fed_rate_past": 5.33,
+      "fed_rate_diff": 0.0
+    },
+    "outcome": {
+      "date_now": "2024-08-09",
+      "date_future": "2024-09-10",
+      "gold_now": 2432.10009765625,
+      "gold_future": 2512.300048828125,
+      "forward_return": 0.032975596378274706,
+      "label": "Tang"
+    },
+    "baseline_pred": "Di_ngang",
+    "bot_reply": "1. Diễn biến: Trong 21 phiên gần nhất tính đến ngày 2024-08-09, giá vàng tăng nhẹ 0.71%, lên mức 2432.10 USD/oz.\n\n2. Yếu tố vĩ mô:\n   - Chỉ số USD (DXY) giảm 1.24% (đồng USD yếu đi), thường hỗ trợ giá vàng.\n   - Lợi suất thực 10 năm (real yield) giảm 0.11 điểm %, giảm áp lực giảm giá đối với vàng.\n   - Lãi suất Fed giữ nguyên trong giai đoạn này, không phải yếu tố chi phối biến động vừa qua.\n\n3. Kịch bản: Kết luận chính: Tăng (tin cậy: trung bình). Dựa trên diễn biến và các yếu tố vĩ mô hiện tại, xu hướng ngắn hạn có khả năng giá vàng tiếp tục tăng nhẹ. Tuy nhiên, mức độ tin cậy chỉ ở mức trung bình do sự trái chiều giữa đồng USD yếu đi và lợi suất thực giảm nhẹ. Nếu đồng USD tiếp tục yếu đi hoặc lợi suất thực duy trì xu hướng giảm, áp lực tăng giá đối với vàng có thể mạnh hơn.\n\n4. Disclaimer: Hệ thống này dựa trên mô hình phân tích xu hướng ngắn hạn từ dữ liệu thời gian thực và không đảm bảo độ chính xác tuyệt đối. Khách hàng nên tham khảo thêm thông tin từ các nguồn đáng tin cậy khác trước khi đưa ra quyết định đầu tư."
+  },
+  {
+    "as_of_date": "2024-08-26",
+    "market_data_text": "Tính đến ngày 2024-08-26 (so với 2024-07-26, khoảng 21 phiên giao dịch trước):\n- Vàng (gold futures): hiện tại 2517.70 USD/oz, thay đổi +5.79%\n- Chỉ số USD (DXY): hiện tại 100.85, thay đổi -3.33%\n- Lợi suất thực 10 năm (real yield): hiện tại 1.67%, thay đổi -0.26 điểm %\n- Lãi suất Fed (fed funds rate): hiện tại 5.33%, thay đổi +0.00 điểm %",
+    "market_data_raw": {
+      "date_now": "2024-08-26",
+      "date_past": "2024-07-26",
+      "gold_now": 2517.699951171875,
+      "gold_past": 2380.0,
+      "gold_pct": 5.785712234112395,
+      "dxy_now": 100.8499984741211,
+      "dxy_past": 104.31999969482422,
+      "dxy_pct": -3.3263048608648407,
+      "real_yield_now": 1.67,
+      "real_yield_past": 1.93,
+      "real_yield_diff": -0.26,
+      "fed_rate_now": 5.33,
+      "fed_rate_past": 5.33,
+      "fed_rate_diff": 0.0
+    },
+    "outcome": {
+      "date_now": "2024-08-26",
+      "date_future": "2024-09-25",
+      "gold_now": 2517.699951171875,
+      "gold_future": 2659.199951171875,
+      "forward_return": 0.056202090298384515,
+      "label": "Tang"
+    },
+    "baseline_pred": "Di_ngang",
+    "bot_reply": "1. Diễn biến: Trong 21 phiên gần nhất tính đến ngày 2024-08-26, giá vàng tăng mạnh 5.79%, lên mức 2517.70 USD/oz.\n\n2. Yếu tố vĩ mô:\n   - Chỉ số USD (DXY) giảm mạnh -3.33% (đồng USD yếu đi), thường hỗ trợ tăng giá vàng.\n   - Lợi suất thực 10 năm (real yield) giảm -0.26 điểm %, giảm áp lực giảm giá đối với vàng.\n   - Lãi suất Fed giữ nguyên trong giai đoạn này, không phải yếu tố chi phối biến động vừa qua.\n\n3. Kịch bản: Kết luận chính: Tăng (tin cậy: cao). Diễn biến tăng mạnh của giá vàng cùng với xu hướng đồng USD yếu đi và lợi suất thực giảm đều tạo ra áp lực tăng giá đối với vàng. Đây là tín hiệu tích cực cho xu hướng ngắn hạn, nhưng cần lưu ý rằng các yếu tố vĩ mô có thể thay đổi nhanh chóng. Nếu đồng USD tiếp tục mạnh lên hoặc lợi suất thực tăng trở lại, áp lực tăng giá có thể giảm.\n\n4. Disclaimer: Hệ thống này dự đoán xu hướng ngắn hạn của thị trường vàng dựa trên các chỉ số và dữ liệu thời gian thực đã cung cấp. Tuy nhiên, việc đầu tư vào thị trường tài chính luôn mang tính rủi ro và không đảm bảo lợi nhuận. Khách hàng nên cân nhắc kỹ lưỡng trước khi đưa ra quyết định đầu tư."
+  },
+  {
+    "as_of_date": "2024-09-10",
+    "market_data_text": "Tính đến ngày 2024-09-10 (so với 2024-08-09, khoảng 21 phiên giao dịch trước):\n- Vàng (gold futures): hiện tại 2512.30 USD/oz, thay đổi +3.30%\n- Chỉ số USD (DXY): hiện tại 101.63, thay đổi -1.46%\n- Lợi suất thực 10 năm (real yield): hiện tại 1.63%, thay đổi -0.21 điểm %\n- Lãi suất Fed (fed funds rate): hiện tại 5.33%, thay đổi +0.00 điểm %",
+    "market_data_raw": {
+      "date_now": "2024-09-10",
+      "date_past": "2024-08-09",
+      "gold_now": 2512.300048828125,
+      "gold_past": 2432.10009765625,
+      "gold_pct": 3.2975596378274705,
+      "dxy_now": 101.62999725341797,
+      "dxy_past": 103.13999938964844,
+      "dxy_pct": -1.4640315543593254,
+      "real_yield_now": 1.63,
+      "real_yield_past": 1.84,
+      "real_yield_diff": -0.2100000000000002,
+      "fed_rate_now": 5.33,
+      "fed_rate_past": 5.33,
+      "fed_rate_diff": 0.0
+    },
+    "outcome": {
+      "date_now": "2024-09-10",
+      "date_future": "2024-10-09",
+      "gold_now": 2512.300048828125,
+      "gold_future": 2606.0,
+      "forward_return": 0.037296481053519785,
+      "label": "Tang"
+    },
+    "baseline_pred": "Di_ngang",
+    "bot_reply": "1. Diễn biến: Trong 21 phiên gần nhất tính đến ngày 2024-09-10, giá vàng tăng nhẹ 3.30%, lên mức 2512.30 USD/oz.\n\n2. Yếu tố vĩ mô:\n   - Chỉ số USD (DXY) giảm 1.46% (đồng USD yếu đi), thường hỗ trợ giá vàng.\n   - Lợi suất thực 10 năm (real yield) giảm 0.21 điểm %, giảm áp lực giảm giá đối với vàng.\n   - Lãi suất Fed giữ nguyên trong giai đoạn này, không phải yếu tố chi phối biến động vừa qua.\n\n3. Kịch bản: Kết luận chính: Tăng (tin cậy: trung bình). Dựa trên diễn biến tăng nhẹ của giá vàng và các yếu tố vĩ mô hỗ trợ tích cực như đồng USD yếu đi và lợi suất thực giảm, xu hướng ngắn hạn có khả năng tiếp tục tăng. Tuy nhiên, mức độ tin cậy chỉ ở mức trung bình do vẫn còn nhiều yếu tố không chắc chắn, như biến động trong tương lai của lãi suất Fed hay lạm phát.\n\n4. Disclaimer: Hệ thống này dựa trên mô hình phân tích xu hướng ngắn hạn và được so sánh với một baseline đơn giản. Đây không phải là cam kết chắc chắn về giá vàng trong tương lai."
+  },
+  {
+    "as_of_date": "2024-09-24",
+    "market_data_text": "Tính đến ngày 2024-09-24 (so với 2024-08-23, khoảng 21 phiên giao dịch trước):\n- Vàng (gold futures): hiện tại 2651.20 USD/oz, thay đổi +5.69%\n- Chỉ số USD (DXY): hiện tại 100.37, thay đổi -0.35%\n- Lợi suất thực 10 năm (real yield): hiện tại 1.55%, thay đổi -0.13 điểm %\n- Lãi suất Fed (fed funds rate): hiện tại 4.83%, thay đổi -0.50 điểm %",
+    "market_data_raw": {
+      "date_now": "2024-09-24",
+      "date_past": "2024-08-23",
+      "gold_now": 2651.199951171875,
+      "gold_past": 2508.39990234375,
+      "gold_pct": 5.692874118464853,
+      "dxy_now": 100.37000274658203,
+      "dxy_past": 100.72000122070312,
+      "dxy_pct": -0.34749649511436975,
+      "real_yield_now": 1.55,
+      "real_yield_past": 1.68,
+      "real_yield_diff": -0.1299999999999999,
+      "fed_rate_now": 4.83,
+      "fed_rate_past": 5.33,
+      "fed_rate_diff": -0.5
+    },
+    "outcome": {
+      "date_now": "2024-09-24",
+      "date_future": "2024-10-23",
+      "gold_now": 2651.199951171875,
+      "gold_future": 2714.39990234375,
+      "forward_return": 0.023838243940801054,
+      "label": "Tang"
+    },
+    "baseline_pred": "Di_ngang",
+    "bot_reply": "1. Diễn biến: Trong 21 phiên gần nhất tính đến ngày 2024-09-24, giá vàng tăng mạnh 5.69%, lên mức 2651.20 USD/oz.\n\n2. Yếu tố vĩ mô:\n   - Chỉ số USD (DXY) giảm -0.35% (đồng USD yếu đi), thường hỗ trợ giá vàng.\n   - Lợi suất thực 10 năm (real yield) giảm -0.13 điểm %, giảm áp lực giảm giá đối với vàng.\n   - Lãi suất Fed giảm -0.50 điểm %, có thể làm tăng nhu cầu an toàn đối với vàng.\n\n3. Kịch bản: Kết luận chính: Tăng (tin cậy: cao). Dựa trên diễn biến và yếu tố vĩ mô hiện tại, xu hướng ngắn hạn của giá vàng khả năng sẽ tiếp tục đi lên. Đồng USD yếu đi và lợi suất thực giảm đều hỗ trợ tăng giá vàng. Lãi suất Fed giảm có thể làm tăng nhu cầu an toàn đối với vàng, nhưng tác động này chưa rõ ràng trong ngắn hạn. Tuy nhiên, mức độ tin cậy cao do các yếu tố vĩ mô đang cùng hướng lên.\n\n4. Disclaimer: [Hệ thống tự thêm câu miễn trừ trách nhiệm cố định ở đây]"
+  },
+  {
+    "as_of_date": "2024-10-22",
+    "market_data_text": "Tính đến ngày 2024-10-22 (so với 2024-09-23, khoảng 21 phiên giao dịch trước):\n- Vàng (gold futures): hiện tại 2744.20 USD/oz, thay đổi +4.48%\n- Chỉ số USD (DXY): hiện tại 104.08, thay đổi +3.13%\n- Lợi suất thực 10 năm (real yield): hiện tại 1.87%, thay đổi +0.29 điểm %\n- Lãi suất Fed (fed funds rate): hiện tại 4.83%, thay đổi +0.00 điểm %",
+    "market_data_raw": {
+      "date_now": "2024-10-22",
+      "date_past": "2024-09-23",
+      "gold_now": 2744.199951171875,
+      "gold_past": 2626.5,
+      "gold_pct": 4.4812469511469635,
+      "dxy_now": 104.08000183105469,
+      "dxy_past": 100.91999816894531,
+      "dxy_pct": 3.131196709713931,
+      "real_yield_now": 1.87,
+      "real_yield_past": 1.58,
+      "real_yield_diff": 0.29000000000000004,
+      "fed_rate_now": 4.83,
+      "fed_rate_past": 4.83,
+      "fed_rate_diff": 0.0
+    },
+    "outcome": {
+      "date_now": "2024-10-22",
+      "date_future": "2024-11-20",
+      "gold_now": 2744.199951171875,
+      "gold_future": 2648.199951171875,
+      "forward_return": -0.034982873590900125,
+      "label": "Giam"
+    },
+    "baseline_pred": "Di_ngang",
+    "bot_reply": "1. Diễn biến: Trong 21 phiên gần nhất tính đến ngày 2024-10-22, giá vàng tăng mạnh 4.48%, lên mức 2744.20 USD/oz.\n\n2. Yếu tố vĩ mô:\n   - Chỉ số DXY tăng 3.13% (đồng USD mạnh lên), thường hỗ trợ giá vàng.\n   - Lợi suất thực 10 năm tăng 0.29 điểm %, tạo áp lực giảm nhẹ đối với vàng.\n   - Lãi suất Fed giữ nguyên trong giai đoạn này.\n\n3. Kịch bản: Kết luận chính: Tăng (tin cậy: trung bình). Dựa trên diễn biến giá vàng và các yếu tố vĩ mô hiện tại, xu hướng tăng có xác suất cao hơn trong ngắn hạn. Đồng USD mạnh lên hỗ trợ giá vàng, nhưng lợi suất thực tăng tạo áp lực giảm nhẹ. Nếu đồng USD tiếp tục duy trì mức mạnh hoặc lợi suất thực không tăng thêm, khả năng giá vàng sẽ tiếp tục tăng. Tuy nhiên, kịch bản này vẫn có điều kiện và độ tin cậy trung bình.\n\n4. Disclaimer: Tôi là trợ lý kiến thức về thị trường vàng, không đại diện cho quan điểm chính thức của Saigonbank và không đảm bảo tính chính xác tuyệt đối của thông tin được cung cấp. Khách hàng nên tham khảo thêm từ các nguồn đáng tin cậy khác trước khi đưa ra quyết định đầu tư."
+  },
+  {
+    "as_of_date": "2024-11-04",
+    "market_data_text": "Tính đến ngày 2024-11-04 (so với 2024-10-04, khoảng 21 phiên giao dịch trước):\n- Vàng (gold futures): hiện tại 2736.10 USD/oz, thay đổi +3.41%\n- Chỉ số USD (DXY): hiện tại 103.89, thay đổi +1.34%\n- Lợi suất thực 10 năm (real yield): hiện tại 2.03%, thay đổi +0.28 điểm %\n- Lãi suất Fed (fed funds rate): hiện tại 4.83%, thay đổi +0.00 điểm %",
+    "market_data_raw": {
+      "date_now": "2024-11-04",
+      "date_past": "2024-10-04",
+      "gold_now": 2736.10009765625,
+      "gold_past": 2645.800048828125,
+      "gold_pct": 3.412958166212167,
+      "dxy_now": 103.88999938964844,
+      "dxy_past": 102.5199966430664,
+      "dxy_pct": 1.336327342412849,
+      "real_yield_now": 2.03,
+      "real_yield_past": 1.75,
+      "real_yield_diff": 0.2799999999999998,
+      "fed_rate_now": 4.83,
+      "fed_rate_past": 4.83,
+      "fed_rate_diff": 0.0
+    },
+    "outcome": {
+      "date_now": "2024-11-04",
+      "date_future": "2024-12-04",
+      "gold_now": 2736.10009765625,
+      "gold_future": 2653.800048828125,
+      "forward_return": -0.030079326739041245,
+      "label": "Giam"
+    },
+    "baseline_pred": "Di_ngang",
+    "bot_reply": "1. Diễn biến: Trong 21 phiên gần nhất tính đến ngày 2024-11-04, giá vàng tăng nhẹ 3.41%, lên mức 2736.10 USD/oz.\n\n2. Yếu tố vĩ mô:\n   - Chỉ số USD (DXY) tăng 1.34% (giá trị hiện tại: 103.89), tạo áp lực giảm nhẹ đối với vàng.\n   - Lợi suất thực 10 năm tăng 0.28 điểm % (giá trị hiện tại: 2.03%), gây áp lực giảm giá đối với vàng do chi phí cơ hội nắm giữ vàng tăng lên.\n   - Lãi suất Fed giữ nguyên trong giai đoạn này, không phải yếu tố chi phối biến động vừa qua.\n\n3. Kịch bản:\n   Kết luận chính: Đi ngang (tin cậy: trung bình). Dựa trên diễn biến giá vàng và các chỉ báo vĩ mô hiện tại, xu hướng ngắn hạn của thị trường vàng có thể đi ngang hoặc dao động trong biên độ hẹp. Tuy nhiên, do sự trái chiều giữa yếu tố USD mạnh lên và lợi suất thực tăng, khả năng đi ngang là cao hơn. Nếu DXY tiếp tục tăng mạnh hơn mức tăng của lợi suất thực, áp lực giảm giá có thể chiếm ưu thế; ngược lại, nếu lợi suất thực tăng chậm hoặc DXY suy yếu nhanh, xu hướng tăng nhẹ vẫn còn khả thi.\n\n4. Disclaimer: [Hệ thống tự thêm câu miễn trừ trách nhiệm cố định ở đây]"
+  },
+  {
+    "as_of_date": "2024-11-08",
+    "market_data_text": "Tính đến ngày 2024-11-08 (so với 2024-10-10, khoảng 21 phiên giao dịch trước):\n- Vàng (gold futures): hiện tại 2687.50 USD/oz, thay đổi +2.55%\n- Chỉ số USD (DXY): hiện tại 105.00, thay đổi +1.95%\n- Lợi suất thực 10 năm (real yield): hiện tại 1.95%, thay đổi +0.19 điểm %\n- Lãi suất Fed (fed funds rate): hiện tại 4.58%, thay đổi -0.25 điểm %",
+    "market_data_raw": {
+      "date_now": "2024-11-08",
+      "date_past": "2024-10-10",
+      "gold_now": 2687.5,
+      "gold_past": 2620.60009765625,
+      "gold_pct": 2.5528466706378565,
+      "dxy_now": 105.0,
+      "dxy_past": 102.98999786376953,
+      "dxy_pct": 1.9516479055463307,
+      "real_yield_now": 1.95,
+      "real_yield_past": 1.76,
+      "real_yield_diff": 0.18999999999999995,
+      "fed_rate_now": 4.58,
+      "fed_rate_past": 4.83,
+      "fed_rate_diff": -0.25
+    },
+    "outcome": {
+      "date_now": "2024-11-08",
+      "date_future": "2024-12-10",
+      "gold_now": 2687.5,
+      "gold_future": 2697.60009765625,
+      "forward_return": 0.003758175872093023,
+      "label": "Di_ngang"
+    },
+    "baseline_pred": "Di_ngang",
+    "bot_reply": "1. Diễn biến: Trong 21 phiên gần nhất tính đến ngày 2024-11-08, giá vàng tăng nhẹ 2.55%, lên mức 2687.50 USD/oz.\n\n2. Yếu tố vĩ mô:\n   - Chỉ số USD (DXY) tăng 1.95% (giá trị hiện tại: 105.00), tạo áp lực giảm nhẹ đối với vàng.\n   - Lợi suất thực 10 năm tăng 0.19 điểm % (giá trị hiện tại: 1.95%), gây áp lực giảm giá đối với vàng.\n   - Lãi suất Fed giảm 0.25 điểm % (giá trị hiện tại: 4.58%), có thể hỗ trợ tăng giá vàng.\n\n3. Kịch bản:\n   Kết luận chính: Tăng (tin cậy: trung bình). Dù chỉ số DXY và lợi suất thực đều tăng, nhưng mức độ tăng của DXY thấp hơn so với lợi suất thực. Lãi suất Fed giảm cũng tạo điều kiện thuận lợi cho giá vàng. Tuy nhiên, do các yếu tố vĩ mô đang đi cùng chiều, kịch bản có xác suất cao là giá vàng sẽ tiếp tục tăng nhẹ trong ngắn hạn. Nếu lãi suất Fed giữ nguyên hoặc chỉ số DXY tăng mạnh hơn, áp lực giảm giá có thể gia tăng.\n\n4. Disclaimer: [Hệ thống tự thêm câu miễn trừ trách nhiệm cố định ở đây]"
+  },
+  {
+    "as_of_date": "2024-12-06",
+    "market_data_text": "Tính đến ngày 2024-12-06 (so với 2024-11-06, khoảng 21 phiên giao dịch trước):\n- Vàng (gold futures): hiện tại 2638.60 USD/oz, thay đổi -1.09%\n- Chỉ số USD (DXY): hiện tại 105.97, thay đổi +0.84%\n- Lợi suất thực 10 năm (real yield): hiện tại 1.91%, thay đổi -0.13 điểm %\n- Lãi suất Fed (fed funds rate): hiện tại 4.58%, thay đổi -0.25 điểm %",
+    "market_data_raw": {
+      "date_now": "2024-12-06",
+      "date_past": "2024-11-06",
+      "gold_now": 2638.60009765625,
+      "gold_past": 2667.60009765625,
+      "gold_pct": -1.0871194683745649,
+      "dxy_now": 105.97000122070312,
+      "dxy_past": 105.08999633789062,
+      "dxy_pct": 0.8373821614600349,
+      "real_yield_now": 1.91,
+      "real_yield_past": 2.04,
+      "real_yield_diff": -0.13000000000000012,
+      "fed_rate_now": 4.58,
+      "fed_rate_past": 4.83,
+      "fed_rate_diff": -0.25
+    },
+    "outcome": {
+      "date_now": "2024-12-06",
+      "date_future": "2025-01-08",
+      "gold_now": 2638.60009765625,
+      "gold_future": 2664.5,
+      "forward_return": 0.00981577404122577,
+      "label": "Di_ngang"
+    },
+    "baseline_pred": "Di_ngang",
+    "bot_reply": "1. Diễn biến: Trong 21 phiên gần nhất tính đến ngày 2024-12-06, giá vàng giảm 1.09%, xuống còn 2638.60 USD/oz.\n\n2. Yếu tố vĩ mô:\n   - Chỉ số USD (DXY) tăng 0.84% (đồng USD mạnh lên, thường hỗ trợ vàng).\n   - Lợi suất thực 10 năm giảm 0.13 điểm % (chi phí cơ hội nắm giữ vàng giảm, tạo áp lực giảm giá vàng).\n   - Lãi suất Fed giảm 0.25 điểm % (giảm sức ép lãi suất đối với vàng).\n\n3. Kịch bản: Kết luận chính: Giảm (tin cậy: trung bình). Diễn biến giảm gần đây do đồng USD mạnh lên và lợi suất thực giảm, tạo áp lực giảm giá vàng trong ngắn hạn. Tuy nhiên, mức thay đổi của DXY và lợi suất thực không quá lớn, nên khả năng đi ngang hoặc dao động nhẹ vẫn còn cao. Nếu đồng USD tiếp tục mạnh lên mạnh hơn so với sự suy yếu của lợi suất thực, áp lực giảm có thể tăng; ngược lại, nếu lợi suất thực hồi phục nhanh hơn, giá vàng có thể chịu ít áp lực giảm.\n\n4. Disclaimer: Hệ thống này cung cấp thông tin dựa trên dữ liệu lịch sử và không đảm bảo tính chính xác tuyệt đối. Khách hàng nên tham khảo thêm các nguồn thông tin khác trước khi đưa ra quyết định đầu tư."
+  },
+  {
+    "as_of_date": "2024-12-18",
+    "market_data_text": "Tính đến ngày 2024-12-18 (so với 2024-11-18, khoảng 21 phiên giao dịch trước):\n- Vàng (gold futures): hiện tại 2636.50 USD/oz, thay đổi +0.99%\n- Chỉ số USD (DXY): hiện tại 108.03, thay đổi +1.65%\n- Lợi suất thực 10 năm (real yield): hiện tại 2.18%, thay đổi +0.10 điểm %\n- Lãi suất Fed (fed funds rate): hiện tại 4.58%, thay đổi +0.00 điểm %",
+    "market_data_raw": {
+      "date_now": "2024-12-18",
+      "date_past": "2024-11-18",
+      "gold_now": 2636.5,
+      "gold_past": 2610.60009765625,
+      "gold_pct": 0.9921053158238393,
+      "dxy_now": 108.02999877929688,
+      "dxy_past": 106.27999877929688,
+      "dxy_pct": 1.6465939218103343,
+      "real_yield_now": 2.18,
+      "real_yield_past": 2.08,
+      "real_yield_diff": 0.10000000000000009,
+      "fed_rate_now": 4.58,
+      "fed_rate_past": 4.58,
+      "fed_rate_diff": 0.0
+    },
+    "outcome": {
+      "date_now": "2024-12-18",
+      "date_future": "2025-01-21",
+      "gold_now": 2636.5,
+      "gold_future": 2755.0,
+      "forward_return": 0.0449459510714963,
+      "label": "Tang"
+    },
+    "baseline_pred": "Di_ngang",
+    "bot_reply": "1. Diễn biến: Trong 21 phiên gần nhất tính đến ngày 2024-12-18, giá vàng tăng nhẹ 0.99%, lên mức 2636.50 USD/oz.\n\n2. Yếu tố vĩ mô:\n   - Chỉ số USD (DXY) tăng 1.65%: Đồng USD mạnh lên có thể gây áp lực giảm đối với vàng.\n   - Lợi suất thực 10 năm (real yield) tăng 0.10 điểm %: Chi phí cơ hội nắm giữ vàng tăng, tạo áp lực giảm giá.\n   - Lãi suất Fed giữ nguyên ở 4.58%: Không phải yếu tố chi phối biến động vừa qua.\n\n3. Kịch bản:\n   Kết luận chính: Giảm (tin cậy: trung bình). Dựa trên xu hướng tăng nhẹ của vàng và các chỉ báo vĩ mô, có thể thấy áp lực giảm giá đang chiếm ưu thế. Tuy nhiên, mức thay đổi của DXY và lợi suất thực đều không quá mạnh, nên khả năng đi ngang hoặc dao động trong biên độ hẹp vẫn còn cao. Nếu DXY tiếp tục tăng mạnh hơn so với lợi suất thực, áp lực giảm có thể gia tăng; ngược lại, nếu lợi suất thực tăng nhanh hơn, giá vàng có thể giữ nguyên hoặc tăng nhẹ.\n\n4. Disclaimer: [Hệ thống tự thêm câu miễn trừ trách nhiệm cố định ở đây]"
+  },
+  {
+    "as_of_date": "2024-12-26",
+    "market_data_text": "Tính đến ngày 2024-12-26 (so với 2024-11-25, khoảng 21 phiên giao dịch trước):\n- Vàng (gold futures): hiện tại 2638.80 USD/oz, thay đổi +0.84%\n- Chỉ số USD (DXY): hiện tại 108.13, thay đổi +1.23%\n- Lợi suất thực 10 năm (real yield): hiện tại 2.23%, thay đổi +0.25 điểm %\n- Lãi suất Fed (fed funds rate): hiện tại 4.33%, thay đổi -0.25 điểm %",
+    "market_data_raw": {
+      "date_now": "2024-12-26",
+      "date_past": "2024-11-25",
+      "gold_now": 2638.800048828125,
+      "gold_past": 2616.800048828125,
+      "gold_pct": 0.8407214762110772,
+      "dxy_now": 108.12999725341797,
+      "dxy_past": 106.81999969482422,
+      "dxy_pct": 1.2263598224455188,
+      "real_yield_now": 2.23,
+      "real_yield_past": 1.98,
+      "real_yield_diff": 0.25,
+      "fed_rate_now": 4.33,
+      "fed_rate_past": 4.58,
+      "fed_rate_diff": -0.25
+    },
+    "outcome": {
+      "date_now": "2024-12-26",
+      "date_future": "2025-01-28",
+      "gold_now": 2638.800048828125,
+      "gold_future": 2766.800048828125,
+      "forward_return": 0.048506896176860395,
+      "label": "Tang"
+    },
+    "baseline_pred": "Di_ngang",
+    "bot_reply": "1. Diễn biến: Trong 21 phiên gần nhất tính đến ngày 2024-12-26, giá vàng tăng nhẹ 0.84%, lên mức 2638.80 USD/oz.\n\n2. Yếu tố vĩ mô:\n   - Chỉ số USD (DXY) tăng 1.23%: Đồng USD mạnh lên có thể gây áp lực giảm đối với vàng.\n   - Lợi suất thực 10 năm tăng 0.25 điểm %: Chi phí cơ hội nắm giữ vàng tăng, tạo áp lực giảm giá.\n   - Lãi suất Fed giảm 0.25 điểm %: Điều này có thể làm giảm sức hấp dẫn của các tài sản không sinh lãi như vàng.\n\n3. Kịch bản:\n   Kết luận chính: Giảm (tin cậy: trung bình). Dựa trên xu hướng tăng nhẹ của giá vàng và tác động từ đồng USD mạnh lên, cùng với lợi suất thực tăng, có thể thấy áp lực giảm đối với vàng đang gia tăng. Tuy nhiên, việc lãi suất Fed giảm có thể làm giảm sức ép này. Trong ngắn hạn, khả năng đi ngang hoặc giảm nhẹ vẫn còn cao, nhưng kịch bản cụ thể sẽ phụ thuộc vào diễn biến của các chỉ số vĩ mô trong thời gian tới.\n\n4. Disclaimer: Hệ thống tự động thêm câu miễn trừ trách nhiệm ở đây."
+  },
+  {
+    "as_of_date": "2025-01-13",
+    "market_data_text": "Tính đến ngày 2025-01-13 (so với 2024-12-11, khoảng 21 phiên giao dịch trước):\n- Vàng (gold futures): hiện tại 2673.50 USD/oz, thay đổi -2.21%\n- Chỉ số USD (DXY): hiện tại 109.96, thay đổi +3.05%\n- Lợi suất thực 10 năm (real yield): hiện tại 2.34%, thay đổi +0.38 điểm %\n- Lãi suất Fed (fed funds rate): hiện tại 4.33%, thay đổi -0.25 điểm %",
+    "market_data_raw": {
+      "date_now": "2025-01-13",
+      "date_past": "2024-12-11",
+      "gold_now": 2673.5,
+      "gold_past": 2733.800048828125,
+      "gold_pct": -2.2057227211614587,
+      "dxy_now": 109.95999908447266,
+      "dxy_past": 106.70999908447266,
+      "dxy_pct": 3.0456377358107454,
+      "real_yield_now": 2.34,
+      "real_yield_past": 1.96,
+      "real_yield_diff": 0.3799999999999999,
+      "fed_rate_now": 4.33,
+      "fed_rate_past": 4.58,
+      "fed_rate_diff": -0.25
+    },
+    "outcome": {
+      "date_now": "2025-01-13",
+      "date_future": "2025-02-12",
+      "gold_now": 2673.5,
+      "gold_future": 2909.0,
+      "forward_return": 0.08808677763231719,
+      "label": "Tang"
+    },
+    "baseline_pred": "Di_ngang",
+    "bot_reply": "1. Diễn biến: Trong 21 phiên gần nhất tính đến ngày 2025-01-13, giá vàng giảm 2.21%, xuống còn 2673.50 USD/oz.\n2. Yếu tố vĩ mô: Diễn biến giảm này đi cùng với hai yếu tố vĩ mô mạnh mẽ: chỉ số DXY tăng 3.05% (đồng USD mạnh lên đáng kể) và lợi suất thực 10 năm tăng 0.38 điểm % (chi phí cơ hội nắm giữ vàng - tài sản không sinh lãi - tăng lên rõ rệt). Lãi suất Fed giảm nhẹ 0.25 điểm % trong giai đoạn này, nhưng không phải yếu tố chính giải thích biến động vừa qua.\n3. Kịch bản: Kết luận chính: Giảm (tin cậy: trung bình). Với cả USD mạnh lên và lợi suất thực tăng cùng chiều - hai yếu tố lý thuyết đều bất lợi cho vàng - kịch bản có xác suất cao hơn trong ngắn hạn là vàng tiếp tục chịu áp lực giảm hoặc đi ngang ở vùng thấp. Đây không phải kết luận chắc chắn: nếu lợi suất thực hoặc DXY đảo chiều (ví dụ do dữ liệu lạm phát/việc làm mới làm thay đổi kỳ vọng về lãi suất Fed), áp lực giảm giá có thể suy yếu nhanh hoặc đảo ngược.\n4. Disclaimer: Hệ thống sẽ tự động thêm câu miễn trừ trách nhiệm cố định ở đây."
+  },
+  {
+    "as_of_date": "2025-01-30",
+    "market_data_text": "Tính đến ngày 2025-01-30 (so với 2024-12-30, khoảng 21 phiên giao dịch trước):\n- Vàng (gold futures): hiện tại 2823.00 USD/oz, thay đổi +8.32%\n- Chỉ số USD (DXY): hiện tại 107.80, thay đổi -0.31%\n- Lợi suất thực 10 năm (real yield): hiện tại 2.14%, thay đổi -0.10 điểm %\n- Lãi suất Fed (fed funds rate): hiện tại 4.33%, thay đổi +0.00 điểm %",
+    "market_data_raw": {
+      "date_now": "2025-01-30",
+      "date_past": "2024-12-30",
+      "gold_now": 2823.0,
+      "gold_past": 2606.10009765625,
+      "gold_pct": 8.322777108170753,
+      "dxy_now": 107.80000305175781,
+      "dxy_past": 108.12999725341797,
+      "dxy_pct": -0.3051828447630199,
+      "real_yield_now": 2.14,
+      "real_yield_past": 2.24,
+      "real_yield_diff": -0.10000000000000009,
+      "fed_rate_now": 4.33,
+      "fed_rate_past": 4.33,
+      "fed_rate_diff": 0.0
+    },
+    "outcome": {
+      "date_now": "2025-01-30",
+      "date_future": "2025-03-03",
+      "gold_now": 2823.0,
+      "gold_future": 2890.199951171875,
+      "forward_return": 0.02380444604033829,
+      "label": "Tang"
+    },
+    "baseline_pred": "Di_ngang",
+    "bot_reply": "1. Diễn biến: Trong 21 phiên gần nhất tính đến ngày 2025-01-30, giá vàng tăng mạnh 8.32%, lên mức 2823.00 USD/oz.\n\n2. Yếu tố vĩ mô:\n   - Chỉ số USD (DXY) giảm nhẹ -0.31% (đồng USD yếu đi), thường hỗ trợ tăng giá vàng.\n   - Lợi suất thực 10 năm (real yield) giảm -0.10 điểm %, chi phí cơ hội nắm giữ vàng giảm, tạo áp lực giảm nhẹ lên giá vàng.\n   - Lãi suất Fed giữ nguyên ở mức 4.33%, không phải yếu tố chính giải thích biến động vừa qua.\n\n3. Kịch bản: Kết luận chính: Tăng (tin cậy: trung bình). Dựa trên diễn biến tăng mạnh của giá vàng và xu hướng đồng USD yếu đi, kịch bản có xác suất cao là giá vàng tiếp tục duy trì xu hướng tăng trong ngắn hạn. Tuy nhiên, mức độ tin cậy chỉ ở mức trung bình do lợi suất thực giảm nhẹ tạo áp lực giảm lên giá vàng. Nếu DXY tiếp tục yếu đi hoặc lợi suất thực không thay đổi mạnh, khả năng tăng của giá vàng có thể được duy trì; ngược lại, nếu DXY hồi phục mạnh hoặc lợi suất thực tăng thêm, áp lực giảm giá vàng có thể gia tăng.\n\n4. Disclaimer: [Hệ thống tự thêm câu miễn trừ trách nhiệm cố định ở đây]"
+  },
+  {
+    "as_of_date": "2025-02-18",
+    "market_data_text": "Tính đến ngày 2025-02-18 (so với 2025-01-16, khoảng 21 phiên giao dịch trước):\n- Vàng (gold futures): hiện tại 2931.60 USD/oz, thay đổi +6.74%\n- Chỉ số USD (DXY): hiện tại 107.05, thay đổi -1.75%\n- Lợi suất thực 10 năm (real yield): hiện tại 2.10%, thay đổi -0.09 điểm %\n- Lãi suất Fed (fed funds rate): hiện tại 4.33%, thay đổi +0.00 điểm %",
+    "market_data_raw": {
+      "date_now": "2025-02-18",
+      "date_past": "2025-01-16",
+      "gold_now": 2931.60009765625,
+      "gold_past": 2746.39990234375,
+      "gold_pct": 6.743380494386561,
+      "dxy_now": 107.05000305175781,
+      "dxy_past": 108.95999908447266,
+      "dxy_pct": -1.7529332312439674,
+      "real_yield_now": 2.1,
+      "real_yield_past": 2.19,
+      "real_yield_diff": -0.08999999999999986,
+      "fed_rate_now": 4.33,
+      "fed_rate_past": 4.33,
+      "fed_rate_diff": 0.0
+    },
+    "outcome": {
+      "date_now": "2025-02-18",
+      "date_future": "2025-03-19",
+      "gold_now": 2931.60009765625,
+      "gold_future": 3035.89990234375,
+      "forward_return": 0.035577773643439774,
+      "label": "Tang"
+    },
+    "baseline_pred": "Di_ngang",
+    "bot_reply": "1. Diễn biến: Trong 21 phiên gần nhất tính đến ngày 2025-02-18, giá vàng tăng mạnh 6.74%, lên mức 2931.60 USD/oz.\n\n2. Yếu tố vĩ mô:\n   - Chỉ số USD (DXY) giảm 1.75% (đồng USD yếu đi), thường hỗ trợ giá vàng.\n   - Lợi suất thực 10 năm (real yield) giảm 0.09 điểm %, giảm áp lực giảm giá đối với vàng.\n   - Lãi suất Fed giữ nguyên trong giai đoạn này, không phải yếu tố chi phối biến động vừa qua.\n\n3. Kịch bản: Kết luận chính: Tăng (tin cậy: trung bình). Dựa trên diễn biến tăng mạnh của giá vàng và xu hướng giảm của chỉ số USD cùng lợi suất thực, kịch bản có xác suất cao là giá vàng tiếp tục duy trì xu hướng tăng trong ngắn hạn. Tuy nhiên, đây không phải dự đoán chắc chắn - nếu đồng USD yếu đi nhanh hơn hoặc lợi suất thực tăng trở lại, áp lực lên giá vàng có thể giảm.\n\n4. Disclaimer: Hệ thống này cung cấp thông tin phân tích dựa trên dữ liệu thời gian thực và mô hình dự đoán xu hướng ngắn hạn. Đây không phải là lời khuyên đầu tư và khách hàng nên cân nhắc kỹ trước khi đưa ra quyết định đầu tư."
+  },
+  {
+    "as_of_date": "2025-03-04",
+    "market_data_text": "Tính đến ngày 2025-03-04 (so với 2025-01-31, khoảng 21 phiên giao dịch trước):\n- Vàng (gold futures): hiện tại 2909.60 USD/oz, thay đổi +3.45%\n- Chỉ số USD (DXY): hiện tại 105.74, thay đổi -2.43%\n- Lợi suất thực 10 năm (real yield): hiện tại 1.87%, thay đổi -0.29 điểm %\n- Lãi suất Fed (fed funds rate): hiện tại 4.33%, thay đổi +0.00 điểm %",
+    "market_data_raw": {
+      "date_now": "2025-03-04",
+      "date_past": "2025-01-31",
+      "gold_now": 2909.60009765625,
+      "gold_past": 2812.5,
+      "gold_pct": 3.4524479166666664,
+      "dxy_now": 105.73999786376953,
+      "dxy_past": 108.37000274658203,
+      "dxy_pct": -2.426875349410702,
+      "real_yield_now": 1.87,
+      "real_yield_past": 2.16,
+      "real_yield_diff": -0.29000000000000004,
+      "fed_rate_now": 4.33,
+      "fed_rate_past": 4.33,
+      "fed_rate_diff": 0.0
+    },
+    "outcome": {
+      "date_now": "2025-03-04",
+      "date_future": "2025-04-02",
+      "gold_now": 2909.60009765625,
+      "gold_future": 3139.89990234375,
+      "forward_return": 0.07915170365611818,
+      "label": "Tang"
+    },
+    "baseline_pred": "Di_ngang",
+    "bot_reply": "1. Diễn biến: Trong 21 phiên gần nhất tính đến ngày 2025-03-04, giá vàng tăng nhẹ 3.45%, lên mức 2909.60 USD/oz.\n\n2. Yếu tố vĩ mô:\n   - Chỉ số USD (DXY) giảm 2.43% (đồng USD yếu đi), thường hỗ trợ giá vàng.\n   - Lợi suất thực 10 năm (real yield) giảm 0.29 điểm %, giảm áp lực giảm giá đối với vàng.\n   - Lãi suất Fed giữ nguyên trong giai đoạn này, không phải yếu tố chi phối biến động vừa qua.\n\n3. Kịch bản: Kết luận chính: Tăng (tin cậy: trung bình). Dựa trên diễn biến tăng nhẹ của giá vàng và các yếu tố vĩ mô hỗ trợ tích cực như đồng USD yếu đi và lợi suất thực giảm, xu hướng ngắn hạn có khả năng tiếp tục tăng nhẹ. Tuy nhiên, mức độ tin cậy chỉ ở mức trung bình do vẫn còn nhiều yếu tố không chắc chắn khác có thể tác động.\n\n4. Disclaimer: Hệ thống này dự đoán xu hướng ngắn hạn với xác suất dựa trên các yếu tố vĩ mô hiện tại và không đảm bảo chính xác 100%."
+  },
+  {
+    "as_of_date": "2025-03-25",
+    "market_data_text": "Tính đến ngày 2025-03-25 (so với 2025-02-24, khoảng 21 phiên giao dịch trước):\n- Vàng (gold futures): hiện tại 3023.70 USD/oz, thay đổi +2.57%\n- Chỉ số USD (DXY): hiện tại 104.18, thay đổi -2.27%\n- Lợi suất thực 10 năm (real yield): hiện tại 1.96%, thay đổi -0.02 điểm %\n- Lãi suất Fed (fed funds rate): hiện tại 4.33%, thay đổi +0.00 điểm %",
+    "market_data_raw": {
+      "date_now": "2025-03-25",
+      "date_past": "2025-02-24",
+      "gold_now": 3023.699951171875,
+      "gold_past": 2947.89990234375,
+      "gold_pct": 2.5713236995550495,
+      "dxy_now": 104.18000030517578,
+      "dxy_past": 106.5999984741211,
+      "dxy_pct": -2.2701671703426967,
+      "real_yield_now": 1.96,
+      "real_yield_past": 1.98,
+      "real_yield_diff": -0.020000000000000018,
+      "fed_rate_now": 4.33,
+      "fed_rate_past": 4.33,
+      "fed_rate_diff": 0.0
+    },
+    "outcome": {
+      "date_now": "2025-03-25",
+      "date_future": "2025-04-24",
+      "gold_now": 3023.699951171875,
+      "gold_future": 3332.0,
+      "forward_return": 0.10196119119181757,
+      "label": "Tang"
+    },
+    "baseline_pred": "Di_ngang",
+    "bot_reply": "1. Diễn biến: Trong 21 phiên gần nhất tính đến ngày 2025-03-25, giá vàng tăng nhẹ 2.57%, lên mức 3023.70 USD/oz.\n\n2. Yếu tố vĩ mô:\n   - Chỉ số USD (DXY) giảm 2.27% (đồng USD yếu đi), thường hỗ trợ giá vàng.\n   - Lợi suất thực 10 năm (real yield) giảm 0.02 điểm %, giảm áp lực giảm giá đối với vàng.\n   - Lãi suất Fed giữ nguyên ở mức 4.33%, không phải yếu tố chi phối biến động vừa qua.\n\n3. Kịch bản: Kết luận chính: Tăng (tin cậy: trung bình). Dựa trên diễn biến tăng nhẹ của giá vàng và các yếu tố vĩ mô hỗ trợ như đồng USD yếu đi cùng với lợi suất thực giảm, xu hướng ngắn hạn có khả năng tiếp tục tăng nhẹ. Tuy nhiên, mức độ tin cậy chỉ ở mức trung bình do vẫn còn nhiều yếu tố không chắc chắn, đặc biệt là sự biến động của lãi suất Fed trong tương lai.\n\n4. Disclaimer: [Hệ thống tự thêm câu miễn trừ trách nhiệm cố định ở đây]"
+  },
+  {
+    "as_of_date": "2025-04-09",
+    "market_data_text": "Tính đến ngày 2025-04-09 (so với 2025-03-11, khoảng 21 phiên giao dịch trước):\n- Vàng (gold futures): hiện tại 3056.50 USD/oz, thay đổi +4.93%\n- Chỉ số USD (DXY): hiện tại 102.90, thay đổi -0.52%\n- Lợi suất thực 10 năm (real yield): hiện tại 2.07%, thay đổi +0.10 điểm %\n- Lãi suất Fed (fed funds rate): hiện tại 4.33%, thay đổi +0.00 điểm %",
+    "market_data_raw": {
+      "date_now": "2025-04-09",
+      "date_past": "2025-03-11",
+      "gold_now": 3056.5,
+      "gold_past": 2912.89990234375,
+      "gold_pct": 4.929798567424436,
+      "dxy_now": 102.9000015258789,
+      "dxy_past": 103.44000244140625,
+      "dxy_pct": -0.5220426361003114,
+      "real_yield_now": 2.07,
+      "real_yield_past": 1.97,
+      "real_yield_diff": 0.09999999999999987,
+      "fed_rate_now": 4.33,
+      "fed_rate_past": 4.33,
+      "fed_rate_diff": 0.0
+    },
+    "outcome": {
+      "date_now": "2025-04-09",
+      "date_future": "2025-05-09",
+      "gold_now": 3056.5,
+      "gold_future": 3335.39990234375,
+      "forward_return": 0.09124812770938982,
+      "label": "Tang"
+    },
+    "baseline_pred": "Di_ngang",
+    "bot_reply": "1. Diễn biến: Trong 21 phiên gần nhất tính đến ngày 2025-04-09, giá vàng tăng mạnh 4.93%, lên mức 3056.50 USD/oz.\n\n2. Yếu tố vĩ mô:\n   - Chỉ số DXY giảm -0.52% (đồng USD yếu đi), thường hỗ trợ giá vàng.\n   - Lợi suất thực 10 năm tăng +0.10 điểm %, tạo áp lực giảm nhẹ lên giá vàng nhưng không mạnh.\n   - Lãi suất Fed giữ nguyên ở 4.33%, không phải yếu tố chi phối biến động gần đây.\n\n3. Kịch bản: Kết luận chính: Tăng (tin cậy: trung bình). Dựa trên diễn biến tăng mạnh trong ngắn hạn và xu hướng đồng USD yếu đi, có khả năng giá vàng sẽ tiếp tục duy trì xu hướng tăng trong thời gian tới. Tuy nhiên, mức độ tin cậy chỉ ở mức trung bình do lợi suất thực đang tạo áp lực giảm nhẹ lên giá vàng.\n\n4. Disclaimer: Hệ thống này dự đoán xu hướng ngắn hạn của thị trường vàng dựa trên các yếu tố vĩ mô hiện tại và không đảm bảo chính xác 100%."
+  },
+  {
+    "as_of_date": "2025-04-10",
+    "market_data_text": "Tính đến ngày 2025-04-10 (so với 2025-03-12, khoảng 21 phiên giao dịch trước):\n- Vàng (gold futures): hiện tại 3155.20 USD/oz, thay đổi +7.35%\n- Chỉ số USD (DXY): hiện tại 100.87, thay đổi -2.64%\n- Lợi suất thực 10 năm (real yield): hiện tại 2.21%, thay đổi +0.22 điểm %\n- Lãi suất Fed (fed funds rate): hiện tại 4.33%, thay đổi +0.00 điểm %",
+    "market_data_raw": {
+      "date_now": "2025-04-10",
+      "date_past": "2025-03-12",
+      "gold_now": 3155.199951171875,
+      "gold_past": 2939.10009765625,
+      "gold_pct": 7.352585700907269,
+      "dxy_now": 100.87000274658203,
+      "dxy_past": 103.61000061035156,
+      "dxy_pct": -2.6445303036662478,
+      "real_yield_now": 2.21,
+      "real_yield_past": 1.99,
+      "real_yield_diff": 0.21999999999999997,
+      "fed_rate_now": 4.33,
+      "fed_rate_past": 4.33,
+      "fed_rate_diff": 0.0
+    },
+    "outcome": {
+      "date_now": "2025-04-10",
+      "date_future": "2025-05-12",
+      "gold_now": 3155.199951171875,
+      "gold_future": 3220.0,
+      "forward_return": 0.020537541148242466,
+      "label": "Di_ngang"
+    },
+    "baseline_pred": "Di_ngang",
+    "bot_reply": "1. Diễn biến: Trong 21 phiên gần nhất tính đến ngày 2025-04-10, giá vàng tăng mạnh 7.35%, lên mức 3155.20 USD/oz.\n\n2. Yếu tố vĩ mô:\n   - Chỉ số DXY giảm 2.64% (đồng USD yếu đi), thường hỗ trợ giá vàng.\n   - Lợi suất thực 10 năm tăng 0.22 điểm %, tạo áp lực giảm nhẹ lên giá vàng nhưng không mạnh.\n   - Lãi suất Fed giữ nguyên trong giai đoạn này.\n\n3. Kịch bản: Kết luận chính: Tăng (tin cậy: trung bình). Dựa trên diễn biến giá vàng và yếu tố vĩ mô hiện tại, xu hướng tăng có xác suất cao hơn trong ngắn hạn. Đồng USD yếu đi mạnh mẽ tạo áp lực tăng lên giá vàng, trong khi lợi suất thực tăng nhẹ không đủ để đảo ngược xu hướng này. Tuy nhiên, mức độ tin cậy chỉ ở trung bình do còn nhiều biến số khác có thể tác động đến thị trường.\n\n4. Disclaimer: Hệ thống tự động thêm câu miễn trừ trách nhiệm: \"Lưu ý rằng đây là phân tích dựa trên dữ liệu hiện tại và không đảm bảo chính xác 100%. Thị trường tài chính luôn chứa đựng rủi ro.\""
+  },
+  {
+    "as_of_date": "2025-05-07",
+    "market_data_text": "Tính đến ngày 2025-05-07 (so với 2025-04-07, khoảng 21 phiên giao dịch trước):\n- Vàng (gold futures): hiện tại 3381.40 USD/oz, thay đổi +14.57%\n- Chỉ số USD (DXY): hiện tại 99.61, thay đổi -3.53%\n- Lợi suất thực 10 năm (real yield): hiện tại 2.01%, thay đổi +0.05 điểm %\n- Lãi suất Fed (fed funds rate): hiện tại 4.33%, thay đổi +0.00 điểm %",
+    "market_data_raw": {
+      "date_now": "2025-05-07",
+      "date_past": "2025-04-07",
+      "gold_now": 3381.39990234375,
+      "gold_past": 2951.300048828125,
+      "gold_pct": 14.573233707172712,
+      "dxy_now": 99.61000061035156,
+      "dxy_past": 103.26000213623047,
+      "dxy_pct": -3.5347680131397587,
+      "real_yield_now": 2.01,
+      "real_yield_past": 1.96,
+      "real_yield_diff": 0.04999999999999982,
+      "fed_rate_now": 4.33,
+      "fed_rate_past": 4.33,
+      "fed_rate_diff": 0.0
+    },
+    "outcome": {
+      "date_now": "2025-05-07",
+      "date_future": "2025-06-06",
+      "gold_now": 3381.39990234375,
+      "gold_future": 3322.699951171875,
+      "forward_return": -0.017359659569159004,
+      "label": "Di_ngang"
+    },
+    "baseline_pred": "Di_ngang",
+    "bot_reply": "1. Diễn biến: Trong 21 phiên gần nhất tính đến ngày 2025-05-07, giá vàng tăng mạnh 14.57%, lên mức 3381.40 USD/oz.\n\n2. Yếu tố vĩ mô:\n   - Chỉ số USD (DXY) giảm 3.53% (đồng USD yếu đi), thường hỗ trợ giá vàng.\n   - Lợi suất thực 10 năm tăng nhẹ 0.05 điểm %, chi phí cơ hội nắm giữ vàng tăng lên nhưng không đáng kể so với mức giảm của DXY.\n   - Lãi suất Fed giữ nguyên trong giai đoạn này, không phải yếu tố chi phối biến động vừa qua.\n\n3. Kịch bản: Kết luận chính: Tăng (tin cậy: cao). Với đồng USD yếu đi mạnh mẽ và lợi suất thực tăng nhẹ nhưng chưa đủ để tạo áp lực giảm giá vàng, kịch bản có xác suất rất cao là giá vàng sẽ tiếp tục xu hướng tăng trong ngắn hạn. Nếu DXY duy trì mức thấp hoặc tiếp tục suy yếu, áp lực tăng của vàng sẽ càng được củng cố; ngược lại nếu lợi suất thực tăng mạnh hơn, áp lực giảm giá vàng cũng không thể bị loại bỏ hoàn toàn.\n\n4. Disclaimer: Hệ thống này dự đoán xu hướng ngắn hạn dựa trên các chỉ số vĩ mô hiện tại và không đảm bảo tính chính xác tuyệt đối của kết quả. Khách hàng nên tham khảo thêm thông tin từ nhiều nguồn khác nhau trước khi đưa ra quyết định đầu tư."
+  },
+  {
+    "as_of_date": "2025-05-14",
+    "market_data_text": "Tính đến ngày 2025-05-14 (so với 2025-04-14, khoảng 21 phiên giao dịch trước):\n- Vàng (gold futures): hiện tại 3181.40 USD/oz, thay đổi -0.73%\n- Chỉ số USD (DXY): hiện tại 101.04, thay đổi +1.41%\n- Lợi suất thực 10 năm (real yield): hiện tại 2.16%, thay đổi +0.01 điểm %\n- Lãi suất Fed (fed funds rate): hiện tại 4.33%, thay đổi +0.00 điểm %",
+    "market_data_raw": {
+      "date_now": "2025-05-14",
+      "date_past": "2025-04-14",
+      "gold_now": 3181.39990234375,
+      "gold_past": 3204.800048828125,
+      "gold_pct": -0.7301593275041154,
+      "dxy_now": 101.04000091552734,
+      "dxy_past": 99.63999938964844,
+      "dxy_pct": 1.4050597495531014,
+      "real_yield_now": 2.16,
+      "real_yield_past": 2.15,
+      "real_yield_diff": 0.010000000000000231,
+      "fed_rate_now": 4.33,
+      "fed_rate_past": 4.33,
+      "fed_rate_diff": 0.0
+    },
+    "outcome": {
+      "date_now": "2025-05-14",
+      "date_future": "2025-06-13",
+      "gold_now": 3181.39990234375,
+      "gold_future": 3431.199951171875,
+      "forward_return": 0.07851890881246847,
+      "label": "Tang"
+    },
+    "baseline_pred": "Di_ngang",
+    "bot_reply": "1. Diễn biến: Trong 21 phiên gần nhất tính đến ngày 2025-05-14, giá vàng giảm nhẹ -0.73%, xuống còn 3181.40 USD/oz.\n2. Yếu tố vĩ mô: Chỉ số DXY tăng +1.41% (đồng USD mạnh lên), trong khi lợi suất thực 10 năm chỉ tăng nhẹ +0.01 điểm %, và lãi suất Fed giữ nguyên ở 4.33%. Tuy đồng USD mạnh lên thường hỗ trợ vàng, nhưng mức tăng của DXY không quá lớn nên áp lực giảm giá vàng chưa rõ rệt.\n3. Kịch bản: Kết luận chính: Đi ngang (tin cậy: trung bình). Diễn biến vừa qua cho thấy xu hướng đi ngang hoặc dao động nhẹ trong biên độ hẹp có khả năng tiếp tục trong ngắn hạn, do DXY tăng nhưng không mạnh và lợi suất thực chỉ tăng nhẹ. Nếu đồng USD tiếp tục mạnh lên nhanh hơn mức tăng của lợi suất thực, áp lực giảm giá vàng có thể gia tăng; ngược lại nếu DXY giữ nguyên hoặc suy yếu, xu hướng đi ngang hoặc tăng nhẹ vẫn có khả năng.\n4. Disclaimer: [Hệ thống tự thêm câu miễn trừ trách nhiệm cố định ở đây]"
+  },
+  {
+    "as_of_date": "2025-06-05",
+    "market_data_text": "Tính đến ngày 2025-06-05 (so với 2025-05-06, khoảng 21 phiên giao dịch trước):\n- Vàng (gold futures): hiện tại 3350.70 USD/oz, thay đổi -1.78%\n- Chỉ số USD (DXY): hiện tại 98.74, thay đổi -0.50%\n- Lợi suất thực 10 năm (real yield): hiện tại 2.11%, thay đổi +0.07 điểm %\n- Lãi suất Fed (fed funds rate): hiện tại 4.33%, thay đổi +0.00 điểm %",
+    "market_data_raw": {
+      "date_now": "2025-06-05",
+      "date_past": "2025-05-06",
+      "gold_now": 3350.699951171875,
+      "gold_past": 3411.39990234375,
+      "gold_pct": -1.779326754690121,
+      "dxy_now": 98.73999786376953,
+      "dxy_past": 99.23999786376953,
+      "dxy_pct": -0.5038291120142594,
+      "real_yield_now": 2.11,
+      "real_yield_past": 2.04,
+      "real_yield_diff": 0.06999999999999984,
+      "fed_rate_now": 4.33,
+      "fed_rate_past": 4.33,
+      "fed_rate_diff": 0.0
+    },
+    "outcome": {
+      "date_now": "2025-06-05",
+      "date_future": "2025-07-08",
+      "gold_now": 3350.699951171875,
+      "gold_future": 3307.0,
+      "forward_return": -0.013042036532274806,
+      "label": "Di_ngang"
+    },
+    "baseline_pred": "Di_ngang",
+    "bot_reply": "1. Diễn biến: Trong 21 phiên gần nhất tính đến ngày 05/06/2025, giá vàng giảm 1.78%, xuống còn 3350.70 USD/oz.\n2. Yếu tố vĩ mô:\n   - Chỉ số USD (DXY) giảm 0.50% (đồng USD yếu đi), thường hỗ trợ tăng giá vàng.\n   - Lợi suất thực 10 năm (real yield) tăng 0.07 điểm %, chi phí cơ hội nắm giữ vàng tăng lên, gây áp lực giảm giá vàng.\n   - Lãi suất Fed giữ nguyên trong giai đoạn này, không phải yếu tố chi phối biến động vừa qua.\n\n3. Kịch bản: Kết luận chính: Giảm (tin cậy: trung bình). Với đồng USD yếu đi và lợi suất thực tăng cùng chiều - hai yếu tố lý thuyết đều bất lợi cho vàng - kịch bản có xác suất cao hơn trong ngắn hạn là giá vàng tiếp tục chịu áp lực giảm hoặc đi ngang ở vùng thấp. Đây không phải kết luận chắc chắn: nếu lợi suất thực hoặc DXY đảo chiều (ví dụ do dữ liệu kinh tế mới làm thay đổi kỳ vọng về lãi suất Fed), áp lực giảm giá có thể suy yếu nhanh hoặc đảo ngược.\n\n4. Disclaimer: Hệ thống này cung cấp thông tin dựa trên các yếu tố vĩ mô hiện tại và không đảm bảo tính chính xác tuyệt đối của kết quả phân tích. Khách hàng nên tham khảo thêm nhiều nguồn thông tin khác trước khi đưa ra quyết định đầu tư."
+  },
+  {
+    "as_of_date": "2025-06-17",
+    "market_data_text": "Tính đến ngày 2025-06-17 (so với 2025-05-16, khoảng 21 phiên giao dịch trước):\n- Vàng (gold futures): hiện tại 3386.60 USD/oz, thay đổi +6.43%\n- Chỉ số USD (DXY): hiện tại 98.82, thay đổi -2.25%\n- Lợi suất thực 10 năm (real yield): hiện tại 2.08%, thay đổi -0.01 điểm %\n- Lãi suất Fed (fed funds rate): hiện tại 4.33%, thay đổi +0.00 điểm %",
+    "market_data_raw": {
+      "date_now": "2025-06-17",
+      "date_past": "2025-05-16",
+      "gold_now": 3386.60009765625,
+      "gold_past": 3182.0,
+      "gold_pct": 6.429921359404463,
+      "dxy_now": 98.81999969482422,
+      "dxy_past": 101.08999633789062,
+      "dxy_pct": -2.2455205512907557,
+      "real_yield_now": 2.08,
+      "real_yield_past": 2.09,
+      "real_yield_diff": -0.009999999999999787,
+      "fed_rate_now": 4.33,
+      "fed_rate_past": 4.33,
+      "fed_rate_diff": 0.0
+    },
+    "outcome": {
+      "date_now": "2025-06-17",
+      "date_future": "2025-07-18",
+      "gold_now": 3386.60009765625,
+      "gold_future": 3353.0,
+      "forward_return": -0.009921483696732743,
+      "label": "Di_ngang"
+    },
+    "baseline_pred": "Di_ngang",
+    "bot_reply": "1. Diễn biến: Trong 21 phiên gần nhất tính đến ngày 2025-06-17, giá vàng tăng mạnh 6.43%, lên mức 3386.60 USD/oz.\n\n2. Yếu tố vĩ mô:\n   - Chỉ số USD (DXY) giảm 2.25% (đồng USD yếu đi), thường hỗ trợ giá vàng.\n   - Lợi suất thực 10 năm (real yield) giảm nhẹ 0.01 điểm %, áp lực giảm đối với vàng suy yếu.\n   - Lãi suất Fed giữ nguyên ở mức 4.33%, không phải yếu tố chi phối biến động gần đây.\n\n3. Kịch bản: Kết luận chính: Tăng (tin cậy: cao). Diễn biến tăng mạnh của giá vàng trong 21 phiên qua, cùng với đồng USD yếu đi và áp lực giảm đối với lợi suất thực suy yếu, tạo ra xu hướng tích cực cho ngắn hạn. Tuy nhiên, cần lưu ý rằng thị trường có thể đảo chiều nhanh chóng do nhiều yếu tố không xác định như biến động kinh tế toàn cầu hay quyết định chính sách của Fed trong tương lai.\n\n4. Disclaimer: Hệ thống này dựa trên mô hình phân tích xu hướng ngắn hạn và được so sánh với một baseline đơn giản, không có khả năng dự đoán chắc chắn. Các yếu tố thị trường có thể thay đổi nhanh chóng, do đó kết quả thực tế có thể khác biệt từ dự báo này."
+  },
+  {
+    "as_of_date": "2025-06-27",
+    "market_data_text": "Tính đến ngày 2025-06-27 (so với 2025-05-28, khoảng 21 phiên giao dịch trước):\n- Vàng (gold futures): hiện tại 3273.70 USD/oz, thay đổi -0.60%\n- Chỉ số USD (DXY): hiện tại 97.40, thay đổi -2.48%\n- Lợi suất thực 10 năm (real yield): hiện tại 2.00%, thay đổi -0.15 điểm %\n- Lãi suất Fed (fed funds rate): hiện tại 4.33%, thay đổi +0.00 điểm %",
+    "market_data_raw": {
+      "date_now": "2025-06-27",
+      "date_past": "2025-05-28",
+      "gold_now": 3273.699951171875,
+      "gold_past": 3293.60009765625,
+      "gold_pct": -0.604206518530774,
+      "dxy_now": 97.4000015258789,
+      "dxy_past": 99.87999725341797,
+      "dxy_pct": -2.4829753661754284,
+      "real_yield_now": 2.0,
+      "real_yield_past": 2.15,
+      "real_yield_diff": -0.1499999999999999,
+      "fed_rate_now": 4.33,
+      "fed_rate_past": 4.33,
+      "fed_rate_diff": 0.0
+    },
+    "outcome": {
+      "date_now": "2025-06-27",
+      "date_future": "2025-07-29",
+      "gold_now": 3273.699951171875,
+      "gold_future": 3323.39990234375,
+      "forward_return": 0.015181584113743863,
+      "label": "Di_ngang"
+    },
+    "baseline_pred": "Di_ngang",
+    "bot_reply": "1. Diễn biến: Trong 21 phiên gần nhất tính đến ngày 2025-06-27, giá vàng giảm nhẹ -0.60%, xuống còn 3273.70 USD/oz.\n2. Yếu tố vĩ mô:\n   - Chỉ số USD (DXY) giảm mạnh -2.48%: Đồng USD yếu đi có thể tạo áp lực lên giá vàng, thường hỗ trợ tăng giá vàng.\n   - Lợi suất thực 10 năm giảm -0.15 điểm %: Chi phí cơ hội nắm giữ vàng giảm, tạo điều kiện thuận lợi cho việc mua vào vàng.\n   - Lãi suất Fed giữ nguyên +0.00 điểm %: Không phải yếu tố chi phối biến động giá vàng trong giai đoạn này.\n\n3. Kịch bản:\n   Kết luận chính: Tăng (tin cậy: trung bình). Dựa trên xu hướng giảm nhẹ của giá vàng và các yếu tố vĩ mô hỗ trợ tăng như đồng USD yếu đi và lợi suất thực giảm, có khả năng giá vàng sẽ tăng trong ngắn hạn. Tuy nhiên, mức độ tin cậy chỉ ở mức trung bình do biến động thị trường có thể thay đổi nhanh chóng.\n\n4. Disclaimer: Hệ thống này dựa trên mô hình phân tích xu hướng ngắn hạn và không đảm bảo chính xác 100%. Khách hàng nên cân nhắc kỹ lưỡng trước khi đưa ra quyết định đầu tư."
+  },
+  {
+    "as_of_date": "2025-07-18",
+    "market_data_text": "Tính đến ngày 2025-07-18 (so với 2025-06-17, khoảng 21 phiên giao dịch trước):\n- Vàng (gold futures): hiện tại 3353.00 USD/oz, thay đổi -0.99%\n- Chỉ số USD (DXY): hiện tại 98.48, thay đổi -0.34%\n- Lợi suất thực 10 năm (real yield): hiện tại 2.03%, thay đổi -0.05 điểm %\n- Lãi suất Fed (fed funds rate): hiện tại 4.33%, thay đổi +0.00 điểm %",
+    "market_data_raw": {
+      "date_now": "2025-07-18",
+      "date_past": "2025-06-17",
+      "gold_now": 3353.0,
+      "gold_past": 3386.60009765625,
+      "gold_pct": -0.9921483696732742,
+      "dxy_now": 98.4800033569336,
+      "dxy_past": 98.81999969482422,
+      "dxy_pct": -0.3440562021256843,
+      "real_yield_now": 2.03,
+      "real_yield_past": 2.08,
+      "real_yield_diff": -0.050000000000000266,
+      "fed_rate_now": 4.33,
+      "fed_rate_past": 4.33,
+      "fed_rate_diff": 0.0
+    },
+    "outcome": {
+      "date_now": "2025-07-18",
+      "date_future": "2025-08-18",
+      "gold_now": 3353.0,
+      "gold_future": 3331.699951171875,
+      "forward_return": -0.006352534693744408,
+      "label": "Di_ngang"
+    },
+    "baseline_pred": "Di_ngang",
+    "bot_reply": "1. Diễn biến: Trong 21 phiên gần nhất tính đến ngày 2025-07-18, giá vàng giảm nhẹ -0.99%, xuống còn 3353.00 USD/oz.\n\n2. Yếu tố vĩ mô:\n   - Chỉ số USD (DXY) giảm -0.34%: Đồng USD yếu đi có thể tạo áp lực lên giá vàng.\n   - Lợi suất thực 10 năm (real yield) giảm -0.05 điểm %: Chi phí cơ hội nắm giữ vàng giảm, tạo điều kiện thuận lợi cho việc mua vào.\n   - Lãi suất Fed giữ nguyên ở 4.33%: Không phải yếu tố chi phối biến động giá vàng trong giai đoạn này.\n\n3. Kịch bản:\n   Kết luận chính: Đi ngang (tin cậy: trung bình). Dựa trên diễn biến gần đây, xu hướng đi ngang hoặc dao động nhẹ có thể tiếp tục trong ngắn hạn. Tuy nhiên, với mức thay đổi của chỉ số DXY và lợi suất thực đều không quá mạnh, khả năng giá vàng sẽ duy trì trạng thái cân bằng giữa tăng và giảm là cao. Nếu đồng USD tiếp tục yếu đi nhanh hơn so với sự giảm nhẹ của lợi suất thực, áp lực tăng có thể chiếm ưu thế; ngược lại, nếu lợi suất thực tiếp tục giảm mạnh hơn, áp lực giảm giá có thể gia tăng.\n\n4. Disclaimer: [Hệ thống tự thêm câu miễn trừ trách nhiệm cố định ở đây]"
+  },
+  {
+    "as_of_date": "2025-08-05",
+    "market_data_text": "Tính đến ngày 2025-08-05 (so với 2025-07-07, khoảng 21 phiên giao dịch trước):\n- Vàng (gold futures): hiện tại 3381.90 USD/oz, thay đổi +1.49%\n- Chỉ số USD (DXY): hiện tại 98.78, thay đổi +1.33%\n- Lợi suất thực 10 năm (real yield): hiện tại 1.86%, thay đổi -0.19 điểm %\n- Lãi suất Fed (fed funds rate): hiện tại 4.33%, thay đổi +0.00 điểm %",
+    "market_data_raw": {
+      "date_now": "2025-08-05",
+      "date_past": "2025-07-07",
+      "gold_now": 3381.89990234375,
+      "gold_past": 3332.199951171875,
+      "gold_pct": 1.4915056689319144,
+      "dxy_now": 98.77999877929688,
+      "dxy_past": 97.4800033569336,
+      "dxy_pct": 1.3336021518210328,
+      "real_yield_now": 1.86,
+      "real_yield_past": 2.05,
+      "real_yield_diff": -0.18999999999999972,
+      "fed_rate_now": 4.33,
+      "fed_rate_past": 4.33,
+      "fed_rate_diff": 0.0
+    },
+    "outcome": {
+      "date_now": "2025-08-05",
+      "date_future": "2025-09-04",
+      "gold_now": 3381.89990234375,
+      "gold_future": 3565.800048828125,
+      "forward_return": 0.05437776155258975,
+      "label": "Tang"
+    },
+    "baseline_pred": "Di_ngang",
+    "bot_reply": "1. Diễn biến: Trong 21 phiên gần nhất tính đến ngày 05/08/2025, giá vàng tăng nhẹ 1.49%, lên mức 3381.90 USD/oz.\n\n2. Yếu tố vĩ mô:\n   - Chỉ số USD (DXY) tăng 1.33% (giá trị hiện tại: 98.78), đồng USD mạnh lên có thể gây áp lực giảm giá vàng.\n   - Lợi suất thực 10 năm (real yield) giảm 0.19 điểm % (giá trị hiện tại: 1.86%), chi phí cơ hội nắm giữ vàng giảm nhẹ, tạo điều kiện cho giá vàng tăng.\n   - Lãi suất Fed giữ nguyên ở mức 4.33%, không phải yếu tố chính giải thích biến động vừa qua.\n\n3. Kịch bản:\n   Kết luận chính: Tăng (tin cậy: trung bình). Dựa trên diễn biến gần đây, xu hướng ngắn hạn có khả năng tiếp tục tăng nhẹ do lợi suất thực giảm và đồng USD mạnh lên chưa tạo áp lực quá lớn. Tuy nhiên, mức độ tin cậy chỉ ở trung bình vì các yếu tố vĩ mô đang trái chiều nhau - nếu đồng USD tiếp tục mạnh lên hoặc lợi suất thực tăng trở lại, áp lực giảm giá vàng có thể gia tăng.\n\n4. Disclaimer: Hệ thống sẽ tự động thêm câu miễn trừ trách nhiệm cố định ở đây."
+  },
+  {
+    "as_of_date": "2025-08-12",
+    "market_data_text": "Tính đến ngày 2025-08-12 (so với 2025-07-14, khoảng 21 phiên giao dịch trước):\n- Vàng (gold futures): hiện tại 3348.90 USD/oz, thay đổi -0.08%\n- Chỉ số USD (DXY): hiện tại 98.10, thay đổi +0.02%\n- Lợi suất thực 10 năm (real yield): hiện tại 1.91%, thay đổi -0.13 điểm %\n- Lãi suất Fed (fed funds rate): hiện tại 4.33%, thay đổi +0.00 điểm %",
+    "market_data_raw": {
+      "date_now": "2025-08-12",
+      "date_past": "2025-07-14",
+      "gold_now": 3348.89990234375,
+      "gold_past": 3351.5,
+      "gold_pct": -0.07758011804415933,
+      "dxy_now": 98.0999984741211,
+      "dxy_past": 98.08000183105469,
+      "dxy_pct": 0.02038809409980536,
+      "real_yield_now": 1.91,
+      "real_yield_past": 2.04,
+      "real_yield_diff": -0.13000000000000012,
+      "fed_rate_now": 4.33,
+      "fed_rate_past": 4.33,
+      "fed_rate_diff": 0.0
+    },
+    "outcome": {
+      "date_now": "2025-08-12",
+      "date_future": "2025-09-11",
+      "gold_now": 3348.89990234375,
+      "gold_future": 3636.89990234375,
+      "forward_return": 0.08599839003800659,
+      "label": "Tang"
+    },
+    "baseline_pred": "Di_ngang",
+    "bot_reply": "1. Diễn biến: Trong 21 phiên gần nhất tính đến ngày 2025-08-12, giá vàng giữ nguyên ở mức 3348.90 USD/oz, thay đổi -0.08%.\n\n2. Yếu tố vĩ mô:\n   - Chỉ số USD (DXY) tăng nhẹ +0.02%, đồng USD có xu hướng mạnh lên một chút.\n   - Lợi suất thực 10 năm giảm -0.13 điểm %, chi phí cơ hội nắm giữ vàng giảm nhẹ.\n   - Lãi suất Fed giữ nguyên ở mức 4.33%, không phải yếu tố chi phối biến động gần đây.\n\n3. Kịch bản: Kết luận chính: Đi ngang (tin cậy: trung bình). Dựa trên diễn biến giá vàng và các chỉ báo vĩ mô, xu hướng ngắn hạn có thể tiếp tục đi ngang hoặc dao động trong biên độ hẹp. Tuy nhiên, với lợi suất thực giảm nhẹ và DXY tăng nhẹ nhưng không mạnh, áp lực đối với giá vàng chưa đủ để nghiêng hẳn về một kịch bản rõ rệt. Nếu lợi suất thực tiếp tục giảm mạnh hơn mức tăng của DXY, khả năng đi ngang hoặc tăng nhẹ có thể chiếm ưu thế; ngược lại nếu DXY tăng mạnh hơn, áp lực giảm giá có thể gia tăng.\n\n4. Disclaimer: [Hệ thống tự thêm câu miễn trừ trách nhiệm cố định ở đây]"
+  },
+  {
+    "as_of_date": "2025-08-20",
+    "market_data_text": "Tính đến ngày 2025-08-20 (so với 2025-07-22, khoảng 21 phiên giao dịch trước):\n- Vàng (gold futures): hiện tại 3343.40 USD/oz, thay đổi -2.79%\n- Chỉ số USD (DXY): hiện tại 98.22, thay đổi +0.85%\n- Lợi suất thực 10 năm (real yield): hiện tại 1.94%, thay đổi -0.02 điểm %\n- Lãi suất Fed (fed funds rate): hiện tại 4.33%, thay đổi +0.00 điểm %",
+    "market_data_raw": {
+      "date_now": "2025-08-20",
+      "date_past": "2025-07-22",
+      "gold_now": 3343.39990234375,
+      "gold_past": 3439.199951171875,
+      "gold_pct": -2.785532978257982,
+      "dxy_now": 98.22000122070312,
+      "dxy_past": 97.38999938964844,
+      "dxy_pct": 0.8522454423004219,
+      "real_yield_now": 1.94,
+      "real_yield_past": 1.96,
+      "real_yield_diff": -0.020000000000000018,
+      "fed_rate_now": 4.33,
+      "fed_rate_past": 4.33,
+      "fed_rate_diff": 0.0
+    },
+    "outcome": {
+      "date_now": "2025-08-20",
+      "date_future": "2025-09-19",
+      "gold_now": 3343.39990234375,
+      "gold_future": 3671.5,
+      "forward_return": 0.09813366849303586,
+      "label": "Tang"
+    },
+    "baseline_pred": "Di_ngang",
+    "bot_reply": "1. Diễn biến: Trong 21 phiên gần nhất tính đến ngày 2025-08-20, giá vàng giảm 2.79%, xuống còn 3343.40 USD/oz.\n\n2. Yếu tố vĩ mô:\n   - Chỉ số USD (DXY) tăng 0.85%: Đồng USD mạnh lên có thể tạo áp lực giảm đối với vàng.\n   - Lợi suất thực 10 năm (real yield) giảm 0.02 điểm %: Chi phí cơ hội nắm giữ vàng giảm nhẹ, nhưng tác động không lớn.\n\n3. Kịch bản:\n   Kết luận chính: Giảm (tin cậy: trung bình). Dựa trên diễn biến giá vàng và các yếu tố vĩ mô hiện tại, xu hướng ngắn hạn có thể tiếp tục đi ngang hoặc giảm nhẹ do đồng USD mạnh lên. Tuy nhiên, mức độ giảm có thể bị hạn chế bởi lợi suất thực đang ở mức thấp. Nếu đồng USD giữ nguyên hay lợi suất thực tăng trở lại, áp lực giảm giá vàng có thể gia tăng.\n\n4. Disclaimer: Tôi là trợ lý kiến thức về thị trường vàng, không đại diện cho quan điểm chính thức của Saigonbank và không đảm bảo độ chính xác tuyệt đối của thông tin được cung cấp."
+  },
+  {
+    "as_of_date": "2025-09-08",
+    "market_data_text": "Tính đến ngày 2025-09-08 (so với 2025-08-07, khoảng 21 phiên giao dịch trước):\n- Vàng (gold futures): hiện tại 3638.10 USD/oz, thay đổi +6.99%\n- Chỉ số USD (DXY): hiện tại 97.45, thay đổi -0.97%\n- Lợi suất thực 10 năm (real yield): hiện tại 1.70%, thay đổi -0.18 điểm %\n- Lãi suất Fed (fed funds rate): hiện tại 4.33%, thay đổi +0.00 điểm %",
+    "market_data_raw": {
+      "date_now": "2025-09-08",
+      "date_past": "2025-08-07",
+      "gold_now": 3638.10009765625,
+      "gold_past": 3400.300048828125,
+      "gold_pct": 6.993501909047117,
+      "dxy_now": 97.44999694824219,
+      "dxy_past": 98.4000015258789,
+      "dxy_pct": -0.965451791570217,
+      "real_yield_now": 1.7,
+      "real_yield_past": 1.88,
+      "real_yield_diff": -0.17999999999999994,
+      "fed_rate_now": 4.33,
+      "fed_rate_past": 4.33,
+      "fed_rate_diff": 0.0
+    },
+    "outcome": {
+      "date_now": "2025-09-08",
+      "date_future": "2025-10-07",
+      "gold_now": 3638.10009765625,
+      "gold_future": 3976.60009765625,
+      "forward_return": 0.09304306943562925,
+      "label": "Tang"
+    },
+    "baseline_pred": "Di_ngang",
+    "bot_reply": "1. Diễn biến: Trong 21 phiên gần nhất tính đến ngày 2025-09-08, giá vàng tăng mạnh 6.99%, lên mức 3638.10 USD/oz.\n\n2. Yếu tố vĩ mô:\n   - Chỉ số USD (DXY) giảm 0.97% (đồng USD yếu đi), thường hỗ trợ giá vàng.\n   - Lợi suất thực 10 năm (real yield) giảm 0.18 điểm %, giảm áp lực giảm giá đối với vàng.\n   - Lãi suất Fed giữ nguyên trong giai đoạn này, không phải yếu tố chi phối biến động vừa qua.\n\n3. Kịch bản: Kết luận chính: Tăng (tin cậy: cao). Với đồng USD yếu đi và lợi suất thực giảm, xu hướng tăng của giá vàng có xác suất rất cao trong ngắn hạn. Nếu tình hình tiếp tục duy trì như hiện tại hoặc đồng USD tiếp tục yếu đi nhanh hơn so với sự giảm của lợi suất thực, áp lực tăng giá sẽ càng mạnh. Tuy nhiên, cần theo dõi sát diễn biến thị trường để điều chỉnh nhận định nếu có thay đổi.\n\n4. Disclaimer: Hệ thống này cung cấp thông tin dựa trên dữ liệu thời gian thực và mô hình dự đoán xu hướng ngắn hạn, không đảm bảo chính xác 100%. Khách hàng nên cân nhắc kỹ trước khi đưa ra quyết định đầu tư."
+  },
+  {
+    "as_of_date": "2025-09-26",
+    "market_data_text": "Tính đến ngày 2025-09-26 (so với 2025-08-27, khoảng 21 phiên giao dịch trước):\n- Vàng (gold futures): hiện tại 3775.30 USD/oz, thay đổi +10.89%\n- Chỉ số USD (DXY): hiện tại 98.15, thay đổi -0.08%\n- Lợi suất thực 10 năm (real yield): hiện tại 1.82%, thay đổi +0.01 điểm %\n- Lãi suất Fed (fed funds rate): hiện tại 4.09%, thay đổi -0.24 điểm %",
+    "market_data_raw": {
+      "date_now": "2025-09-26",
+      "date_past": "2025-08-27",
+      "gold_now": 3775.300048828125,
+      "gold_past": 3404.60009765625,
+      "gold_pct": 10.888208322236359,
+      "dxy_now": 98.1500015258789,
+      "dxy_past": 98.2300033569336,
+      "dxy_pct": -0.08144337607725487,
+      "real_yield_now": 1.82,
+      "real_yield_past": 1.81,
+      "real_yield_diff": 0.010000000000000009,
+      "fed_rate_now": 4.09,
+      "fed_rate_past": 4.33,
+      "fed_rate_diff": -0.2400000000000002
+    },
+    "outcome": {
+      "date_now": "2025-09-26",
+      "date_future": "2025-10-27",
+      "gold_now": 3775.300048828125,
+      "gold_future": 4001.89990234375,
+      "forward_return": 0.06002168055118239,
+      "label": "Tang"
+    },
+    "baseline_pred": "Di_ngang",
+    "bot_reply": "1. Diễn biến: Trong 21 phiên gần nhất tính đến ngày 2025-09-26, giá vàng tăng mạnh 10.89%, lên mức 3775.30 USD/oz.\n\n2. Yếu tố vĩ mô:\n   - Chỉ số USD (DXY) giảm nhẹ -0.08% (đồng USD yếu đi), thường hỗ trợ tăng giá vàng.\n   - Lợi suất thực 10 năm (real yield) chỉ tăng 0.01 điểm %, không đáng kể so với mức thay đổi của DXY và giá vàng.\n   - Lãi suất Fed giảm 0.24 điểm %, có thể tạo áp lực giảm nhẹ lên giá vàng nhưng chưa rõ ràng.\n\n3. Kịch bản:\n   Kết luận chính: Tăng (tin cậy: cao). Với đồng USD yếu đi mạnh mẽ cùng với mức tăng lợi suất thực không đáng kể, xu hướng ngắn hạn của giá vàng khả năng sẽ tiếp tục duy trì đà tăng. Tuy nhiên, cần theo dõi sát diễn biến lãi suất Fed trong thời gian tới để xem có thay đổi kịch bản hay không.\n\n4. Disclaimer: [Hệ thống tự thêm câu miễn trừ trách nhiệm cố định ở đây]"
+  },
+  {
+    "as_of_date": "2025-10-09",
+    "market_data_text": "Tính đến ngày 2025-10-09 (so với 2025-09-10, khoảng 21 phiên giao dịch trước):\n- Vàng (gold futures): hiện tại 3946.30 USD/oz, thay đổi +8.31%\n- Chỉ số USD (DXY): hiện tại 99.54, thay đổi +1.80%\n- Lợi suất thực 10 năm (real yield): hiện tại 1.80%, thay đổi +0.11 điểm %\n- Lãi suất Fed (fed funds rate): hiện tại 4.10%, thay đổi -0.23 điểm %",
+    "market_data_raw": {
+      "date_now": "2025-10-09",
+      "date_past": "2025-09-10",
+      "gold_now": 3946.300048828125,
+      "gold_past": 3643.60009765625,
+      "gold_pct": 8.307716079121501,
+      "dxy_now": 99.54000091552734,
+      "dxy_past": 97.77999877929688,
+      "dxy_pct": 1.7999612990413711,
+      "real_yield_now": 1.8,
+      "real_yield_past": 1.69,
+      "real_yield_diff": 0.1100000000000001,
+      "fed_rate_now": 4.1,
+      "fed_rate_past": 4.33,
+      "fed_rate_diff": -0.23000000000000043
+    },
+    "outcome": {
+      "date_now": "2025-10-09",
+      "date_future": "2025-11-07",
+      "gold_now": 3946.300048828125,
+      "gold_future": 3999.39990234375,
+      "forward_return": 0.013455604707856233,
+      "label": "Di_ngang"
+    },
+    "baseline_pred": "Di_ngang",
+    "bot_reply": "1. Diễn biến: Trong 21 phiên gần nhất tính đến ngày 2025-10-09, giá vàng tăng mạnh 8.31%, lên mức 3946.30 USD/oz.\n\n2. Yếu tố vĩ mô:\n   - Chỉ số USD (DXY) tăng 1.80% (giảm so với mức thay đổi +1.80%), đồng USD yếu đi, thường hỗ trợ giá vàng.\n   - Lợi suất thực 10 năm (real yield) tăng 0.11 điểm % (chi phí cơ hội nắm giữ vàng tăng lên, gây áp lực giảm giá vàng).\n   - Lãi suất Fed giảm 0.23 điểm % (giảm so với mức thay đổi -0.23%), có thể làm giảm sức hấp dẫn của các tài sản không sinh lãi như vàng.\n\n3. Kịch bản: Kết luận chính: Tăng (tin cậy: trung bình). Mặc dù lợi suất thực tăng và Fed giảm lãi suất, nhưng DXY giảm mạnh hơn, tạo áp lực hỗ trợ giá vàng tăng. Khả năng giá vàng tiếp tục đi lên trong ngắn hạn vẫn có, nhưng không phải là chắc chắn. Nếu DXY tiếp tục yếu đi hoặc lợi suất thực giảm, xu hướng tăng có thể duy trì tốt; ngược lại, nếu DXY phục hồi mạnh hoặc lợi suất thực tiếp tục tăng, áp lực giảm giá vàng có thể gia tăng.\n\n4. Disclaimer: [Hệ thống tự thêm câu miễn trừ trách nhiệm cố định ở đây]"
+  },
+  {
+    "as_of_date": "2025-10-22",
+    "market_data_text": "Tính đến ngày 2025-10-22 (so với 2025-09-23, khoảng 21 phiên giao dịch trước):\n- Vàng (gold futures): hiện tại 4044.40 USD/oz, thay đổi +6.98%\n- Chỉ số USD (DXY): hiện tại 98.90, thay đổi +1.69%\n- Lợi suất thực 10 năm (real yield): hiện tại 1.68%, thay đổi -0.07 điểm %\n- Lãi suất Fed (fed funds rate): hiện tại 4.11%, thay đổi +0.02 điểm %",
+    "market_data_raw": {
+      "date_now": "2025-10-22",
+      "date_past": "2025-09-23",
+      "gold_now": 4044.39990234375,
+      "gold_past": 3780.60009765625,
+      "gold_pct": 6.977723056480912,
+      "dxy_now": 98.9000015258789,
+      "dxy_past": 97.26000213623047,
+      "dxy_pct": 1.6862012683809295,
+      "real_yield_now": 1.68,
+      "real_yield_past": 1.75,
+      "real_yield_diff": -0.07000000000000006,
+      "fed_rate_now": 4.11,
+      "fed_rate_past": 4.09,
+      "fed_rate_diff": 0.020000000000000462
+    },
+    "outcome": {
+      "date_now": "2025-10-22",
+      "date_future": "2025-11-20",
+      "gold_now": 4044.39990234375,
+      "gold_future": 4056.5,
+      "forward_return": 0.002991815336865658,
+      "label": "Di_ngang"
+    },
+    "baseline_pred": "Di_ngang",
+    "bot_reply": "1. Diễn biến: Trong 21 phiên gần nhất tính đến ngày 2025-10-22, giá vàng tăng mạnh 6.98%, lên mức 4044.40 USD/oz.\n\n2. Yếu tố vĩ mô:\n   - Chỉ số USD (DXY) tăng 1.69% (giá trị hiện tại: 98.90), tạo áp lực giảm nhẹ đối với vàng.\n   - Lợi suất thực 10 năm (real yield) giảm 0.07 điểm % (giá trị hiện tại: 1.68%), giảm áp lực giảm giá đối với vàng.\n   - Lãi suất Fed tăng 0.02 điểm % (giá trị hiện tại: 4.11%), không phải yếu tố chi phối biến động vừa qua.\n\n3. Kịch bản:\n   Kết luận chính: Tăng (tin cậy: trung bình). Dựa trên diễn biến giá vàng và các chỉ báo vĩ mô, xu hướng tăng có xác suất cao hơn trong ngắn hạn. Tuy nhiên, sự gia tăng của lợi suất thực đã giảm nhẹ áp lực tăng giá, tạo ra một kịch bản đi ngang hoặc dao động trong biên độ hẹp là khả năng không thể loại bỏ. Nếu DXY tiếp tục tăng mạnh hơn mức giảm của lợi suất thực, áp lực giảm có thể chiếm ưu thế; ngược lại, nếu lợi suất thực tiếp tục giảm mạnh hơn mức tăng của DXY, xu hướng tăng giá sẽ được củng cố.\n\n4. Disclaimer: [Hệ thống tự thêm câu miễn trừ trách nhiệm cố định ở đây]"
+  },
+  {
+    "as_of_date": "2025-11-03",
+    "market_data_text": "Tính đến ngày 2025-11-03 (so với 2025-10-03, khoảng 21 phiên giao dịch trước):\n- Vàng (gold futures): hiện tại 4000.30 USD/oz, thay đổi +3.08%\n- Chỉ số USD (DXY): hiện tại 99.87, thay đổi +2.20%\n- Lợi suất thực 10 năm (real yield): hiện tại 1.82%, thay đổi +0.02 điểm %\n- Lãi suất Fed (fed funds rate): hiện tại 3.87%, thay đổi -0.22 điểm %",
+    "market_data_raw": {
+      "date_now": "2025-11-03",
+      "date_past": "2025-10-03",
+      "gold_now": 4000.300048828125,
+      "gold_past": 3880.800048828125,
+      "gold_pct": 3.079261969090242,
+      "dxy_now": 99.87000274658203,
+      "dxy_past": 97.72000122070312,
+      "dxy_pct": 2.2001652671115637,
+      "real_yield_now": 1.82,
+      "real_yield_past": 1.8,
+      "real_yield_diff": 0.020000000000000018,
+      "fed_rate_now": 3.87,
+      "fed_rate_past": 4.09,
+      "fed_rate_diff": -0.21999999999999975
+    },
+    "outcome": {
+      "date_now": "2025-11-03",
+      "date_future": "2025-12-03",
+      "gold_now": 4000.300048828125,
+      "gold_future": 4199.2998046875,
+      "forward_return": 0.04974620739203584,
+      "label": "Tang"
+    },
+    "baseline_pred": "Di_ngang",
+    "bot_reply": "1. Diễn biến: Trong 21 phiên gần nhất tính đến ngày 03/11/2025, giá vàng tăng nhẹ 3.08%, lên mức 4000.30 USD/oz.\n\n2. Yếu tố vĩ mô:\n   - Chỉ số USD (DXY) tăng 2.20% (giá trị hiện tại: 99.87), đồng USD mạnh lên, thường gây áp lực giảm giá vàng.\n   - Lợi suất thực 10 năm (real yield) chỉ tăng nhẹ 0.02 điểm % (giá trị hiện tại: 1.82%), chi phí cơ hội nắm giữ vàng không thay đổi nhiều.\n   - Lãi suất Fed giảm 0.22 điểm % (giá trị hiện tại: 3.87%), có thể tạo áp lực tăng giá vàng nhưng mức độ giảm này chưa mạnh.\n\n3. Kịch bản:\n   Kết luận chính: Tăng (tin cậy: trung bình). Dù đồng USD mạnh lên gây áp lực giảm, nhưng lợi suất thực chỉ thay đổi nhẹ và lãi suất Fed giảm nhẹ đều có thể hỗ trợ giá vàng tăng trong ngắn hạn. Tuy nhiên, mức độ của các yếu tố này chưa đủ mạnh để tạo ra xu hướng rõ ràng, nên khả năng đi ngang hoặc dao động vẫn còn cao.\n\n4. Disclaimer: [Hệ thống tự thêm câu miễn trừ trách nhiệm cố định ở đây]"
+  },
+  {
+    "as_of_date": "2025-11-18",
+    "market_data_text": "Tính đến ngày 2025-11-18 (so với 2025-10-20, khoảng 21 phiên giao dịch trước):\n- Vàng (gold futures): hiện tại 4061.30 USD/oz, thay đổi -6.34%\n- Chỉ số USD (DXY): hiện tại 99.55, thay đổi +0.97%\n- Lợi suất thực 10 năm (real yield): hiện tại 1.85%, thay đổi +0.11 điểm %\n- Lãi suất Fed (fed funds rate): hiện tại 3.88%, thay đổi -0.23 điểm %",
+    "market_data_raw": {
+      "date_now": "2025-11-18",
+      "date_past": "2025-10-20",
+      "gold_now": 4061.300048828125,
+      "gold_past": 4336.39990234375,
+      "gold_pct": -6.343968723155312,
+      "dxy_now": 99.55000305175781,
+      "dxy_past": 98.58999633789062,
+      "dxy_pct": 0.9737364332350956,
+      "real_yield_now": 1.85,
+      "real_yield_past": 1.74,
+      "real_yield_diff": 0.1100000000000001,
+      "fed_rate_now": 3.88,
+      "fed_rate_past": 4.11,
+      "fed_rate_diff": -0.23000000000000043
+    },
+    "outcome": {
+      "date_now": "2025-11-18",
+      "date_future": "2025-12-18",
+      "gold_now": 4061.300048828125,
+      "gold_future": 4339.5,
+      "forward_return": 0.06850022106890347,
+      "label": "Tang"
+    },
+    "baseline_pred": "Di_ngang",
+    "bot_reply": "1. Diễn biến: Trong 21 phiên gần nhất tính đến ngày 2025-11-18, giá vàng giảm mạnh -6.34%, xuống còn 4061.30 USD/oz.\n\n2. Yếu tố vĩ mô:\n   - Chỉ số USD (DXY) tăng +0.97%: Đồng USD mạnh lên có thể tạo áp lực giảm đối với vàng.\n   - Lợi suất thực 10 năm (real yield) tăng +0.11 điểm %: Chi phí cơ hội nắm giữ vàng tăng, gây áp lực giảm giá vàng.\n   - Lãi suất Fed giảm -0.23 điểm %: Điều này có thể làm giảm sức hấp dẫn của USD so với các tài sản không sinh lãi như vàng.\n\n3. Kịch bản:\n   Kết luận chính: Giảm (tin cậy: trung bình). Dựa trên diễn biến giá vàng và các yếu tố vĩ mô, xu hướng ngắn hạn có khả năng tiếp tục đi xuống hoặc dao động trong biên độ hẹp ở mức thấp. Tuy nhiên, nếu lãi suất Fed tiếp tục giảm mạnh hơn nữa hoặc đồng USD mất sức mạnh, áp lực giảm đối với vàng có thể suy yếu nhanh chóng.\n\n4. Disclaimer: Hệ thống này dựa trên mô hình phân tích xu hướng ngắn hạn và không đảm bảo độ chính xác tuyệt đối. Các biến động thị trường có thể thay đổi do nhiều yếu tố không thể dự đoán trước."
+  },
+  {
+    "as_of_date": "2025-12-05",
+    "market_data_text": "Tính đến ngày 2025-12-05 (so với 2025-11-05, khoảng 21 phiên giao dịch trước):\n- Vàng (gold futures): hiện tại 4212.90 USD/oz, thay đổi +5.84%\n- Chỉ số USD (DXY): hiện tại 98.99, thay đổi -1.21%\n- Lợi suất thực 10 năm (real yield): hiện tại 1.88%, thay đổi +0.01 điểm %\n- Lãi suất Fed (fed funds rate): hiện tại 3.89%, thay đổi +0.02 điểm %",
+    "market_data_raw": {
+      "date_now": "2025-12-05",
+      "date_past": "2025-11-05",
+      "gold_now": 4212.89990234375,
+      "gold_past": 3980.300048828125,
+      "gold_pct": 5.843776867628528,
+      "dxy_now": 98.98999786376953,
+      "dxy_past": 100.19999694824219,
+      "dxy_pct": -1.2075839534183572,
+      "real_yield_now": 1.88,
+      "real_yield_past": 1.87,
+      "real_yield_diff": 0.009999999999999787,
+      "fed_rate_now": 3.89,
+      "fed_rate_past": 3.87,
+      "fed_rate_diff": 0.020000000000000018
+    },
+    "outcome": {
+      "date_now": "2025-12-05",
+      "date_future": "2026-01-07",
+      "gold_now": 4212.89990234375,
+      "gold_future": 4449.2998046875,
+      "forward_return": 0.056113344210299024,
+      "label": "Tang"
+    },
+    "baseline_pred": "Di_ngang",
+    "bot_reply": "1. Diễn biến: Trong 21 phiên gần nhất tính đến ngày 2025-12-05, giá vàng tăng mạnh 5.84%, lên mức 4212.90 USD/oz.\n\n2. Yếu tố vĩ mô:\n   - Chỉ số USD (DXY) giảm 1.21% (đồng USD yếu đi), thường hỗ trợ giá vàng.\n   - Lợi suất thực 10 năm (real yield) tăng nhẹ 0.01 điểm %, tác động hạn chế đến giá vàng.\n   - Lãi suất Fed tăng 0.02 điểm %, nhưng không phải yếu tố chi phối biến động gần đây.\n\n3. Kịch bản: Kết luận chính: Tăng (tin cậy: trung bình). Dựa trên diễn biến giá vàng mạnh mẽ và xu hướng đồng USD yếu đi, kịch bản có xác suất cao là giá vàng tiếp tục tăng trong ngắn hạn. Tuy nhiên, mức độ tin cậy chỉ ở mức trung bình do lợi suất thực tăng nhẹ và lãi suất Fed tăng nhẹ vẫn tạo áp lực giảm giá nhất định.\n\n4. Disclaimer: Hệ thống này dự đoán xu hướng ngắn hạn của thị trường vàng dựa trên các yếu tố vĩ mô hiện tại nhưng không đảm bảo chính xác 100%."
+  },
+  {
+    "as_of_date": "2025-12-15",
+    "market_data_text": "Tính đến ngày 2025-12-15 (so với 2025-11-13, khoảng 21 phiên giao dịch trước):\n- Vàng (gold futures): hiện tại 4306.70 USD/oz, thay đổi +2.86%\n- Chỉ số USD (DXY): hiện tại 98.15, thay đổi -1.04%\n- Lợi suất thực 10 năm (real yield): hiện tại 1.93%, thay đổi +0.10 điểm %\n- Lãi suất Fed (fed funds rate): hiện tại 3.64%, thay đổi -0.24 điểm %",
+    "market_data_raw": {
+      "date_now": "2025-12-15",
+      "date_past": "2025-11-13",
+      "gold_now": 4306.7001953125,
+      "gold_past": 4186.89990234375,
+      "gold_pct": 2.861312564498807,
+      "dxy_now": 98.1500015258789,
+      "dxy_past": 99.18000030517578,
+      "dxy_pct": -1.0385145958132487,
+      "real_yield_now": 1.93,
+      "real_yield_past": 1.83,
+      "real_yield_diff": 0.09999999999999987,
+      "fed_rate_now": 3.64,
+      "fed_rate_past": 3.88,
+      "fed_rate_diff": -0.23999999999999977
+    },
+    "outcome": {
+      "date_now": "2025-12-15",
+      "date_future": "2026-01-15",
+      "gold_now": 4306.7001953125,
+      "gold_future": 4616.2998046875,
+      "forward_return": 0.07188789452118689,
+      "label": "Tang"
+    },
+    "baseline_pred": "Di_ngang",
+    "bot_reply": "1. Diễn biến: Trong 21 phiên gần nhất tính đến ngày 2025-12-15, giá vàng tăng nhẹ 2.86%, lên mức 4306.70 USD/oz.\n\n2. Yếu tố vĩ mô:\n   - Chỉ số USD (DXY) giảm 1.04% (đồng USD yếu đi), thường hỗ trợ giá vàng.\n   - Lợi suất thực 10 năm tăng 0.10 điểm %, tạo áp lực giảm nhẹ lên giá vàng nhưng không mạnh.\n   - Lãi suất Fed giảm 0.24 điểm %, có thể làm giảm sức hấp dẫn của các tài sản không sinh lãi như vàng.\n\n3. Kịch bản: Kết luận chính: Tăng (tin cậy: trung bình). Dựa trên diễn biến gần đây và yếu tố vĩ mô hiện tại, xu hướng tăng giá vàng trong ngắn hạn vẫn được duy trì với xác suất cao. Tuy nhiên, sự giảm nhẹ của lãi suất Fed có thể làm giảm sức hấp dẫn của vàng so với các tài sản khác. Nếu đồng USD tiếp tục yếu đi mạnh mẽ hoặc lợi suất thực không tăng thêm, áp lực tăng giá vàng sẽ gia tăng.\n\n4. Disclaimer: Hệ thống này cung cấp thông tin dựa trên dữ liệu thời gian thực và mô hình dự đoán xu hướng ngắn hạn. Đây không phải là lời khuyên đầu tư chuyên nghiệp và khách hàng nên cân nhắc kỹ trước khi đưa ra quyết định đầu tư."
+  },
+  {
+    "as_of_date": "2025-12-30",
+    "market_data_text": "Tính đến ngày 2025-12-30 (so với 2025-11-28, khoảng 21 phiên giao dịch trước):\n- Vàng (gold futures): hiện tại 4370.10 USD/oz, thay đổi +3.60%\n- Chỉ số USD (DXY): hiện tại 98.24, thay đổi -1.23%\n- Lợi suất thực 10 năm (real yield): hiện tại 1.90%, thay đổi +0.11 điểm %\n- Lãi suất Fed (fed funds rate): hiện tại 3.64%, thay đổi -0.25 điểm %",
+    "market_data_raw": {
+      "date_now": "2025-12-30",
+      "date_past": "2025-11-28",
+      "gold_now": 4370.10009765625,
+      "gold_past": 4218.2998046875,
+      "gold_pct": 3.5986131853422325,
+      "dxy_now": 98.23999786376953,
+      "dxy_past": 99.45999908447266,
+      "dxy_pct": -1.2266250069708549,
+      "real_yield_now": 1.9,
+      "real_yield_past": 1.79,
+      "real_yield_diff": 0.10999999999999988,
+      "fed_rate_now": 3.64,
+      "fed_rate_past": 3.89,
+      "fed_rate_diff": -0.25
+    },
+    "outcome": {
+      "date_now": "2025-12-30",
+      "date_future": "2026-01-30",
+      "gold_now": 4370.10009765625,
+      "gold_future": 4713.89990234375,
+      "forward_return": 0.07867092217679064,
+      "label": "Tang"
+    },
+    "baseline_pred": "Di_ngang",
+    "bot_reply": "1. Diễn biến: Trong 21 phiên gần nhất tính đến ngày 2025-12-30, giá vàng tăng nhẹ 3.60%, lên mức 4370.10 USD/oz.\n\n2. Yếu tố vĩ mô:\n   - Chỉ số USD (DXY) giảm 1.23% (đồng USD yếu đi), thường hỗ trợ giá vàng.\n   - Lợi suất thực 10 năm tăng 0.11 điểm %, tạo áp lực giảm nhẹ lên giá vàng nhưng không mạnh.\n   - Lãi suất Fed giảm 0.25 điểm %, có thể làm giảm sức hấp dẫn của tài sản không sinh lãi như vàng.\n\n3. Kịch bản: Kết luận chính: Tăng (tin cậy: trung bình). Dựa trên diễn biến tăng nhẹ trong ngắn hạn và yếu tố vĩ mô hỗ trợ giá vàng (USD yếu đi), xu hướng tăng có khả năng tiếp tục trong ngắn hạn. Tuy nhiên, mức độ tin cậy chỉ ở mức trung bình do sự tác động phức tạp của các yếu tố kinh tế.\n\n4. Disclaimer: Hệ thống này dự đoán xu hướng ngắn hạn với xác suất và không đảm bảo tính chính xác tuyệt đối."
+  },
+  {
+    "as_of_date": "2026-01-22",
+    "market_data_text": "Tính đến ngày 2026-01-22 (so với 2025-12-19, khoảng 21 phiên giao dịch trước):\n- Vàng (gold futures): hiện tại 4908.80 USD/oz, thay đổi +12.55%\n- Chỉ số USD (DXY): hiện tại 98.36, thay đổi -0.24%\n- Lợi suất thực 10 năm (real yield): hiện tại 1.95%, thay đổi +0.03 điểm %\n- Lãi suất Fed (fed funds rate): hiện tại 3.64%, thay đổi +0.00 điểm %",
+    "market_data_raw": {
+      "date_now": "2026-01-22",
+      "date_past": "2025-12-19",
+      "gold_now": 4908.7998046875,
+      "gold_past": 4361.39990234375,
+      "gold_pct": 12.551013770821282,
+      "dxy_now": 98.36000061035156,
+      "dxy_past": 98.5999984741211,
+      "dxy_pct": -0.24340554511521817,
+      "real_yield_now": 1.95,
+      "real_yield_past": 1.92,
+      "real_yield_diff": 0.030000000000000027,
+      "fed_rate_now": 3.64,
+      "fed_rate_past": 3.64,
+      "fed_rate_diff": 0.0
+    },
+    "outcome": {
+      "date_now": "2026-01-22",
+      "date_future": "2026-02-23",
+      "gold_now": 4908.7998046875,
+      "gold_future": 5204.7001953125,
+      "forward_return": 0.0602795800192217,
+      "label": "Tang"
+    },
+    "baseline_pred": "Di_ngang",
+    "bot_reply": "1. Diễn biến: Trong 21 phiên gần nhất tính đến ngày 2026-01-22, giá vàng tăng mạnh 12.55%, lên mức 4908.80 USD/oz.\n\n2. Yếu tố vĩ mô:\n   - Chỉ số USD (DXY) giảm -0.24% (đồng USD yếu đi), thường hỗ trợ giá vàng.\n   - Lợi suất thực 10 năm (real yield) tăng +0.03 điểm %, nhưng mức tăng này nhỏ và chưa đủ mạnh để gây áp lực giảm lên vàng.\n   - Lãi suất Fed giữ nguyên ở 3.64%, không phải yếu tố chi phối biến động vừa qua.\n\n3. Kịch bản: Kết luận chính: Tăng (tin cậy: cao). Dựa trên diễn biến giá tăng mạnh và chỉ số USD yếu đi, xu hướng ngắn hạn có khả năng tiếp tục duy trì đà tăng. Tuy nhiên, mức độ tin cậy vẫn cần được đánh giá kỹ lưỡng do các yếu tố vĩ mô khác chưa tạo ra áp lực giảm rõ rệt lên vàng.\n\n4. Disclaimer: Hệ thống này dự đoán xu hướng ngắn hạn của thị trường vàng dựa trên dữ liệu thời gian thực và không đảm bảo tính chính xác tuyệt đối."
+  },
+  {
+    "as_of_date": "2026-01-29",
+    "market_data_text": "Tính đến ngày 2026-01-29 (so với 2025-12-29, khoảng 21 phiên giao dịch trước):\n- Vàng (gold futures): hiện tại 5318.40 USD/oz, thay đổi +22.97%\n- Chỉ số USD (DXY): hiện tại 96.28, thay đổi -1.80%\n- Lợi suất thực 10 năm (real yield): hiện tại 1.89%, thay đổi -0.01 điểm %\n- Lãi suất Fed (fed funds rate): hiện tại 3.64%, thay đổi +0.00 điểm %",
+    "market_data_raw": {
+      "date_now": "2026-01-29",
+      "date_past": "2025-12-29",
+      "gold_now": 5318.39990234375,
+      "gold_past": 4325.10009765625,
+      "gold_pct": 22.965937949638764,
+      "dxy_now": 96.27999877929688,
+      "dxy_past": 98.04000091552734,
+      "dxy_pct": -1.795187800688529,
+      "real_yield_now": 1.89,
+      "real_yield_past": 1.9,
+      "real_yield_diff": -0.010000000000000009,
+      "fed_rate_now": 3.64,
+      "fed_rate_past": 3.64,
+      "fed_rate_diff": 0.0
+    },
+    "outcome": {
+      "date_now": "2026-01-29",
+      "date_future": "2026-03-02",
+      "gold_now": 5318.39990234375,
+      "gold_future": 5294.39990234375,
+      "forward_return": -0.004512635461922205,
+      "label": "Di_ngang"
+    },
+    "baseline_pred": "Di_ngang",
+    "bot_reply": "1. Diễn biến: Trong 21 phiên gần nhất tính đến ngày 2026-01-29, giá vàng tăng mạnh 22.97%, lên mức 5318.40 USD/oz.\n\n2. Yếu tố vĩ mô:\n   - Chỉ số USD (DXY) giảm 1.80% (đồng USD yếu đi), thường hỗ trợ giá vàng.\n   - Lợi suất thực 10 năm (real yield) giảm 0.01 điểm %, giảm áp lực giảm giá đối với vàng.\n   - Lãi suất Fed giữ nguyên ở 3.64%, không phải yếu tố chi phối biến động vừa qua.\n\n3. Kịch bản: Kết luận chính: Tăng (tin cậy: cao). Với đồng USD yếu đi và lợi suất thực giảm, xu hướng tăng giá vàng trong ngắn hạn có xác suất rất cao. Nếu tình hình tiếp tục duy trì như hiện tại hoặc đồng USD tiếp tục yếu đi mạnh mẽ hơn, áp lực tăng giá đối với vàng sẽ càng lớn. Tuy nhiên, cần theo dõi sát diễn biến thị trường để điều chỉnh nhận định nếu có thay đổi.\n\n4. Disclaimer: Hệ thống này dựa trên mô hình phân tích xu hướng ngắn hạn và được so sánh (benchmark) với một baseline đơn giản. Mô hình không dự đoán chính xác giá trị cụ thể của vàng trong tương lai, chỉ cung cấp thông tin về xu hướng chung có thể xảy ra."
+  },
+  {
+    "as_of_date": "2026-02-19",
+    "market_data_text": "Tính đến ngày 2026-02-19 (so với 2026-01-20, khoảng 21 phiên giao dịch trước):\n- Vàng (gold futures): hiện tại 4975.90 USD/oz, thay đổi +4.54%\n- Chỉ số USD (DXY): hiện tại 97.93, thay đổi -0.72%\n- Lợi suất thực 10 năm (real yield): hiện tại 1.79%, thay đổi -0.18 điểm %\n- Lãi suất Fed (fed funds rate): hiện tại 3.64%, thay đổi +0.00 điểm %",
+    "market_data_raw": {
+      "date_now": "2026-02-19",
+      "date_past": "2026-01-20",
+      "gold_now": 4975.89990234375,
+      "gold_past": 4759.60009765625,
+      "gold_pct": 4.544495340984878,
+      "dxy_now": 97.93000030517578,
+      "dxy_past": 98.63999938964844,
+      "dxy_pct": -0.7197882085015155,
+      "real_yield_now": 1.79,
+      "real_yield_past": 1.97,
+      "real_yield_diff": -0.17999999999999994,
+      "fed_rate_now": 3.64,
+      "fed_rate_past": 3.64,
+      "fed_rate_diff": 0.0
+    },
+    "outcome": {
+      "date_now": "2026-02-19",
+      "date_future": "2026-03-20",
+      "gold_now": 4975.89990234375,
+      "gold_future": 4570.39990234375,
+      "forward_return": -0.08149279687258204,
+      "label": "Giam"
+    },
+    "baseline_pred": "Di_ngang",
+    "bot_reply": "1. Diễn biến: Trong 21 phiên gần nhất tính đến ngày 2026-02-19, giá vàng tăng mạnh 4.54%, lên mức 4975.90 USD/oz.\n\n2. Yếu tố vĩ mô:\n   - Chỉ số USD (DXY) giảm -0.72% (đồng USD yếu đi), thường hỗ trợ giá vàng.\n   - Lợi suất thực 10 năm (real yield) giảm -0.18 điểm %, giảm áp lực giảm giá đối với vàng.\n   - Lãi suất Fed giữ nguyên ở 3.64%, không phải yếu tố chi phối biến động vừa qua.\n\n3. Kịch bản: Kết luận chính: Tăng (tin cậy: trung bình). Dựa trên diễn biến tăng mạnh của giá vàng và xu hướng giảm của chỉ số USD cùng lợi suất thực, kịch bản có xác suất cao hơn là giá vàng tiếp tục duy trì xu hướng tăng trong ngắn hạn. Tuy nhiên, đây không phải dự đoán chắc chắn - nếu đồng USD hoặc lợi suất thực đảo chiều mạnh mẽ, áp lực tăng giá có thể suy yếu nhanh chóng.\n\n4. Disclaimer: Hệ thống này cung cấp thông tin phân tích dựa trên dữ liệu thời gian thực và mô hình dự đoán xu hướng ngắn hạn. Đây không phải là lời khuyên đầu tư chuyên nghiệp và khách hàng nên cân nhắc kỹ trước khi đưa ra quyết định đầu tư."
+  },
+  {
+    "as_of_date": "2026-03-05",
+    "market_data_text": "Tính đến ngày 2026-03-05 (so với 2026-02-03, khoảng 21 phiên giao dịch trước):\n- Vàng (gold futures): hiện tại 5065.30 USD/oz, thay đổi +3.30%\n- Chỉ số USD (DXY): hiện tại 99.32, thay đổi +1.93%\n- Lợi suất thực 10 năm (real yield): hiện tại 1.82%, thay đổi -0.10 điểm %\n- Lãi suất Fed (fed funds rate): hiện tại 3.64%, thay đổi +0.00 điểm %",
+    "market_data_raw": {
+      "date_now": "2026-03-05",
+      "date_past": "2026-02-03",
+      "gold_now": 5065.2998046875,
+      "gold_past": 4903.7001953125,
+      "gold_pct": 3.2954626697911675,
+      "dxy_now": 99.31999969482422,
+      "dxy_past": 97.44000244140625,
+      "dxy_pct": 1.9293895795502165,
+      "real_yield_now": 1.82,
+      "real_yield_past": 1.92,
+      "real_yield_diff": -0.09999999999999987,
+      "fed_rate_now": 3.64,
+      "fed_rate_past": 3.64,
+      "fed_rate_diff": 0.0
+    },
+    "outcome": {
+      "date_now": "2026-03-05",
+      "date_future": "2026-04-06",
+      "gold_now": 5065.2998046875,
+      "gold_future": 4656.7998046875,
+      "forward_return": -0.08064675651024018,
+      "label": "Giam"
+    },
+    "baseline_pred": "Di_ngang",
+    "bot_reply": "1. Diễn biến: Trong 21 phiên gần nhất tính đến ngày 2026-03-05, giá vàng tăng nhẹ 3.30%, lên mức 5065.30 USD/oz.\n\n2. Yếu tố vĩ mô:\n   - Chỉ số USD (DXY) tăng 1.93% (giá trị hiện tại: 99.32), tạo áp lực giảm giá vàng do đồng USD mạnh lên.\n   - Lợi suất thực 10 năm giảm 0.10 điểm % (giá trị hiện tại: 1.82%), giảm áp lực giảm giá đối với vàng nhưng không đủ mạnh để đảo chiều xu hướng tăng nhẹ.\n\n3. Kịch bản:\n   Kết luận chính: Tăng (tin cậy: trung bình). Dựa trên diễn biến gần đây, xu hướng ngắn hạn có khả năng tiếp tục đi lên do mức tăng của DXY chưa đủ mạnh để tạo áp lực giảm giá vàng. Tuy nhiên, sự suy yếu nhẹ của lợi suất thực cũng không hỗ trợ rõ rệt cho kịch bản tăng giá. Nếu DXY duy trì mức tăng hiện tại hoặc lợi suất thực tiếp tục giảm sâu hơn, khả năng tăng giá có thể bị ảnh hưởng. Ngược lại, nếu DXY đảo chiều hoặc lợi suất thực phục hồi, áp lực giảm giá vàng có thể gia tăng.\n\n4. Disclaimer: [Hệ thống tự thêm câu miễn trừ trách nhiệm cố định ở đây]"
+  },
+  {
+    "as_of_date": "2026-03-25",
+    "market_data_text": "Tính đến ngày 2026-03-25 (so với 2026-02-24, khoảng 21 phiên giao dịch trước):\n- Vàng (gold futures): hiện tại 4549.80 USD/oz, thay đổi -11.75%\n- Chỉ số USD (DXY): hiện tại 99.60, thay đổi +1.76%\n- Lợi suất thực 10 năm (real yield): hiện tại 2.02%, thay đổi +0.24 điểm %\n- Lãi suất Fed (fed funds rate): hiện tại 3.64%, thay đổi +0.00 điểm %",
+    "market_data_raw": {
+      "date_now": "2026-03-25",
+      "date_past": "2026-02-24",
+      "gold_now": 4549.7998046875,
+      "gold_past": 5155.7998046875,
+      "gold_pct": -11.75375350006885,
+      "dxy_now": 99.5999984741211,
+      "dxy_past": 97.87999725341797,
+      "dxy_pct": 1.757255076591313,
+      "real_yield_now": 2.02,
+      "real_yield_past": 1.78,
+      "real_yield_diff": 0.24,
+      "fed_rate_now": 3.64,
+      "fed_rate_past": 3.64,
+      "fed_rate_diff": 0.0
+    },
+    "outcome": {
+      "date_now": "2026-03-25",
+      "date_future": "2026-04-24",
+      "gold_now": 4549.7998046875,
+      "gold_future": 4722.2998046875,
+      "forward_return": 0.037913756078295856,
+      "label": "Tang"
+    },
+    "baseline_pred": "Di_ngang",
+    "bot_reply": "1. Diễn biến: Trong 21 phiên gần nhất tính đến ngày 2026-03-25, giá vàng giảm mạnh -11.75%, xuống còn 4549.80 USD/oz.\n\n2. Yếu tố vĩ mô:\n   - Chỉ số USD (DXY) tăng +1.76%: Đồng USD mạnh lên có thể hỗ trợ giá vàng do nhu cầu mua vào để phòng ngừa rủi ro.\n   - Lợi suất thực 10 năm (real yield) tăng +0.24 điểm %: Chi phí cơ hội nắm giữ vàng tăng, gây áp lực giảm giá vàng.\n   - Lãi suất Fed giữ nguyên ở 3.64%: Không phải yếu tố chi phối biến động vừa qua.\n\n3. Kịch bản:\n   Kết luận chính: Giảm (tin cậy: trung bình). Diễn biến giảm mạnh của giá vàng gần đây do đồng USD mạnh lên và lợi suất thực tăng, tạo áp lực giảm giá. Tuy nhiên, DXY đã tăng mạnh trong thời gian ngắn, nên khả năng đảo chiều hoặc đi ngang là có thể nếu đồng USD yếu đi nhanh chóng hoặc lợi suất thực không tiếp tục tăng.\n\n4. Disclaimer: Hệ thống này cung cấp thông tin dựa trên dữ liệu hiện tại và mô hình dự đoán xu hướng ngắn hạn. Đây không phải là lời khuyên đầu tư chuyên nghiệp, và khách hàng nên cân nhắc kỹ trước khi đưa ra quyết định đầu tư."
+  },
+  {
+    "as_of_date": "2026-04-01",
+    "market_data_text": "Tính đến ngày 2026-04-01 (so với 2026-03-03, khoảng 21 phiên giao dịch trước):\n- Vàng (gold futures): hiện tại 4783.20 USD/oz, thay đổi -6.35%\n- Chỉ số USD (DXY): hiện tại 99.65, thay đổi +0.61%\n- Lợi suất thực 10 năm (real yield): hiện tại 2.02%, thay đổi +0.25 điểm %\n- Lãi suất Fed (fed funds rate): hiện tại 3.64%, thay đổi +0.00 điểm %",
+    "market_data_raw": {
+      "date_now": "2026-04-01",
+      "date_past": "2026-03-03",
+      "gold_now": 4783.2001953125,
+      "gold_past": 5107.39990234375,
+      "gold_pct": -6.347646811100048,
+      "dxy_now": 99.6500015258789,
+      "dxy_past": 99.05000305175781,
+      "dxy_pct": 0.6057531101817021,
+      "real_yield_now": 2.02,
+      "real_yield_past": 1.77,
+      "real_yield_diff": 0.25,
+      "fed_rate_now": 3.64,
+      "fed_rate_past": 3.64,
+      "fed_rate_diff": 0.0
+    },
+    "outcome": {
+      "date_now": "2026-04-01",
+      "date_future": "2026-05-01",
+      "gold_now": 4783.2001953125,
+      "gold_future": 4629.89990234375,
+      "forward_return": -0.03204973379934696,
+      "label": "Giam"
+    },
+    "baseline_pred": "Di_ngang",
+    "bot_reply": "1. Diễn biến: Trong 21 phiên gần nhất tính đến ngày 2026-04-01, giá vàng giảm mạnh -6.35%, xuống còn 4783.20 USD/oz.\n\n2. Yếu tố vĩ mô:\n   - Chỉ số USD (DXY) tăng nhẹ +0.61%: Đồng USD đang yếu đi một chút so với các đồng tiền chủ chốt, tạo áp lực giảm giá đối với vàng.\n   - Lợi suất thực 10 năm (real yield) tăng +0.25 điểm %: Chi phí cơ hội nắm giữ vàng - tài sản không sinh lãi - tăng lên, gây áp lực giảm giá vàng.\n   - Lãi suất Fed giữ nguyên trong giai đoạn này: Không phải yếu tố chi phối biến động vừa qua.\n\n3. Kịch bản:\n   Kết luận chính: Giảm (tin cậy: trung bình). Với cả USD yếu đi một chút và lợi suất thực tăng cùng chiều - hai yếu tố lý thuyết đều bất lợi cho vàng - kịch bản có xác suất cao hơn trong ngắn hạn là vàng tiếp tục chịu áp lực giảm hoặc đi ngang ở vùng thấp. Đây không phải kết luận chắc chắn: nếu lợi suất thực hoặc DXY đảo chiều (ví dụ do dữ liệu lạm phát/việc làm mới làm thay đổi kỳ vọng về lãi suất Fed), áp lực giảm giá có thể suy yếu nhanh hoặc đảo ngược.\n\n4. Disclaimer: Hệ thống sẽ tự động thêm câu miễn trừ trách nhiệm cố định ở đây."
+  },
+  {
+    "as_of_date": "2026-04-10",
+    "market_data_text": "Tính đến ngày 2026-04-10 (so với 2026-03-11, khoảng 21 phiên giao dịch trước):\n- Vàng (gold futures): hiện tại 4761.90 USD/oz, thay đổi -7.85%\n- Chỉ số USD (DXY): hiện tại 98.65, thay đổi -0.58%\n- Lợi suất thực 10 năm (real yield): hiện tại 1.95%, thay đổi +0.10 điểm %\n- Lãi suất Fed (fed funds rate): hiện tại 3.64%, thay đổi +0.00 điểm %",
+    "market_data_raw": {
+      "date_now": "2026-04-10",
+      "date_past": "2026-03-11",
+      "gold_now": 4761.89990234375,
+      "gold_past": 5167.39990234375,
+      "gold_pct": -7.847273438544587,
+      "dxy_now": 98.6500015258789,
+      "dxy_past": 99.2300033569336,
+      "dxy_pct": -0.5845024805334349,
+      "real_yield_now": 1.95,
+      "real_yield_past": 1.85,
+      "real_yield_diff": 0.09999999999999987,
+      "fed_rate_now": 3.64,
+      "fed_rate_past": 3.64,
+      "fed_rate_diff": 0.0
+    },
+    "outcome": {
+      "date_now": "2026-04-10",
+      "date_future": "2026-05-11",
+      "gold_now": 4761.89990234375,
+      "gold_future": 4718.7001953125,
+      "forward_return": -0.009071947734556038,
+      "label": "Di_ngang"
+    },
+    "baseline_pred": "Di_ngang",
+    "bot_reply": "1. Diễn biến: Trong 21 phiên gần nhất tính đến ngày 2026-04-10, giá vàng giảm mạnh 7.85%, xuống còn 4761.90 USD/oz.\n2. Yếu tố vĩ mô:\n   - Chỉ số DXY giảm -0.58% (đồng USD yếu đi), thường hỗ trợ tăng giá vàng.\n   - Lợi suất thực 10 năm tăng +0.10 điểm %, tạo áp lực giảm lên giá vàng do chi phí cơ hội nắm giữ vàng tăng.\n   - Lãi suất Fed giữ nguyên trong giai đoạn này, không phải yếu tố chính giải thích biến động vừa qua.\n\n3. Kịch bản: Kết luận chính: Giảm (tin cậy: trung bình). Dựa trên diễn biến giá vàng giảm mạnh và áp lực từ lợi suất thực tăng, xu hướng ngắn hạn có thể tiếp tục đi xuống hoặc dao động trong biên độ hẹp ở mức thấp. Tuy nhiên, sự yếu đi của đồng USD tạo ra một yếu tố hỗ trợ tiềm năng cho giá vàng. Nếu đồng USD tiếp tục yếu đi nhanh hơn so với tốc độ tăng lợi suất thực, áp lực giảm giá có thể suy yếu; ngược lại, nếu lợi suất thực tiếp tục tăng mạnh, xu hướng giảm giá có thể duy trì.\n\n4. Disclaimer: Hệ thống này cung cấp thông tin dựa trên dữ liệu lịch sử và phân tích thị trường hiện tại, nhưng không đảm bảo tính chính xác tuyệt đối của các dự đoán. Khách hàng nên cân nhắc kỹ lưỡng trước khi đưa ra quyết định đầu tư."
+  },
+  {
+    "as_of_date": "2026-05-05",
+    "market_data_text": "Tính đến ngày 2026-05-05 (so với 2026-04-06, khoảng 21 phiên giao dịch trước):\n- Vàng (gold futures): hiện tại 4555.80 USD/oz, thay đổi -2.17%\n- Chỉ số USD (DXY): hiện tại 98.48, thay đổi -1.50%\n- Lợi suất thực 10 năm (real yield): hiện tại 1.96%, thay đổi -0.02 điểm %\n- Lãi suất Fed (fed funds rate): hiện tại 3.64%, thay đổi +0.00 điểm %",
+    "market_data_raw": {
+      "date_now": "2026-05-05",
+      "date_past": "2026-04-06",
+      "gold_now": 4555.7998046875,
+      "gold_past": 4656.7998046875,
+      "gold_pct": -2.168871418915929,
+      "dxy_now": 98.4800033569336,
+      "dxy_past": 99.9800033569336,
+      "dxy_pct": -1.5003000096378525,
+      "real_yield_now": 1.96,
+      "real_yield_past": 1.98,
+      "real_yield_diff": -0.020000000000000018,
+      "fed_rate_now": 3.64,
+      "fed_rate_past": 3.64,
+      "fed_rate_diff": 0.0
+    },
+    "outcome": {
+      "date_now": "2026-05-05",
+      "date_future": "2026-06-04",
+      "gold_now": 4555.7998046875,
+      "gold_future": 4475.7998046875,
+      "forward_return": -0.01756003411688269,
+      "label": "Di_ngang"
+    },
+    "baseline_pred": "Di_ngang",
+    "bot_reply": "1. Diễn biến: Trong 21 phiên gần nhất tính đến ngày 2026-05-05, giá vàng giảm 2.17%, xuống còn 4555.80 USD/oz.\n\n2. Yếu tố vĩ mô:\n   - Chỉ số USD (DXY) giảm 1.50% (đồng USD yếu đi), thường hỗ trợ tăng giá vàng.\n   - Lợi suất thực 10 năm (real yield) giảm 0.02 điểm %, giảm áp lực giảm giá đối với vàng.\n   - Lãi suất Fed giữ nguyên trong giai đoạn này, không phải yếu tố chi phối biến động vừa qua.\n\n3. Kịch bản: Kết luận chính: Giảm (tin cậy: trung bình). Diễn biến giảm giá vàng gần đây chủ yếu do đồng USD mạnh lên và lợi suất thực tăng, nhưng xu hướng giảm đang có dấu hiệu suy yếu với DXY yếu đi và lợi suất thực giảm nhẹ. Trong ngắn hạn, khả năng giá vàng tiếp tục giảm hoặc đi ngang ở mức thấp là có thể, nhưng không phải dự đoán chắc chắn. Nếu đồng USD tiếp tục yếu đi nhanh hơn so với sự giảm của lợi suất thực, áp lực giảm giá vàng có thể suy yếu; ngược lại, nếu DXY mạnh lên nhanh chóng, áp lực giảm giá có thể gia tăng.\n\n4. Disclaimer: Hệ thống sẽ tự động thêm câu miễn trừ trách nhiệm cố định ở đây."
+  },
+  {
+    "as_of_date": "2026-05-20",
+    "market_data_text": "Tính đến ngày 2026-05-20 (so với 2026-04-21, khoảng 21 phiên giao dịch trước):\n- Vàng (gold futures): hiện tại 4531.30 USD/oz, thay đổi -3.56%\n- Chỉ số USD (DXY): hiện tại 99.11, thay đổi +0.71%\n- Lợi suất thực 10 năm (real yield): hiện tại 2.13%, thay đổi +0.21 điểm %\n- Lãi suất Fed (fed funds rate): hiện tại 3.62%, thay đổi -0.02 điểm %",
+    "market_data_raw": {
+      "date_now": "2026-05-20",
+      "date_past": "2026-04-21",
+      "gold_now": 4531.2998046875,
+      "gold_past": 4698.39990234375,
+      "gold_pct": -3.5565320349358465,
+      "dxy_now": 99.11000061035156,
+      "dxy_past": 98.41000366210938,
+      "dxy_pct": 0.7113066987027317,
+      "real_yield_now": 2.13,
+      "real_yield_past": 1.92,
+      "real_yield_diff": 0.20999999999999996,
+      "fed_rate_now": 3.62,
+      "fed_rate_past": 3.64,
+      "fed_rate_diff": -0.020000000000000018
+    },
+    "outcome": {
+      "date_now": "2026-05-20",
+      "date_future": "2026-06-22",
+      "gold_now": 4531.2998046875,
+      "gold_future": 4181.89990234375,
+      "forward_return": -0.07710809644118136,
+      "label": "Giam"
+    },
+    "baseline_pred": "Di_ngang",
+    "bot_reply": "1. Diễn biến: Trong 21 phiên gần nhất tính đến ngày 2026-05-20, giá vàng giảm 3.56%, xuống còn 4531.30 USD/oz.\n\n2. Yếu tố vĩ mô:\n   - Chỉ số USD (DXY) tăng 0.71%: Đồng USD mạnh lên có thể tạo áp lực giảm đối với vàng.\n   - Lợi suất thực 10 năm (real yield) tăng 0.21 điểm %: Chi phí cơ hội nắm giữ vàng tăng, gây áp lực giảm giá vàng.\n   - Lãi suất Fed giảm nhẹ -0.02 điểm %: Tuy nhiên, mức thay đổi này nhỏ và không phải yếu tố chính chi phối biến động gần đây.\n\n3. Kịch bản:\n   Kết luận chính: Giảm (tin cậy: trung bình). Diễn biến giảm giá vàng trong 21 phiên qua đi cùng với xu hướng tăng của chỉ số DXY và lợi suất thực, cho thấy áp lực giảm giá vẫn còn hiện hữu. Tuy nhiên, mức thay đổi lãi suất Fed không lớn nên tác động hạn chế. Nếu DXY tiếp tục tăng mạnh hoặc lợi suất thực duy trì đà tăng, áp lực giảm giá có thể gia tăng. Ngược lại, nếu USD yếu đi nhanh chóng hoặc lợi suất thực đảo chiều, vàng có thể hồi phục.\n\n4. Disclaimer: [Hệ thống tự thêm câu miễn trừ trách nhiệm cố định ở đây]"
+  },
+  {
+    "as_of_date": "2026-05-26",
+    "market_data_text": "Tính đến ngày 2026-05-26 (so với 2026-04-24, khoảng 21 phiên giao dịch trước):\n- Vàng (gold futures): hiện tại 4500.40 USD/oz, thay đổi -4.70%\n- Chỉ số USD (DXY): hiện tại 99.17, thay đổi +0.67%\n- Lợi suất thực 10 năm (real yield): hiện tại 2.10%, thay đổi +0.21 điểm %\n- Lãi suất Fed (fed funds rate): hiện tại 3.62%, thay đổi -0.02 điểm %",
+    "market_data_raw": {
+      "date_now": "2026-05-26",
+      "date_past": "2026-04-24",
+      "gold_now": 4500.39990234375,
+      "gold_past": 4722.2998046875,
+      "gold_pct": -4.698979554908508,
+      "dxy_now": 99.16999816894531,
+      "dxy_past": 98.51000213623047,
+      "dxy_pct": 0.6699787010481724,
+      "real_yield_now": 2.1,
+      "real_yield_past": 1.89,
+      "real_yield_diff": 0.2100000000000002,
+      "fed_rate_now": 3.62,
+      "fed_rate_past": 3.64,
+      "fed_rate_diff": -0.020000000000000018
+    },
+    "outcome": {
+      "date_now": "2026-05-26",
+      "date_future": "2026-06-25",
+      "gold_now": 4500.39990234375,
+      "gold_future": 4030.5,
+      "forward_return": -0.10441292163814869,
+      "label": "Giam"
+    },
+    "baseline_pred": "Di_ngang",
+    "bot_reply": "1. Diễn biến: Trong 21 phiên gần nhất tính đến ngày 2026-05-26, giá vàng giảm 4.70%, xuống còn 4500.40 USD/oz.\n\n2. Yếu tố vĩ mô:\n   - Chỉ số USD (DXY) tăng 0.67%: Đồng USD mạnh lên có thể tạo áp lực giảm đối với vàng.\n   - Lợi suất thực 10 năm (real yield) tăng 0.21 điểm %: Chi phí cơ hội nắm giữ vàng tăng, gây áp lực giảm giá vàng.\n   - Lãi suất Fed giảm nhẹ -0.02 điểm %: Tuy lãi suất Fed giảm nhưng mức độ này không lớn nên chưa phải yếu tố chi phối mạnh mẽ.\n\n3. Kịch bản:\n   Kết luận chính: Giảm (tin cậy: trung bình). Dựa trên diễn biến giá vàng và các chỉ số vĩ mô, xu hướng ngắn hạn có thể tiếp tục đi ngang hoặc giảm nhẹ do đồng USD mạnh lên và lợi suất thực tăng. Tuy nhiên, mức độ giảm có thể bị hạn chế bởi lãi suất Fed đã giảm nhưng chưa tạo ra áp lực mua vào đáng kể cho vàng.\n\n4. Disclaimer: Hệ thống này cung cấp thông tin dựa trên dữ liệu thời gian thực và mô hình dự đoán xu hướng chung. Đây không phải là lời khuyên đầu tư cụ thể, khách hàng nên cân nhắc kỹ trước khi đưa ra quyết định đầu tư."
+  },
+  {
+    "as_of_date": "2026-06-16",
+    "market_data_text": "Tính đến ngày 2026-06-16 (so với 2026-05-15, khoảng 21 phiên giao dịch trước):\n- Vàng (gold futures): hiện tại 4330.90 USD/oz, thay đổi -4.94%\n- Chỉ số USD (DXY): hiện tại 99.54, thay đổi +0.27%\n- Lợi suất thực 10 năm (real yield): hiện tại 2.14%, thay đổi +0.04 điểm %\n- Lãi suất Fed (fed funds rate): hiện tại 3.63%, thay đổi +0.00 điểm %",
+    "market_data_raw": {
+      "date_now": "2026-06-16",
+      "date_past": "2026-05-15",
+      "gold_now": 4330.89990234375,
+      "gold_past": 4555.7998046875,
+      "gold_pct": -4.936562447549794,
+      "dxy_now": 99.54000091552734,
+      "dxy_past": 99.2699966430664,
+      "dxy_pct": 0.27198980718389715,
+      "real_yield_now": 2.14,
+      "real_yield_past": 2.1,
+      "real_yield_diff": 0.040000000000000036,
+      "fed_rate_now": 3.63,
+      "fed_rate_past": 3.63,
+      "fed_rate_diff": 0.0
+    },
+    "outcome": {
+      "date_now": "2026-06-16",
+      "date_future": "2026-07-17",
+      "gold_now": 4330.89990234375,
+      "gold_future": 4012.699951171875,
+      "forward_return": -0.07347201698189214,
+      "label": "Giam"
+    },
+    "baseline_pred": "Di_ngang",
+    "bot_reply": "1. Diễn biến: Trong 21 phiên gần nhất tính đến ngày 2026-06-16, giá vàng giảm 4.94%, xuống còn 4330.90 USD/oz.\n\n2. Yếu tố vĩ mô:\n   - Chỉ số USD (DXY) tăng 0.27%: Đồng USD mạnh lên có thể tạo áp lực giảm đối với vàng.\n   - Lợi suất thực 10 năm (real yield) tăng 0.04 điểm %: Chi phí cơ hội nắm giữ vàng tăng, gây áp lực giảm giá vàng.\n   - Lãi suất Fed giữ nguyên ở 3.63%: Không phải yếu tố chi phối biến động vừa qua.\n\n3. Kịch bản:\n   Kết luận chính: Giảm (tin cậy: trung bình). Diễn biến giảm gần đây do đồng USD mạnh lên và lợi suất thực tăng cùng chiều, tạo áp lực giảm đối với vàng. Tuy nhiên, mức thay đổi của DXY và lợi suất thực đều không quá lớn, nên khả năng đi ngang hoặc dao động trong biên độ hẹp vẫn còn cao. Nếu đồng USD tiếp tục mạnh lên nhanh hơn so với lợi suất thực, áp lực giảm giá có thể tăng lên; ngược lại, nếu lợi suất thực tăng mạnh hơn, vàng có thể chịu ít áp lực hơn.\n\n4. Disclaimer: [Hệ thống tự thêm câu miễn trừ trách nhiệm cố định ở đây]"
+  }
+]
