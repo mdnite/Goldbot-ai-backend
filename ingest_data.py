@@ -13,12 +13,12 @@ PERSIST_DIRECTORY = "./chroma_db"
 CHUNK_SIZE = 1000       # Tăng lên 1000 để chứa trọn vẹn 1 đoạn Hỏi-Đáp dài
 CHUNK_OVERLAP = 150     # Tăng độ nối giữa các đoạn để không mất ngữ cảnh
 EMBEDDING_MODEL_NAME = "keepitreal/vietnamese-sbert"
-TEXT_FILE_PATH = "bank_data.txt"
+TEXT_FILE_PATH = "gold_data.txt"
 
 # --- 0. Đọc flag dòng lệnh ---
 # MẶC ĐỊNH GIỜ LÀ "REBUILD SẠCH" (xoá DB cũ, nạp lại từ đầu).
 # Lý do đổi mặc định: bản gốc mặc định APPEND, nên mỗi lần chạy lại script
-# (vd: rerun cell trong Colab, hoặc chạy lại sau khi sửa bank_data.txt) sẽ
+# (vd: rerun cell trong Colab, hoặc chạy lại sau khi sửa gold_data.txt) sẽ
 # CỘNG DỒN dữ liệu cũ + mới, dẫn đến trùng lặp chunk (đã xác nhận: DB đi kèm
 # trong repo có 106 chunk nhưng chỉ 25 chunk là duy nhất — một số bị lặp 5 lần,
 # và vẫn còn lẫn 4 chunk dữ liệu Saigonbank thật + 2 chunk nội dung "ABC Bank"

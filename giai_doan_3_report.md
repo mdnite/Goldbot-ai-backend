@@ -98,9 +98,35 @@ Tỷ lệ đúng/sai 50/50 trên cùng một loại quan hệ nhân quả (Fed r
 
 **Kết luận methodology**: lỗi suy luận không phải hiện tượng hiếm như ước tính ban đầu (2/50 từ smoke test 3 mốc) — đặc biệt lỗi về Fed rate xuất hiện với tần suất rất cao (~50%) mỗi khi model chịu đưa ra khẳng định rõ ràng. Đây là finding hợp lệ về giới hạn suy luận của model 7B chạy CPU-only, không phải bug quy trình backtest — số liệu trích dẫn (QUY TẮC 7) hầu hết chính xác, vấn đề nằm ở việc GẮN đúng chiều tác động lý thuyết cho từng chỉ báo, đặc biệt là Fed rate — chỉ báo có tần suất thay đổi thấp nhất (step-function, ~8 lần/năm) nên model có ít "thấy" các trường hợp huấn luyện/ví dụ về chỉ báo này hơn DXY/real yield.
 
-## 7. Việc còn mở / bước tiếp theo
+## 8. So sánh với `trend_model.joblib` (task tuỳ chọn — đã hoàn thành)
 
-- **Task tuỳ chọn**: so sánh thêm dự đoán của `trend_model.joblib` (28 feature kỹ thuật hoá) trên cùng 50 mốc — cần build riêng pipeline feature cho từng mốc, không tái dùng được trực tiếp text snapshot.
-- **Cân nhắc**: có nên thêm 1 quy tắc riêng về chiều tác động Fed rate vào `giai_doan_3_system_prompt.txt` hay không, dựa trên tỷ lệ lỗi ~50% vừa phát hiện — nhưng lưu ý nguyên tắc đã chốt ở mục 4.6: N=50 chỉ chạy MỘT LẦN cho báo cáo chính thức, sửa thêm bây giờ đồng nghĩa phải chạy lại toàn bộ để đo lại, và có rủi ro overfit lên đúng tập 50 mốc này. Chưa quyết định — để ngỏ cho phiên sau.
-- **Việc treo từ Giai đoạn 2.5** (không thuộc phạm vi Giai đoạn 3 nhưng vẫn chưa xử lý): `system_prompt_v2.txt` (QUY TẮC 5/6/7, đã validate 96% faithfulness) chưa được sync vào `ADVICE_PROMPT` trong `main.py` — bản production hiện vẫn chỉ có QUY TẮC 1-4.
-- File kết quả liên quan: `giai_doan_3_backtest_results.json` (kết quả chính thức N=50), `giai_doan_3_backtest_results_smoketest_v1_prehedgefix.json` (bản smoke test 3 mốc TRƯỚC khi sửa prompt, giữ lại làm bằng chứng đối chiếu trước/sau).
+`market_data_text`/`market_data_raw` (dùng feed cho bot) chỉ là 1 con số %change/diff mỗi chỉ báo — không đủ cho `trend_model.joblib`, model này cần 28 feature kỹ thuật hoá (lag `[1,5,10,21,60]` + MA60 + vol60 trên 4 series `gold_ret`/`dxy_ret`/`real_yield_diff`/`fed_rate_diff`, xem `train_trend_model.py`). Viết script riêng `giai_doan_3_compare_trend_model.py` — KHÔNG sửa `train_trend_model.py` — lặp lại đúng logic feature engineering của nó tại từng `as_of_date`, cắt dữ liệu leak-safe (chỉ dùng ≤ as_of_date, cùng nguyên tắc `_nearest_value` đã dùng ở `get_market_data_asof`). Ground truth và bot_reply tái dùng nguyên từ `giai_doan_3_backtest_results.json`, không tính lại; nhãn bot trích qua regex trên dòng "Kết luận chính:".
+
+**Kết quả trên đúng 50/50 mốc (0 mốc thiếu feature lịch sử):**
+
+| | Đúng/Tổng | Tỷ lệ |
+|---|---|---|
+| Bot (GoldBot suy luận) | 23/50 | 46.0% |
+| Baseline 1 — đóng băng (`Di_ngang`) | 15/50 | 30.0% |
+| **trend_model.joblib** | **12/50** | **24.0%** |
+
+2 số đã biết trước (bot 46.0%, baseline 30.0%) đều khớp tuyệt đối với mục 5 — xác nhận cách trích/so sánh của script nhất quán với cách đã chấm, nên số 24.0% của `trend_model.joblib` đáng tin.
+
+**Phân phối dự đoán của `trend_model.joblib` (confusion matrix, hàng = thực tế, cột = dự đoán):**
+
+| Thực tế \ Dự đoán | Giảm | Đi ngang | Tăng |
+|---|---|---|---|
+| Giảm (8) | 6 | 2 | 0 |
+| Đi ngang (15) | 9 | 4 | 2 |
+| Tăng (27) | 9 | 16 | 2 |
+
+Model dự đoán `Giam`/`Di_ngang` ở 46/50 mốc, gần như không bao giờ dự đoán `Tang` (4/50) dù thực tế `Tang` chiếm 27/50 (54%) — đúng đúng 2/27 lần. Đây **không phải bug** mà là tiếp diễn trực tiếp finding regime shift đã ghi trong `giai_doan_1_5_report.md`: model học quy luật mean-reversion trên train 2010-2023 (return cao → dự đoán đảo chiều), nhưng cả khung test Giai đoạn 1.5 lẫn 50 mốc Giai đoạn 3 đều rơi vào cùng giai đoạn vàng tăng cấu trúc (2023-2026) — quy luật học được liên tục sai chiều trong regime này. Kết quả: model số (24.0%) thua cả baseline ngây thơ (30.0%) lẫn bot suy luận bằng lời (46.0%) trên cùng 50 mốc, củng cố quyết định đã chốt ở Giai đoạn 2 (không dùng nhãn `trend_model.joblib` để inject vào prompt).
+
+File liên quan: `giai_doan_3_compare_trend_model.py` (script so sánh), `giai_doan_3_trend_model_comparison.json` (kết quả chi tiết 50 record).
+
+## 9. Việc còn mở / bước tiếp theo
+
+- **Đã xong**: sync QUY TẮC 5/6/7 (`system_prompt_v2.txt`, Giai đoạn 2.5) vào `ADVICE_PROMPT` trong `main.py` — production giờ có đủ QUY TẮC 1-7 (việc treo từ trước Giai đoạn 3, đã xử lý).
+- **Đã xong**: so sánh `trend_model.joblib` trên 50 mốc — xem mục 8.
+- **Cân nhắc còn mở**: có nên thêm 1 quy tắc riêng về chiều tác động Fed rate vào `giai_doan_3_system_prompt.txt` hay không, dựa trên tỷ lệ lỗi ~50% phát hiện ở mục 6.3 — nhưng lưu ý nguyên tắc đã chốt ở mục 4.6: N=50 chỉ chạy MỘT LẦN cho báo cáo chính thức, sửa thêm bây giờ đồng nghĩa phải chạy lại toàn bộ để đo lại, và có rủi ro overfit lên đúng tập 50 mốc này. Chưa quyết định — để ngỏ cho phiên sau.
+- File kết quả liên quan: `giai_doan_3_backtest_results.json` (kết quả chính thức N=50), `giai_doan_3_backtest_results_smoketest_v1_prehedgefix.json` (bản smoke test 3 mốc TRƯỚC khi sửa prompt, giữ lại làm bằng chứng đối chiếu trước/sau, nay ở `archive_old_phases/`).
