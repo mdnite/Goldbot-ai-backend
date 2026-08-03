@@ -122,11 +122,19 @@ Tỷ lệ đúng/sai 50/50 trên cùng một loại quan hệ nhân quả (Fed r
 
 Model dự đoán `Giam`/`Di_ngang` ở 46/50 mốc, gần như không bao giờ dự đoán `Tang` (4/50) dù thực tế `Tang` chiếm 27/50 (54%) — đúng đúng 2/27 lần. Đây **không phải bug** mà là tiếp diễn trực tiếp finding regime shift đã ghi trong `giai_doan_1_5_report.md`: model học quy luật mean-reversion trên train 2010-2023 (return cao → dự đoán đảo chiều), nhưng cả khung test Giai đoạn 1.5 lẫn 50 mốc Giai đoạn 3 đều rơi vào cùng giai đoạn vàng tăng cấu trúc (2023-2026) — quy luật học được liên tục sai chiều trong regime này. Kết quả: model số (24.0%) thua cả baseline ngây thơ (30.0%) lẫn bot suy luận bằng lời (46.0%) trên cùng 50 mốc, củng cố quyết định đã chốt ở Giai đoạn 2 (không dùng nhãn `trend_model.joblib` để inject vào prompt).
 
-File liên quan: `giai_doan_3_compare_trend_model.py` (script so sánh), `giai_doan_3_trend_model_comparison.json` (kết quả chi tiết 50 record).
+File liên quan (đã archive, xem mục 10): `archive/giai_doan_3_llm_approach/giai_doan_3_compare_trend_model.py` (script so sánh), `archive/giai_doan_3_llm_approach/giai_doan_3_trend_model_comparison.json` (kết quả chi tiết 50 record).
 
-## 9. Việc còn mở / bước tiếp theo
+## 9. Việc còn mở khi đóng Giai đoạn 3
 
 - **Đã xong**: sync QUY TẮC 5/6/7 (`system_prompt_v2.txt`, Giai đoạn 2.5) vào `ADVICE_PROMPT` trong `main.py` — production giờ có đủ QUY TẮC 1-7 (việc treo từ trước Giai đoạn 3, đã xử lý).
 - **Đã xong**: so sánh `trend_model.joblib` trên 50 mốc — xem mục 8.
-- **Cân nhắc còn mở**: có nên thêm 1 quy tắc riêng về chiều tác động Fed rate vào `giai_doan_3_system_prompt.txt` hay không, dựa trên tỷ lệ lỗi ~50% phát hiện ở mục 6.3 — nhưng lưu ý nguyên tắc đã chốt ở mục 4.6: N=50 chỉ chạy MỘT LẦN cho báo cáo chính thức, sửa thêm bây giờ đồng nghĩa phải chạy lại toàn bộ để đo lại, và có rủi ro overfit lên đúng tập 50 mốc này. Chưa quyết định — để ngỏ cho phiên sau.
-- File kết quả liên quan: `giai_doan_3_backtest_results.json` (kết quả chính thức N=50), `giai_doan_3_backtest_results_smoketest_v1_prehedgefix.json` (bản smoke test 3 mốc TRƯỚC khi sửa prompt, giữ lại làm bằng chứng đối chiếu trước/sau, nay ở `archive_old_phases/`).
+- **KHÔNG hoàn thành** (không phải đã làm xong): so sánh accuracy nửa đầu/nửa sau của khung thời gian backtest (2024-06-01→2025-06 vs 2025-06→2026-06-22) để kiểm tra rủi ro rò rỉ kiến thức pretrain của LLM (model có thể đã "biết trước" diễn biến giá vàng ở phần đầu khung thời gian nằm trong dữ liệu huấn luyện của nó, khiến accuracy ở nửa đầu cao giả tạo so với nửa sau). Việc này **không hoàn thành do đổi hướng ưu tiên** sang model định lượng (xem mục 10), không phải đã kiểm tra và không thấy vấn đề gì.
+- **Bỏ ngỏ, không còn ưu tiên**: quyết định có thêm rule riêng về chiều tác động Fed rate vào `giai_doan_3_system_prompt.txt` hay không (mục 6.3) — không còn cần thiết vì hướng LLM prompt-based đã dừng đầu tư tiếp, xem mục 10.
+
+## 10. Kết luận & hướng đi tiếp theo (đóng Giai đoạn 3)
+
+Dù LLM cho thấy cải thiện theo hướng tích cực so với baseline (46% vs 30%, n hiệu dụng≈25, chưa đạt ý nghĩa thống kê chắc chắn), nhóm quyết định ưu tiên hướng model định lượng — có thể fit trực tiếp trên dữ liệu thật của dự án, diễn giải và kiểm chứng được cơ chế ra quyết định, thay vì tiếp tục đầu tư vào một hệ thống chỉ dựa trên hướng dẫn prompt.
+
+Toàn bộ số liệu, audit, và bằng chứng trong báo cáo này (accuracy 46%/30%/54% ở mục 5, phân tích lỗi suy luận DXY/real yield/Fed rate ở mục 6, so sánh với `trend_model.joblib` ở mục 8) **được giữ nguyên làm dữ liệu thật** — đây là kết quả đã đo, không bị xoá hay ghi đè bởi quyết định đổi hướng. Quyết định đóng Giai đoạn 3 là về HƯỚNG ĐI TIẾP THEO, không phải phủ nhận kết quả đã có.
+
+Toàn bộ code + dữ liệu của hướng tiếp cận LLM/few-shot (`giai_doan_3_backtest.py`, `giai_doan_3_run_backtest.py`, `giai_doan_3_sample_dates.py`/`.json`, `giai_doan_3_system_prompt.txt`, `giai_doan_3_compare_trend_model.py`, `giai_doan_3_backtest_results.json`, `giai_doan_3_baseline_check.json`, `giai_doan_3_trend_model_comparison.json`, `giai_doan_3_backtest_results_smoketest_v1_prehedgefix.json`) đã chuyển vào `archive/giai_doan_3_llm_approach/` — **không xoá**, chỉ di chuyển để tách khỏi hướng model định lượng sắp làm ở Giai đoạn 4. File này (`giai_doan_3_report.md`) giữ nguyên ở thư mục gốc làm báo cáo tham chiếu.
