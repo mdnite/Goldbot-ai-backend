@@ -7,8 +7,10 @@ Giai đoạn 1.5) - script này độc lập, ghi model mới ra file riêng.
 1. Cô lập đặc trưng: thêm interaction terms thủ công giữa 3 chỉ báo macro
    (dxy_ret, real_yield_diff, fed_rate_diff - KHÔNG gồm gold_ret, KHÔNG dùng insight
    lỗi Fed rate từ audit LLM Giai đoạn 3 để thiết kế feature riêng vá đúng điểm đó).
-2. Volatility trễ: thay Vol60 cố định bằng ứng viên cửa sổ ngắn hơn, chọn qua grid
-   search trên validation (không chốt cứng trước).
+2. Volatility trễ: thay Vol60 cố định (rolling std) bằng EWMA-Vol (exponentially
+   weighted std, span=10/21, adjust=False, trên chuỗi return/diff) - phản ứng nhanh
+   hơn rolling std khi regime đổi, tránh giật cục lúc 1 phiên biến động mạnh rớt khỏi
+   cửa sổ SMA cũ. Chọn span qua grid search trên validation (không chốt cứng trước).
 3. Đa cộng tuyến: VIF thật (iterative, ngưỡng >5, tính bằng LinearRegression vì
    statsmodels chưa cài trong venv), không chỉ lọc pairwise corr như bản gốc.
 
@@ -19,8 +21,21 @@ Giai đoạn 1.5) - script này độc lập, ghi model mới ra file riêng.
 - Test: KHÔNG đụng trong script này - xem giai_doan_4_backtest_eval.py, chạm 1 lần
   bằng đúng 50 mốc archive/giai_doan_3_llm_approach/giai_doan_3_sample_dates.json.
 
-Grid round 1 (cố định trước khi chạy, tính cả lưới là 1 vòng trong giới hạn 5-6 vòng
-chống overfit): 2 vol_window x 2 penalty x 4 C = 16 tổ hợp.
+Grid round 1 (EWMA, cố định trước khi chạy, tính cả lưới là 1 vòng trong giới hạn 5-6
+vòng chống overfit): 2 vol_window x 2 penalty x C=[0.01,0.1,1,10] = 16 tổ hợp. Best:
+vol=21, l1, C=0.01, val_acc=0.473 - nằm ở MÉP dưới của lưới C -> round 2 mở rộng
+xuống thấp hơn. Kết quả round 1 đã sao lưu riêng: giai_doan_4_train_results_round1_ewma.json.
+
+Grid round 2 (mở rộng lưới C xuống thấp hơn do round 1 chọn mép lưới): 2 vol_window x
+2 penalty x C=[0.001,0.003,0.005,0.01] = 16 tổ hợp. Best không đổi: vol=21, l1, C=0.01,
+val_acc=0.473. Phát hiện: l1 với C<=0.005 (cả 2 span) sụp đổ về đúng 1 kết quả
+(val_acc=0.414, toàn bộ 34 he so ve 0) - khong phai vung con tot hon, la vach dung.
+Ket qua round 2 da sao luu rieng: giai_doan_4_train_results_round2.json.
+
+Grid round 3 (do round 1/2 chi test C in {0.001,0.003,0.005,0.01,0.1,1,10}, con khoang
+giua 0.01-0.1 chua thu): 2 vol_window x 2 penalty x C=[0.02,0.03,0.05,0.07] = 16 to hop.
+Ket qua ghi rieng RESULTS_PATH (khong dung ten file chung nua tu round nay tro di, tranh
+ghi de round 1/2).
 """
 import json
 import sqlite3
@@ -32,12 +47,12 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import accuracy_score
 
 DB_PATH = "indicators.db"
-RESULTS_PATH = "giai_doan_4_train_results.json"
+RESULTS_PATH = "giai_doan_4_train_results_round3.json"  # round 3 - giu file rieng, khong dung ten chung nua
 
 RANDOM_SEED = 42
 LAGS = [1, 5, 10, 21, 60]
 MA_WINDOW = 60  # không đổi - không phải vấn đề kỹ thuật bị nêu (chỉ Vol60 mới là vấn đề)
-VOL_WINDOW_CANDIDATES = [10, 21]
+VOL_WINDOW_CANDIDATES = [10, 21]  # span cho EWMA-Vol, không phải cửa sổ rolling std
 K = 0.5  # bề rộng ngưỡng nhãn, giống Giai đoạn 1.5/3
 VIF_THRESHOLD = 5.0
 
@@ -47,7 +62,7 @@ VAL_END = "2024-05-31"
 REGIME_SPLIT_DATE = "2023-03-17"  # tách range-bound vs bull-market TRONG validation, khớp ranh giới train/test đã xác nhận ở Giai đoạn 1.5 (giai_doan_1_5_report.md)
 
 PENALTY_GRID = ["l1", "l2"]
-C_GRID = [0.01, 0.1, 1, 10]
+C_GRID = [0.02, 0.03, 0.05, 0.07]  # Round 3 - khoang giua chua test giua 0.01 (round1/2) va 0.1 (round1)
 
 MACRO_PAIRS = [
     ("dxy_ret", "real_yield_diff"),
@@ -72,7 +87,9 @@ def load_series():
 
 
 def build_features(base, vol_window):
-    """4 series gốc: lag[1,5,10,21,60] + ma60 + vol{vol_window} (thay Vol60 cố định).
+    """4 series gốc: lag[1,5,10,21,60] + ma60 + vol{vol_window} (EWMA-Vol, thay Vol60
+    rolling std cố định - span=vol_window, adjust=False, tính trên chính base[name]
+    là return/diff, không phải giá tuyệt đối).
     Cộng 6 interaction feature: lag1 + ma60 của 3 cặp macro (dxy_ret, real_yield_diff,
     fed_rate_diff) - đúng phương án đã chọn (không full lag/ma/vol cho interaction,
     tránh nổ chiều feature khi train ~3000 dòng)."""
@@ -81,7 +98,7 @@ def build_features(base, vol_window):
         for lag in LAGS:
             features[f"{name}_lag{lag}"] = s.shift(lag)
         features[f"{name}_ma{MA_WINDOW}"] = s.rolling(MA_WINDOW).mean()
-        features[f"{name}_vol{vol_window}"] = s.rolling(vol_window).std()
+        features[f"{name}_vol{vol_window}"] = s.ewm(span=vol_window, adjust=False).std()
 
     for a, b in MACRO_PAIRS:
         inter = base[a] * base[b]
