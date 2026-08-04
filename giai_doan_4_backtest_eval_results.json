@@ -1,0 +1,535 @@
+{
+  "summary": {
+    "n_samples_requested": 50,
+    "n_missing_features": 0,
+    "missing_dates": [],
+    "n_scored": 50,
+    "model_4a_accuracy": 0.3,
+    "n_bot_labels_parsed": 50,
+    "bot_accuracy": 0.46,
+    "baseline1_accuracy": 0.3,
+    "baseline2_label": "Tang",
+    "baseline2_accuracy": 0.54,
+    "old_trend_model_1_5_accuracy_reference": 0.24,
+    "stat_significance_vs_llm_46pct": {
+      "reference_llm_acc": 0.46,
+      "n_nominal": 50,
+      "n_effective": 25,
+      "primary_decision_rule": "CO Y NGHIA chi khi can duoi CI > reference_llm_acc",
+      "ci95_n_nominal": [
+        0.17297748231120594,
+        0.42702251768879407
+      ],
+      "ci95_n_nominal_significant": false,
+      "ci95_n_effective": [
+        0.12036303275773105,
+        0.4796369672422689
+      ],
+      "ci95_n_effective_significant": false,
+      "secondary_two_proportion_z_n_nominal": -1.6710239725774279,
+      "secondary_two_proportion_z_n_effective": -1.1815923825347827
+    }
+  },
+  "records": [
+    {
+      "as_of_date": "2024-06-17",
+      "actual_label": "Tang",
+      "model_4a_pred": "Di_ngang",
+      "model_4a_correct": false,
+      "bot_pred": "Giam",
+      "bot_correct": false,
+      "baseline1_pred": "Di_ngang",
+      "baseline1_correct": false
+    },
+    {
+      "as_of_date": "2024-06-20",
+      "actual_label": "Di_ngang",
+      "model_4a_pred": "Di_ngang",
+      "model_4a_correct": true,
+      "bot_pred": "Giam",
+      "bot_correct": false,
+      "baseline1_pred": "Di_ngang",
+      "baseline1_correct": true
+    },
+    {
+      "as_of_date": "2024-07-05",
+      "actual_label": "Di_ngang",
+      "model_4a_pred": "Di_ngang",
+      "model_4a_correct": true,
+      "bot_pred": "Tang",
+      "bot_correct": false,
+      "baseline1_pred": "Di_ngang",
+      "baseline1_correct": true
+    },
+    {
+      "as_of_date": "2024-07-26",
+      "actual_label": "Tang",
+      "model_4a_pred": "Di_ngang",
+      "model_4a_correct": false,
+      "bot_pred": "Tang",
+      "bot_correct": true,
+      "baseline1_pred": "Di_ngang",
+      "baseline1_correct": false
+    },
+    {
+      "as_of_date": "2024-08-09",
+      "actual_label": "Tang",
+      "model_4a_pred": "Di_ngang",
+      "model_4a_correct": false,
+      "bot_pred": "Tang",
+      "bot_correct": true,
+      "baseline1_pred": "Di_ngang",
+      "baseline1_correct": false
+    },
+    {
+      "as_of_date": "2024-08-26",
+      "actual_label": "Tang",
+      "model_4a_pred": "Di_ngang",
+      "model_4a_correct": false,
+      "bot_pred": "Tang",
+      "bot_correct": true,
+      "baseline1_pred": "Di_ngang",
+      "baseline1_correct": false
+    },
+    {
+      "as_of_date": "2024-09-10",
+      "actual_label": "Tang",
+      "model_4a_pred": "Di_ngang",
+      "model_4a_correct": false,
+      "bot_pred": "Tang",
+      "bot_correct": true,
+      "baseline1_pred": "Di_ngang",
+      "baseline1_correct": false
+    },
+    {
+      "as_of_date": "2024-09-24",
+      "actual_label": "Tang",
+      "model_4a_pred": "Di_ngang",
+      "model_4a_correct": false,
+      "bot_pred": "Tang",
+      "bot_correct": true,
+      "baseline1_pred": "Di_ngang",
+      "baseline1_correct": false
+    },
+    {
+      "as_of_date": "2024-10-22",
+      "actual_label": "Giam",
+      "model_4a_pred": "Di_ngang",
+      "model_4a_correct": false,
+      "bot_pred": "Tang",
+      "bot_correct": false,
+      "baseline1_pred": "Di_ngang",
+      "baseline1_correct": false
+    },
+    {
+      "as_of_date": "2024-11-04",
+      "actual_label": "Giam",
+      "model_4a_pred": "Di_ngang",
+      "model_4a_correct": false,
+      "bot_pred": "Di_ngang",
+      "bot_correct": false,
+      "baseline1_pred": "Di_ngang",
+      "baseline1_correct": false
+    },
+    {
+      "as_of_date": "2024-11-08",
+      "actual_label": "Di_ngang",
+      "model_4a_pred": "Di_ngang",
+      "model_4a_correct": true,
+      "bot_pred": "Tang",
+      "bot_correct": false,
+      "baseline1_pred": "Di_ngang",
+      "baseline1_correct": true
+    },
+    {
+      "as_of_date": "2024-12-06",
+      "actual_label": "Di_ngang",
+      "model_4a_pred": "Di_ngang",
+      "model_4a_correct": true,
+      "bot_pred": "Giam",
+      "bot_correct": false,
+      "baseline1_pred": "Di_ngang",
+      "baseline1_correct": true
+    },
+    {
+      "as_of_date": "2024-12-18",
+      "actual_label": "Tang",
+      "model_4a_pred": "Di_ngang",
+      "model_4a_correct": false,
+      "bot_pred": "Giam",
+      "bot_correct": false,
+      "baseline1_pred": "Di_ngang",
+      "baseline1_correct": false
+    },
+    {
+      "as_of_date": "2024-12-26",
+      "actual_label": "Tang",
+      "model_4a_pred": "Di_ngang",
+      "model_4a_correct": false,
+      "bot_pred": "Giam",
+      "bot_correct": false,
+      "baseline1_pred": "Di_ngang",
+      "baseline1_correct": false
+    },
+    {
+      "as_of_date": "2025-01-13",
+      "actual_label": "Tang",
+      "model_4a_pred": "Di_ngang",
+      "model_4a_correct": false,
+      "bot_pred": "Giam",
+      "bot_correct": false,
+      "baseline1_pred": "Di_ngang",
+      "baseline1_correct": false
+    },
+    {
+      "as_of_date": "2025-01-30",
+      "actual_label": "Tang",
+      "model_4a_pred": "Di_ngang",
+      "model_4a_correct": false,
+      "bot_pred": "Tang",
+      "bot_correct": true,
+      "baseline1_pred": "Di_ngang",
+      "baseline1_correct": false
+    },
+    {
+      "as_of_date": "2025-02-18",
+      "actual_label": "Tang",
+      "model_4a_pred": "Di_ngang",
+      "model_4a_correct": false,
+      "bot_pred": "Tang",
+      "bot_correct": true,
+      "baseline1_pred": "Di_ngang",
+      "baseline1_correct": false
+    },
+    {
+      "as_of_date": "2025-03-04",
+      "actual_label": "Tang",
+      "model_4a_pred": "Di_ngang",
+      "model_4a_correct": false,
+      "bot_pred": "Tang",
+      "bot_correct": true,
+      "baseline1_pred": "Di_ngang",
+      "baseline1_correct": false
+    },
+    {
+      "as_of_date": "2025-03-25",
+      "actual_label": "Tang",
+      "model_4a_pred": "Di_ngang",
+      "model_4a_correct": false,
+      "bot_pred": "Tang",
+      "bot_correct": true,
+      "baseline1_pred": "Di_ngang",
+      "baseline1_correct": false
+    },
+    {
+      "as_of_date": "2025-04-09",
+      "actual_label": "Tang",
+      "model_4a_pred": "Di_ngang",
+      "model_4a_correct": false,
+      "bot_pred": "Tang",
+      "bot_correct": true,
+      "baseline1_pred": "Di_ngang",
+      "baseline1_correct": false
+    },
+    {
+      "as_of_date": "2025-04-10",
+      "actual_label": "Di_ngang",
+      "model_4a_pred": "Di_ngang",
+      "model_4a_correct": true,
+      "bot_pred": "Tang",
+      "bot_correct": false,
+      "baseline1_pred": "Di_ngang",
+      "baseline1_correct": true
+    },
+    {
+      "as_of_date": "2025-05-07",
+      "actual_label": "Di_ngang",
+      "model_4a_pred": "Di_ngang",
+      "model_4a_correct": true,
+      "bot_pred": "Tang",
+      "bot_correct": false,
+      "baseline1_pred": "Di_ngang",
+      "baseline1_correct": true
+    },
+    {
+      "as_of_date": "2025-05-14",
+      "actual_label": "Tang",
+      "model_4a_pred": "Di_ngang",
+      "model_4a_correct": false,
+      "bot_pred": "Di_ngang",
+      "bot_correct": false,
+      "baseline1_pred": "Di_ngang",
+      "baseline1_correct": false
+    },
+    {
+      "as_of_date": "2025-06-05",
+      "actual_label": "Di_ngang",
+      "model_4a_pred": "Di_ngang",
+      "model_4a_correct": true,
+      "bot_pred": "Giam",
+      "bot_correct": false,
+      "baseline1_pred": "Di_ngang",
+      "baseline1_correct": true
+    },
+    {
+      "as_of_date": "2025-06-17",
+      "actual_label": "Di_ngang",
+      "model_4a_pred": "Di_ngang",
+      "model_4a_correct": true,
+      "bot_pred": "Tang",
+      "bot_correct": false,
+      "baseline1_pred": "Di_ngang",
+      "baseline1_correct": true
+    },
+    {
+      "as_of_date": "2025-06-27",
+      "actual_label": "Di_ngang",
+      "model_4a_pred": "Di_ngang",
+      "model_4a_correct": true,
+      "bot_pred": "Tang",
+      "bot_correct": false,
+      "baseline1_pred": "Di_ngang",
+      "baseline1_correct": true
+    },
+    {
+      "as_of_date": "2025-07-18",
+      "actual_label": "Di_ngang",
+      "model_4a_pred": "Di_ngang",
+      "model_4a_correct": true,
+      "bot_pred": "Di_ngang",
+      "bot_correct": true,
+      "baseline1_pred": "Di_ngang",
+      "baseline1_correct": true
+    },
+    {
+      "as_of_date": "2025-08-05",
+      "actual_label": "Tang",
+      "model_4a_pred": "Di_ngang",
+      "model_4a_correct": false,
+      "bot_pred": "Tang",
+      "bot_correct": true,
+      "baseline1_pred": "Di_ngang",
+      "baseline1_correct": false
+    },
+    {
+      "as_of_date": "2025-08-12",
+      "actual_label": "Tang",
+      "model_4a_pred": "Di_ngang",
+      "model_4a_correct": false,
+      "bot_pred": "Di_ngang",
+      "bot_correct": false,
+      "baseline1_pred": "Di_ngang",
+      "baseline1_correct": false
+    },
+    {
+      "as_of_date": "2025-08-20",
+      "actual_label": "Tang",
+      "model_4a_pred": "Di_ngang",
+      "model_4a_correct": false,
+      "bot_pred": "Giam",
+      "bot_correct": false,
+      "baseline1_pred": "Di_ngang",
+      "baseline1_correct": false
+    },
+    {
+      "as_of_date": "2025-09-08",
+      "actual_label": "Tang",
+      "model_4a_pred": "Di_ngang",
+      "model_4a_correct": false,
+      "bot_pred": "Tang",
+      "bot_correct": true,
+      "baseline1_pred": "Di_ngang",
+      "baseline1_correct": false
+    },
+    {
+      "as_of_date": "2025-09-26",
+      "actual_label": "Tang",
+      "model_4a_pred": "Di_ngang",
+      "model_4a_correct": false,
+      "bot_pred": "Tang",
+      "bot_correct": true,
+      "baseline1_pred": "Di_ngang",
+      "baseline1_correct": false
+    },
+    {
+      "as_of_date": "2025-10-09",
+      "actual_label": "Di_ngang",
+      "model_4a_pred": "Di_ngang",
+      "model_4a_correct": true,
+      "bot_pred": "Tang",
+      "bot_correct": false,
+      "baseline1_pred": "Di_ngang",
+      "baseline1_correct": true
+    },
+    {
+      "as_of_date": "2025-10-22",
+      "actual_label": "Di_ngang",
+      "model_4a_pred": "Di_ngang",
+      "model_4a_correct": true,
+      "bot_pred": "Tang",
+      "bot_correct": false,
+      "baseline1_pred": "Di_ngang",
+      "baseline1_correct": true
+    },
+    {
+      "as_of_date": "2025-11-03",
+      "actual_label": "Tang",
+      "model_4a_pred": "Di_ngang",
+      "model_4a_correct": false,
+      "bot_pred": "Tang",
+      "bot_correct": true,
+      "baseline1_pred": "Di_ngang",
+      "baseline1_correct": false
+    },
+    {
+      "as_of_date": "2025-11-18",
+      "actual_label": "Tang",
+      "model_4a_pred": "Di_ngang",
+      "model_4a_correct": false,
+      "bot_pred": "Giam",
+      "bot_correct": false,
+      "baseline1_pred": "Di_ngang",
+      "baseline1_correct": false
+    },
+    {
+      "as_of_date": "2025-12-05",
+      "actual_label": "Tang",
+      "model_4a_pred": "Di_ngang",
+      "model_4a_correct": false,
+      "bot_pred": "Tang",
+      "bot_correct": true,
+      "baseline1_pred": "Di_ngang",
+      "baseline1_correct": false
+    },
+    {
+      "as_of_date": "2025-12-15",
+      "actual_label": "Tang",
+      "model_4a_pred": "Di_ngang",
+      "model_4a_correct": false,
+      "bot_pred": "Tang",
+      "bot_correct": true,
+      "baseline1_pred": "Di_ngang",
+      "baseline1_correct": false
+    },
+    {
+      "as_of_date": "2025-12-30",
+      "actual_label": "Tang",
+      "model_4a_pred": "Di_ngang",
+      "model_4a_correct": false,
+      "bot_pred": "Tang",
+      "bot_correct": true,
+      "baseline1_pred": "Di_ngang",
+      "baseline1_correct": false
+    },
+    {
+      "as_of_date": "2026-01-22",
+      "actual_label": "Tang",
+      "model_4a_pred": "Di_ngang",
+      "model_4a_correct": false,
+      "bot_pred": "Tang",
+      "bot_correct": true,
+      "baseline1_pred": "Di_ngang",
+      "baseline1_correct": false
+    },
+    {
+      "as_of_date": "2026-01-29",
+      "actual_label": "Di_ngang",
+      "model_4a_pred": "Di_ngang",
+      "model_4a_correct": true,
+      "bot_pred": "Tang",
+      "bot_correct": false,
+      "baseline1_pred": "Di_ngang",
+      "baseline1_correct": true
+    },
+    {
+      "as_of_date": "2026-02-19",
+      "actual_label": "Giam",
+      "model_4a_pred": "Di_ngang",
+      "model_4a_correct": false,
+      "bot_pred": "Tang",
+      "bot_correct": false,
+      "baseline1_pred": "Di_ngang",
+      "baseline1_correct": false
+    },
+    {
+      "as_of_date": "2026-03-05",
+      "actual_label": "Giam",
+      "model_4a_pred": "Di_ngang",
+      "model_4a_correct": false,
+      "bot_pred": "Tang",
+      "bot_correct": false,
+      "baseline1_pred": "Di_ngang",
+      "baseline1_correct": false
+    },
+    {
+      "as_of_date": "2026-03-25",
+      "actual_label": "Tang",
+      "model_4a_pred": "Di_ngang",
+      "model_4a_correct": false,
+      "bot_pred": "Giam",
+      "bot_correct": false,
+      "baseline1_pred": "Di_ngang",
+      "baseline1_correct": false
+    },
+    {
+      "as_of_date": "2026-04-01",
+      "actual_label": "Giam",
+      "model_4a_pred": "Di_ngang",
+      "model_4a_correct": false,
+      "bot_pred": "Giam",
+      "bot_correct": true,
+      "baseline1_pred": "Di_ngang",
+      "baseline1_correct": false
+    },
+    {
+      "as_of_date": "2026-04-10",
+      "actual_label": "Di_ngang",
+      "model_4a_pred": "Di_ngang",
+      "model_4a_correct": true,
+      "bot_pred": "Giam",
+      "bot_correct": false,
+      "baseline1_pred": "Di_ngang",
+      "baseline1_correct": true
+    },
+    {
+      "as_of_date": "2026-05-05",
+      "actual_label": "Di_ngang",
+      "model_4a_pred": "Di_ngang",
+      "model_4a_correct": true,
+      "bot_pred": "Giam",
+      "bot_correct": false,
+      "baseline1_pred": "Di_ngang",
+      "baseline1_correct": true
+    },
+    {
+      "as_of_date": "2026-05-20",
+      "actual_label": "Giam",
+      "model_4a_pred": "Di_ngang",
+      "model_4a_correct": false,
+      "bot_pred": "Giam",
+      "bot_correct": true,
+      "baseline1_pred": "Di_ngang",
+      "baseline1_correct": false
+    },
+    {
+      "as_of_date": "2026-05-26",
+      "actual_label": "Giam",
+      "model_4a_pred": "Di_ngang",
+      "model_4a_correct": false,
+      "bot_pred": "Giam",
+      "bot_correct": true,
+      "baseline1_pred": "Di_ngang",
+      "baseline1_correct": false
+    },
+    {
+      "as_of_date": "2026-06-16",
+      "actual_label": "Giam",
+      "model_4a_pred": "Di_ngang",
+      "model_4a_correct": false,
+      "bot_pred": "Giam",
+      "bot_correct": true,
+      "baseline1_pred": "Di_ngang",
+      "baseline1_correct": false
+    }
+  ]
+}

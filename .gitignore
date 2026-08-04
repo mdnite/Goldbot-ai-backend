@@ -1,4 +1,5 @@
 .env
 indicators.db
 trend_model.joblib
+giai_doan_4_trend_model.joblib
 __pycache__/
