@@ -102,6 +102,8 @@ Khác biệt quan trọng nhất: `inter_dxy_ret_x_real_yield_diff_ma60` (sống
 
 **KHÔNG ĐẠT** theo tiêu chí đã khoá trước khi chạy test (CLAUDE.md, mục "Quyết định đã chốt"): không vượt LLM 46% có ý nghĩa thống kê, không đạt Baseline2 54%. Test đã chạm ĐÚNG 1 LẦN — không retrain/test lại model này.
 
+**Đính chính bổ sung (phiên 2026-08-05, sau khi báo cáo này đã viết xong)**: script chẩn đoán riêng `archive_old_phases/giai_doan_4_interaction_check.py` (không phải `giai_doan_4_backtest_eval.py`, không phải lượt chấm chính thức) đã dựng lại feature TẠI ĐÚNG 50 mốc `as_of_date` đã khoá (`archive/giai_doan_3_llm_approach/giai_doan_3_sample_dates.json`) để làm ablation (tắt 2 interaction feature còn sống, so `argmax` dự đoán trước/sau — kết quả 0/50 mốc đổi nhãn, chi tiết ở memory `giai_doan_4_interaction_verification.md`). Script này có `import` file chứa nhãn thật (`giai_doan_3_backtest_results.json`) nhưng biến đó KHÔNG được dùng ở bất kỳ đâu trong file — không đọc ground truth, không tính lại accuracy, nên KHÔNG ảnh hưởng tới kết luận KHÔNG ĐẠT ở trên. Nhưng về kỹ thuật đây LÀ một lượt dựng-lại-feature-và-suy-luận bổ sung tại đúng 50 mốc khoá, ngoài lượt chấm chính thức duy nhất — không được báo trước lúc thực hiện, chỉ phát hiện khi bị hỏi lại ở phiên sau. Xem quy tắc mới trong CLAUDE.md mục "Gotcha đã gặp thật" để không lặp lại.
+
 ## Việc còn lại
 
 Hướng tiếp theo đã chốt: **"4a-v2"** — đổi metric tối ưu hoá lúc tuning sang F1-weighted/Brier score (thay vì accuracy thô), ép ràng buộc `C≥0.05` (tránh vùng regularization quá mạnh gây suy biến/bám nhãn nền đã phát hiện ở báo cáo này), giữ nguyên toàn bộ 34 feature đã thiết kế. **CHƯA triển khai** — còn đang bàn kế hoạch, chi tiết kỹ thuật sẽ viết ở báo cáo riêng khi bắt đầu, không mở rộng ở đây.
