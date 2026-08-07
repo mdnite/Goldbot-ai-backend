@@ -1,0 +1,523 @@
+{
+  "label_threshold": {
+    "low": -0.018726438161575678,
+    "high": 0.023017148054416573,
+    "source": "giai_doan_4_brier_diagnostic_results.json",
+    "reference_variant": "ewma21+I"
+  },
+  "fixed_hyperparameters": {
+    "penalty": "l1",
+    "C": 0.02,
+    "feature_config": "rolling60+interaction"
+  },
+  "embargo_horizon": 21,
+  "fold_size": 63,
+  "n_folds": 5,
+  "val_post_range": [
+    "2023-03-17",
+    "2024-05-31"
+  ],
+  "n_val_post": 303,
+  "static_reference": {
+    "config": "rolling60+interaction, l1, C=0.02 (thang trong 96 to hop)",
+    "brier_score": 0.6276484986243936
+  },
+  "baselines_reference": {
+    "baseline1_fair_train_distribution": 0.6340597554929709,
+    "baseline2_hindsight_val_distribution": 0.6019017743358495,
+    "baseline3_degenerate_all_Di_ngang": 0.9306930693069307
+  },
+  "arms": {
+    "504": {
+      "window_size": 504,
+      "n_predictions": 303,
+      "brier_score": 0.6385621183138276,
+      "ci_95_block_bootstrap": [
+        0.610786422962597,
+        0.6760464686809534
+      ],
+      "n_bootstrap": 2000,
+      "block_size": 21,
+      "folds": [
+        {
+          "fold_start": "2023-03-17",
+          "fold_end": "2023-06-15",
+          "n_test": 63,
+          "n_train": 504,
+          "train_range": [
+            "2021-02-10",
+            "2023-02-15"
+          ],
+          "n_features_before_vif": 34,
+          "n_features_after_vif": 29,
+          "classes_seen_in_train": [
+            "Di_ngang",
+            "Giam",
+            "Tang"
+          ]
+        },
+        {
+          "fold_start": "2023-06-16",
+          "fold_end": "2023-09-15",
+          "n_test": 63,
+          "n_train": 504,
+          "train_range": [
+            "2021-05-12",
+            "2023-05-17"
+          ],
+          "n_features_before_vif": 34,
+          "n_features_after_vif": 29,
+          "classes_seen_in_train": [
+            "Di_ngang",
+            "Giam",
+            "Tang"
+          ]
+        },
+        {
+          "fold_start": "2023-09-18",
+          "fold_end": "2023-12-15",
+          "n_test": 63,
+          "n_train": 504,
+          "train_range": [
+            "2021-08-11",
+            "2023-08-17"
+          ],
+          "n_features_before_vif": 34,
+          "n_features_after_vif": 29,
+          "classes_seen_in_train": [
+            "Di_ngang",
+            "Giam",
+            "Tang"
+          ]
+        },
+        {
+          "fold_start": "2023-12-18",
+          "fold_end": "2024-03-19",
+          "n_test": 63,
+          "n_train": 504,
+          "train_range": [
+            "2021-11-10",
+            "2023-11-16"
+          ],
+          "n_features_before_vif": 34,
+          "n_features_after_vif": 29,
+          "classes_seen_in_train": [
+            "Di_ngang",
+            "Giam",
+            "Tang"
+          ]
+        },
+        {
+          "fold_start": "2024-03-20",
+          "fold_end": "2024-05-31",
+          "n_test": 51,
+          "n_train": 504,
+          "train_range": [
+            "2022-02-11",
+            "2024-02-20"
+          ],
+          "n_features_before_vif": 34,
+          "n_features_after_vif": 30,
+          "classes_seen_in_train": [
+            "Di_ngang",
+            "Giam",
+            "Tang"
+          ]
+        }
+      ]
+    },
+    "756": {
+      "window_size": 756,
+      "n_predictions": 303,
+      "brier_score": 0.6430724790380489,
+      "ci_95_block_bootstrap": [
+        0.6098686905824693,
+        0.6904601407336598
+      ],
+      "n_bootstrap": 2000,
+      "block_size": 21,
+      "folds": [
+        {
+          "fold_start": "2023-03-17",
+          "fold_end": "2023-06-15",
+          "n_test": 63,
+          "n_train": 756,
+          "train_range": [
+            "2020-02-07",
+            "2023-02-15"
+          ],
+          "n_features_before_vif": 34,
+          "n_features_after_vif": 31,
+          "classes_seen_in_train": [
+            "Di_ngang",
+            "Giam",
+            "Tang"
+          ]
+        },
+        {
+          "fold_start": "2023-06-16",
+          "fold_end": "2023-09-15",
+          "n_test": 63,
+          "n_train": 756,
+          "train_range": [
+            "2020-05-08",
+            "2023-05-17"
+          ],
+          "n_features_before_vif": 34,
+          "n_features_after_vif": 31,
+          "classes_seen_in_train": [
+            "Di_ngang",
+            "Giam",
+            "Tang"
+          ]
+        },
+        {
+          "fold_start": "2023-09-18",
+          "fold_end": "2023-12-15",
+          "n_test": 63,
+          "n_train": 756,
+          "train_range": [
+            "2020-08-07",
+            "2023-08-17"
+          ],
+          "n_features_before_vif": 34,
+          "n_features_after_vif": 30,
+          "classes_seen_in_train": [
+            "Di_ngang",
+            "Giam",
+            "Tang"
+          ]
+        },
+        {
+          "fold_start": "2023-12-18",
+          "fold_end": "2024-03-19",
+          "n_test": 63,
+          "n_train": 756,
+          "train_range": [
+            "2020-11-06",
+            "2023-11-16"
+          ],
+          "n_features_before_vif": 34,
+          "n_features_after_vif": 30,
+          "classes_seen_in_train": [
+            "Di_ngang",
+            "Giam",
+            "Tang"
+          ]
+        },
+        {
+          "fold_start": "2024-03-20",
+          "fold_end": "2024-05-31",
+          "n_test": 51,
+          "n_train": 756,
+          "train_range": [
+            "2021-02-10",
+            "2024-02-20"
+          ],
+          "n_features_before_vif": 34,
+          "n_features_after_vif": 31,
+          "classes_seen_in_train": [
+            "Di_ngang",
+            "Giam",
+            "Tang"
+          ]
+        }
+      ]
+    },
+    "1260": {
+      "window_size": 1260,
+      "n_predictions": 303,
+      "brier_score": 0.6075558203972675,
+      "ci_95_block_bootstrap": [
+        0.5741703613888607,
+        0.6459164040154164
+      ],
+      "n_bootstrap": 2000,
+      "block_size": 21,
+      "folds": [
+        {
+          "fold_start": "2023-03-17",
+          "fold_end": "2023-06-15",
+          "n_test": 63,
+          "n_train": 1260,
+          "train_range": [
+            "2018-01-31",
+            "2023-02-15"
+          ],
+          "n_features_before_vif": 34,
+          "n_features_after_vif": 31,
+          "classes_seen_in_train": [
+            "Di_ngang",
+            "Giam",
+            "Tang"
+          ]
+        },
+        {
+          "fold_start": "2023-06-16",
+          "fold_end": "2023-09-15",
+          "n_test": 63,
+          "n_train": 1260,
+          "train_range": [
+            "2018-05-02",
+            "2023-05-17"
+          ],
+          "n_features_before_vif": 34,
+          "n_features_after_vif": 31,
+          "classes_seen_in_train": [
+            "Di_ngang",
+            "Giam",
+            "Tang"
+          ]
+        },
+        {
+          "fold_start": "2023-09-18",
+          "fold_end": "2023-12-15",
+          "n_test": 63,
+          "n_train": 1260,
+          "train_range": [
+            "2018-08-01",
+            "2023-08-17"
+          ],
+          "n_features_before_vif": 34,
+          "n_features_after_vif": 31,
+          "classes_seen_in_train": [
+            "Di_ngang",
+            "Giam",
+            "Tang"
+          ]
+        },
+        {
+          "fold_start": "2023-12-18",
+          "fold_end": "2024-03-19",
+          "n_test": 63,
+          "n_train": 1260,
+          "train_range": [
+            "2018-10-31",
+            "2023-11-16"
+          ],
+          "n_features_before_vif": 34,
+          "n_features_after_vif": 32,
+          "classes_seen_in_train": [
+            "Di_ngang",
+            "Giam",
+            "Tang"
+          ]
+        },
+        {
+          "fold_start": "2024-03-20",
+          "fold_end": "2024-05-31",
+          "n_test": 51,
+          "n_train": 1260,
+          "train_range": [
+            "2019-02-05",
+            "2024-02-20"
+          ],
+          "n_features_before_vif": 34,
+          "n_features_after_vif": 32,
+          "classes_seen_in_train": [
+            "Di_ngang",
+            "Giam",
+            "Tang"
+          ]
+        }
+      ]
+    },
+    "2016": {
+      "window_size": 2016,
+      "n_predictions": 303,
+      "brier_score": 0.6075399231234683,
+      "ci_95_block_bootstrap": [
+        0.5657493601013793,
+        0.6611489738783897
+      ],
+      "n_bootstrap": 2000,
+      "block_size": 21,
+      "folds": [
+        {
+          "fold_start": "2023-03-17",
+          "fold_end": "2023-06-15",
+          "n_test": 63,
+          "n_train": 2016,
+          "train_range": [
+            "2015-01-22",
+            "2023-02-15"
+          ],
+          "n_features_before_vif": 34,
+          "n_features_after_vif": 33,
+          "classes_seen_in_train": [
+            "Di_ngang",
+            "Giam",
+            "Tang"
+          ]
+        },
+        {
+          "fold_start": "2023-06-16",
+          "fold_end": "2023-09-15",
+          "n_test": 63,
+          "n_train": 2016,
+          "train_range": [
+            "2015-04-23",
+            "2023-05-17"
+          ],
+          "n_features_before_vif": 34,
+          "n_features_after_vif": 33,
+          "classes_seen_in_train": [
+            "Di_ngang",
+            "Giam",
+            "Tang"
+          ]
+        },
+        {
+          "fold_start": "2023-09-18",
+          "fold_end": "2023-12-15",
+          "n_test": 63,
+          "n_train": 2016,
+          "train_range": [
+            "2015-07-23",
+            "2023-08-17"
+          ],
+          "n_features_before_vif": 34,
+          "n_features_after_vif": 33,
+          "classes_seen_in_train": [
+            "Di_ngang",
+            "Giam",
+            "Tang"
+          ]
+        },
+        {
+          "fold_start": "2023-12-18",
+          "fold_end": "2024-03-19",
+          "n_test": 63,
+          "n_train": 2016,
+          "train_range": [
+            "2015-10-22",
+            "2023-11-16"
+          ],
+          "n_features_before_vif": 34,
+          "n_features_after_vif": 33,
+          "classes_seen_in_train": [
+            "Di_ngang",
+            "Giam",
+            "Tang"
+          ]
+        },
+        {
+          "fold_start": "2024-03-20",
+          "fold_end": "2024-05-31",
+          "n_test": 51,
+          "n_train": 2016,
+          "train_range": [
+            "2016-01-26",
+            "2024-02-20"
+          ],
+          "n_features_before_vif": 34,
+          "n_features_after_vif": 33,
+          "classes_seen_in_train": [
+            "Di_ngang",
+            "Giam",
+            "Tang"
+          ]
+        }
+      ]
+    },
+    "expanding": {
+      "window_size": null,
+      "n_predictions": 303,
+      "brier_score": 0.6247028981094522,
+      "ci_95_block_bootstrap": [
+        0.5829983275253805,
+        0.6772313997180686
+      ],
+      "n_bootstrap": 2000,
+      "block_size": 21,
+      "folds": [
+        {
+          "fold_start": "2023-03-17",
+          "fold_end": "2023-06-15",
+          "n_test": 63,
+          "n_train": 3216,
+          "train_range": [
+            "2010-04-01",
+            "2023-02-15"
+          ],
+          "n_features_before_vif": 34,
+          "n_features_after_vif": 34,
+          "classes_seen_in_train": [
+            "Di_ngang",
+            "Giam",
+            "Tang"
+          ]
+        },
+        {
+          "fold_start": "2023-06-16",
+          "fold_end": "2023-09-15",
+          "n_test": 63,
+          "n_train": 3279,
+          "train_range": [
+            "2010-04-01",
+            "2023-05-17"
+          ],
+          "n_features_before_vif": 34,
+          "n_features_after_vif": 34,
+          "classes_seen_in_train": [
+            "Di_ngang",
+            "Giam",
+            "Tang"
+          ]
+        },
+        {
+          "fold_start": "2023-09-18",
+          "fold_end": "2023-12-15",
+          "n_test": 63,
+          "n_train": 3342,
+          "train_range": [
+            "2010-04-01",
+            "2023-08-17"
+          ],
+          "n_features_before_vif": 34,
+          "n_features_after_vif": 34,
+          "classes_seen_in_train": [
+            "Di_ngang",
+            "Giam",
+            "Tang"
+          ]
+        },
+        {
+          "fold_start": "2023-12-18",
+          "fold_end": "2024-03-19",
+          "n_test": 63,
+          "n_train": 3405,
+          "train_range": [
+            "2010-04-01",
+            "2023-11-16"
+          ],
+          "n_features_before_vif": 34,
+          "n_features_after_vif": 34,
+          "classes_seen_in_train": [
+            "Di_ngang",
+            "Giam",
+            "Tang"
+          ]
+        },
+        {
+          "fold_start": "2024-03-20",
+          "fold_end": "2024-05-31",
+          "n_test": 51,
+          "n_train": 3468,
+          "train_range": [
+            "2010-04-01",
+            "2024-02-20"
+          ],
+          "n_features_before_vif": 34,
+          "n_features_after_vif": 34,
+          "classes_seen_in_train": [
+            "Di_ngang",
+            "Giam",
+            "Tang"
+          ]
+        }
+      ]
+    }
+  },
+  "note": "KHONG co gate DAT/KHONG DAT tu dong - bao cao so lieu thuan tuy, khong tu ket luan thang/thua. Chua dung den 50 moc test khoa."
+}

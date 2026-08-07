@@ -1,8 +1,8 @@
 # GoldBot — Báo cáo Tổng hợp: Các Phương Án Dự Đoán Xu Hướng Đã Thử
 
-**Phạm vi:** Giai đoạn 1.5 → hiện tại (chẩn đoán Brier score, chưa chốt hướng đi tiếp theo).
+**Phạm vi:** Giai đoạn 1.5 → Giai đoạn 4b (rolling-window retrain). Giai đoạn 4 (4a + 4b) đã đóng hoàn toàn (2026-08-07) — chưa chốt hướng đi tiếp theo cho bước sau.
 **Mục đích:** Tổng hợp toàn bộ phương án đã thử cho bài toán dự đoán xu hướng giá vàng ngắn hạn, kết quả từng phương án, nguyên nhân thất bại/hạn chế, và toàn bộ phương pháp luận/thuật toán/thước đo đã áp dụng — dùng làm tài liệu tham chiếu khi quyết định hướng đi tiếp theo.
-**Nguồn:** `giai_doan_1_5_report.md` (qua `GoldBot_Bao_Cao_Qua_Trinh.md`), `giai_doan_3_report.md`, `giai_doan_4_report.md`, `CLAUDE.md`/`Roadmap.md`, và kết quả chẩn đoán Brier score chạy trực tiếp trong phiên làm việc này.
+**Nguồn:** `giai_doan_1_5_report.md` (qua `GoldBot_Bao_Cao_Qua_Trinh.md`), `giai_doan_3_report.md`, `giai_doan_4_report.md`, `CLAUDE.md`/`Roadmap.md`, kết quả chẩn đoán Brier score, và kết quả thí nghiệm Giai đoạn 4b (`giai_doan_4b_rolling_window_experiment.py`, `giai_doan_4b_rolling_window_results.json`, `giai_doan_4b_verify_folds.py`).
 
 ---
 
@@ -13,7 +13,8 @@
 | 1.5 | Logistic Regression, 28 feature, Vol60 rolling std | Test acc 0.278 vs baseline 0.364 | THUA baseline — regime shift |
 | 3 | LLM suy luận qua backtest N=50 (few-shot prompting) | 46.0% vs Baseline1 30.0% (chênh ~1.2 SE) | Cải thiện nhưng CHƯA đủ ý nghĩa thống kê — dừng đầu tư |
 | 4a | Logistic Regression + VIF + interaction + EWMA | Test 30.0% (=Baseline1), thua LLM 46% và Baseline2 54% | KHÔNG ĐẠT — CI95 hoàn toàn dưới ngưỡng |
-| Chẩn đoán Brier | Đo Brier score đa lớp, 96 tổ hợp feature×C×penalty trên validation | Chỉ 2/96 tổ hợp thắng baseline ngây thơ, biên rất mỏng | Đang mở — chưa chốt hướng tiếp theo |
+| Chẩn đoán Brier | Đo Brier score đa lớp, 96 tổ hợp feature×C×penalty trên validation | Chỉ 2/96 tổ hợp thắng baseline ngây thơ, biên rất mỏng | Đã dẫn tới Giai đoạn 4b bên dưới |
+| 4b | Rolling-window retrain (walk-forward), 5 arm, feature/hyperparameter cố định | Cả 5 arm không tách biệt khỏi static (0.6276) hay Baseline1 (0.6341) | KHÔNG ĐẠT — ĐÃ ĐÓNG, Giai đoạn 4 đóng hoàn toàn |
 
 ---
 
@@ -146,7 +147,7 @@ Câu hỏi còn treo (chưa giải thích dứt điểm, không chặn kết lu�
 
 ---
 
-## 5. Chẩn đoán Brier Score (giai đoạn hiện tại — chưa chốt hướng tiếp theo)
+## 5. Chẩn đoán Brier Score (đã dẫn tới Giai đoạn 4b — xem mục 6)
 
 ### Động lực
 4a dùng accuracy để chọn C lúc tuning — accuracy dễ bị "lừa" bởi model suy biến về nhãn đa số. Trước khi triển khai "4a-v2" (đổi metric + ép C≥0.05), cần tách bạch: **interaction terms và EWMA có thật sự giúp không**, độc lập khỏi ảnh hưởng của việc chọn C bằng accuracy.
@@ -204,12 +205,66 @@ Câu hỏi còn treo (chưa giải thích dứt điểm, không chặn kết lu�
 
 4. **So với baseline ngây thơ — chỉ 2/96 tổ hợp thắng, biên rất mỏng.** Chỉ `rolling60+interaction` ở C=0.01 (0.6290) và C=0.02 (0.6276, thấp nhất toàn lưới) vượt qua Baseline 1 (0.6341) — chênh ~0.005–0.007 (~1%), CHƯA qua kiểm định ý nghĩa thống kê nào. Mọi tổ hợp còn lại — bao gồm TOÀN BỘ cấu hình `ewma21` (chính là 4a thật) — đều **tệ hơn việc không dùng model nào, chỉ đoán đúng tỉ lệ nhãn lịch sử**.
 
-### Trạng thái hiện tại
-Chưa chốt hướng đi tiếp theo. Ba phương án đang cân nhắc: (1) thử 1 lượt test cuối với `rolling60+interaction`, C nhỏ — kỳ vọng thấp vì biên quá mỏng; (2) coi đây là bằng chứng đủ để dừng nhánh Logistic Regression, mở lại thảo luận Giai đoạn 4b (Random Forest/XGBoost); (3) xem lại framing bài toán (feature set/horizon) có đang chạm trần thông tin thật của dữ liệu hay không. Hai ý tưởng mở rộng thêm (hiệu chỉnh xác suất cho C lớn; winsorizing thay EWMA) đã được cân nhắc nhưng tạm dừng — quyết định ưu tiên chốt hướng lớn trước khi mở rộng thêm phạm vi chẩn đoán, tránh over-engineering khi tín hiệu cơ bản đã được xác nhận là yếu.
+### Trạng thái (đã giải quyết)
+Tại thời điểm chẩn đoán, có 3 phương án đang cân nhắc: (1) thử 1 lượt test cuối với `rolling60+interaction`, C nhỏ; (2) coi đây là bằng chứng đủ để dừng nhánh Logistic Regression, mở lại thảo luận Giai đoạn 4b; (3) xem lại framing bài toán. Quyết định thực tế đã đi hướng khác cả 3: **đổi định nghĩa Giai đoạn 4b** từ Random Forest/XGBoost (dự phòng gốc) sang rolling-window retrain, dùng nguyên cấu hình thắng của chẩn đoán này (`rolling60+interaction`, l1, C=0.02) làm nền — xem mục 6 cho thiết kế, kết quả, và lý do đóng giai đoạn.
 
 ---
 
-## 6. Tổng hợp phương pháp luận / thuật toán đã áp dụng
+## 6. Giai đoạn 4b — Rolling-window retrain (walk-forward) — ĐÃ ĐÓNG
+
+### Bối cảnh và đổi định nghĩa
+Roadmap gốc định nghĩa 4b = Random Forest/XGBoost (dự phòng nếu 4a không đạt — xem mục 4). Trước khi triển khai (quyết định 2026-08-07), định nghĩa này bị bỏ: tree-based model không extrapolate ra ngoài range feature đã thấy lúc train, đúng vào điểm yếu cốt lõi lặp lại xuyên suốt dự án (regime shift đẩy feature 2023-2026 ra ngoài range train 2010-2023 — xem mục 8.1). Đổi RF/XGBoost không giải quyết đúng vấn đề đang gặp. Định nghĩa mới đã chạy: train lại định kỳ (walk-forward) trên cửa sổ dữ liệu trượt gần nhất, thay vì train 1 lần trên cửa sổ tĩnh cố định (2010-2022).
+
+### Thiết kế thí nghiệm
+- Base feature CỐ ĐỊNH: `rolling60+interaction` — đúng cấu hình thắng trong 96 tổ hợp Brier (mục 5), cho Brier static = 0.6276.
+- Hyperparameter CỐ ĐỊNH: `penalty=l1, C=0.02` — dùng y hệt ở mọi arm/fold, không tune lại. Chỉ đổi đúng 1 biến: chiến lược train (window size).
+- Ngưỡng nhãn: tái dùng NGUYÊN VĂN từ chẩn đoán Brier (không tính lại theo fold/window).
+- 5 arm: rolling window 504/756/1260/2016 phiên (~2/3/5/8 năm, dòng dữ liệu gần nhất) + `expanding` (toàn bộ lịch sử đủ điều kiện, không giới hạn) — arm đối chứng, thêm vào để tách bạch "retrain định kỳ" khỏi "chỉ dùng dữ liệu gần nhất" (nếu không có arm này, rolling-window thắng static sẽ không biết là do window ngắn hay do retrain nhiều lần).
+- Walk-forward CHỈ trong val_post đã dùng để tính Brier static (2023-03-17 → 2024-05-31, n=303) — không mở rộng, không chạm 50 mốc test khoá.
+- Retrain theo quý: 5 fold liên tiếp (~63 phiên/fold, fold cuối 51), không chồng không hở, tổng đúng 303 điểm dự đoán.
+- Embargo leak-safe: dòng ngày d chỉ dùng để train nếu d+21 phiên (HORIZON, đúng vị trí lịch giao dịch thật) ≤ ngày retrain T.
+- VIF filter + StandardScaler fit lại từ đầu trên MỖI cửa sổ train riêng.
+- KHÔNG dùng gate ĐẠT/KHÔNG ĐẠT tự động — chỉ báo cáo Brier tổng hợp + 95% CI bằng **block bootstrap** (block=21, N=2000) — tôn trọng tự tương quan do nhãn horizon=21 phiên chồng lấn, tránh phóng đại độ tin cậy như bootstrap i.i.d. thường.
+
+### Verify leak-safety độc lập
+T, khoảng dự đoán, và tập dòng đủ điều kiện embargo (nên cả `train_max`) giống hệt nhau ở mọi arm — window size chỉ quyết định cắt bao nhiêu từ cuối tập đó. Verify trên dữ liệu thật (`giai_doan_4b_verify_folds.py`, không suy diễn từ ý định thiết kế): tổng n_predict qua 5 fold = 303 (đúng), không trùng ngày giữa fold, khớp chính xác val_post không thiếu không thừa, không chồng/không hở, embargo đúng cho MỌI fold (cả 5 fold đều khít sát biên `train_max+21 == T` — kết quả tất yếu của việc chọn dòng train gần T nhất còn hợp lệ, không phải dấu hiệu lỗi).
+
+### Kết quả
+
+| Arm | Brier | 95% CI (block bootstrap, block=21) |
+|---|---|---|
+| static (tham chiếu, không chạy lại) | 0.6276 | — |
+| rolling 504 (~2 năm) | 0.6386 | [0.6108, 0.6760] |
+| rolling 756 (~3 năm) | 0.6431 | [0.6099, 0.6905] |
+| rolling 1260 (~5 năm) | **0.6076** | [0.5742, 0.6459] |
+| rolling 2016 (~8 năm) | **0.6075** | [0.5657, 0.6611] |
+| expanding | 0.6247 | [0.5830, 0.6772] |
+| Baseline1 (công bằng, train dist) | 0.6341 | — |
+| Baseline2 (hindsight) | 0.6019 | — |
+| Baseline3 (suy biến, 100% Đi_ngang) | 0.9307 | — |
+
+**Cả 5 arm ĐỀU KHÔNG tách biệt khỏi static (0.6276) hay Baseline1 (0.6341)** — 95% CI của mọi arm đều chứa cả 2 mốc tham chiếu này. Quan sát định hướng (KHÔNG phải kết luận thống kê, CI quá rộng để khẳng định): window ngắn (504/756) tệ hơn static; window dài (1260/2016) nhỉnh hơn nhưng không tách biệt; expanding nằm giữa.
+
+### Tại sao không tách biệt được — 3 lý do kỹ thuật (không phải bug)
+Đã verify fold-level (embargo, partition) đúng như thiết kế — đây là kết quả thật của thí nghiệm, không phải lỗi code.
+
+1. **Cỡ mẫu quá nhỏ cho quyền lực thống kê (statistical power).** n=303 điểm dự đoán, nhưng vì nhãn horizon=21 phiên chồng lấn (đúng vấn đề n_eff đã gặp ở Giai đoạn 3), số "khối thông tin độc lập" thật chỉ ≈303/21≈14. Với 14 khối, CI95 cho Brier rộng tới ~0.06–0.09 — trong khi chênh lệch quan sát giữa các arm chỉ ~0.02–0.03. Đây là giới hạn cấu trúc của dữ liệu (chỉ có ~14 tháng vùng bull-market khả dụng trước mốc test khoá), không sửa được bằng thử thêm window size.
+2. **Tiền đề gốc của 4b có dấu hiệu bị chính dữ liệu phản bác.** Giả thuyết "window ngắn = gần regime hiện tại hơn = ít ngoại suy hơn" ngụ ý window càng ngắn càng tốt. Nhưng quan sát thật: window ngắn nhất (504/756) lại là 2 arm TỆ NHẤT, tệ hơn cả static; chỉ window dài hơn (1260/2016, gần với 12 năm của static hơn) mới nhỉnh hơn. Cắt ngắn window không chỉ giảm độ "cũ" của dữ liệu train mà còn giảm độ phủ range của feature — đánh đổi bias-do-lệch-regime lấy variance-do-ít-dữ-liệu, và ở window ngắn cái giá variance có vẻ thắng.
+3. **Arm `expanding` (đối chứng) cho thấy retrain định kỳ tự nó không phải chìa khoá.** Expanding retrain định kỳ nhưng không cắt window, kết quả gần sát static (0.6247 vs 0.6276). Nếu "retrain thường xuyên hơn" tự nó có giá trị, expanding phải khác biệt rõ so với static. Điều này gợi ý: chênh lệch quan sát được ở các arm khác chủ yếu đến từ việc CẮT window, không phải từ tần suất retrain.
+
+### Kết luận & lý do không nên tiếp tục hướng này
+Finding hợp lệ: không đủ bằng chứng để nói rolling-window retrain tốt hơn static-window. Không dùng lượt test-touch riêng của 4b trên 50 mốc khoá (không có candidate đủ mạnh để đáng thử). **Giai đoạn 4b ĐÃ ĐÓNG CHÍNH THỨC (2026-08-07)**, không mở vòng thử mới. Lý do không nên mở rộng thêm (thử thêm window size/cadence khác trong cùng thiết kế):
+
+- **Rào cản là cỡ mẫu/cấu trúc dữ liệu, không phải tham số** (lý do 1) — chỉ có từng đó ngày giao dịch trong vùng bull-market trước mốc test khoá. Thử thêm window size hay cadence retrain khác không giải quyết được việc CI luôn rộng hơn hiệu ứng đang tìm; cần dữ liệu dài hơn hẳn mới thu hẹp được CI.
+- **Tiền đề gốc yếu đi sau khi nhìn dữ liệu** (lý do 2) — đào sâu thêm vào cùng 1 tiền đề đã lung lay (window ngắn tốt hơn) có lợi tức kỳ vọng thấp.
+- **Đã dùng đúng budget 5 arm đã khoá trước khi chạy** — mở thêm arm sau khi thấy 504/756 thua, 1260/2016 nhỉnh hơn sẽ là chọn lưới theo kết quả, đúng kiểu rủi ro mà nguyên tắc "chốt trước khi chạy" (mục 7) vốn dùng để tránh.
+- **Nhìn toàn cảnh dự án — đây là điểm dữ liệu thứ 4 liên tiếp cùng 1 mẫu hình**: Giai đoạn 3 (LLM: chênh ~1.2 SE, chưa đủ ý nghĩa) → 4a (dưới cả baseline) → chẩn đoán Brier (chỉ 2/96 tổ hợp thắng baseline, biên ~1%) → 4b (5/5 arm không tách biệt). Mọi biến thể định lượng thử qua — feature khác, regularization khác, cửa sổ train khác — đều hội tụ về cùng 1 kết luận: chưa cấu hình nào tách biệt khỏi baseline một cách có ý nghĩa thống kê. Cách đọc hợp lý hơn "chưa tìm đúng tham số" là: tín hiệu ngắn hạn (21 ngày) từ đúng 4 chỉ báo vĩ mô này, với đúng khung Logistic Regression này, có thể không đủ mạnh để vượt nhiễu — một finding hợp lệ về giới hạn bài toán. Hướng có triển vọng hơn việc thử thêm 1 biến thể nữa trong cùng không gian thiết kế sẽ là xem lại framing bài toán (horizon khác, target khác) hoặc chấp nhận kết quả âm này làm kết luận chính thức — quyết định thuộc về bước lập kế hoạch tiếp theo, chưa chốt trong tài liệu này.
+
+File tham chiếu: `giai_doan_4b_rolling_window_experiment.py` (script walk-forward), `giai_doan_4b_rolling_window_results.json` (kết quả đầy đủ + log từng fold), `giai_doan_4b_verify_folds.py` (verify độc lập embargo + partition fold).
+
+---
+
+## 7. Tổng hợp phương pháp luận / thuật toán đã áp dụng
 
 **Thuật toán mô hình:**
 - Logistic Regression đa lớp (multinomial), solver `saga` (hỗ trợ cả L1/L2, cần `random_state` cố định vì stochastic), penalty L1/L2.
@@ -228,21 +283,26 @@ Chưa chốt hướng đi tiếp theo. Ba phương án đang cân nhắc: (1) th
 - Wald CI 95% một mẫu: `p̂ ± 1.96×√(p̂(1−p̂)/n)` — tiêu chí chính khi chấm test.
 - Two-proportion z-test không gộp: `z=(p₁−p₂)/√(SE1²+SE2²)` — tiêu chí phụ.
 - Tính ở cả n danh nghĩa và n hiệu dụng (n_eff, điều chỉnh do horizon chồng lấn).
-- Multiclass Brier score: `BS=(1/N)ΣᵢΣₖ(pᵢₖ−yᵢₖ)²` — dùng ở giai đoạn chẩn đoán hiện tại, đo chất lượng calibration của xác suất, không chỉ nhãn thắng cuối.
+- Multiclass Brier score: `BS=(1/N)ΣᵢΣₖ(pᵢₖ−yᵢₖ)²` — dùng từ giai đoạn chẩn đoán Brier, đo chất lượng calibration của xác suất, không chỉ nhãn thắng cuối.
+- Block bootstrap (dùng ở Giai đoạn 4b): resample theo khối liên tiếp (block=21, khớp horizon) thay vì bootstrap i.i.d. thường, để không phóng đại độ tin cậy khi các điểm dự đoán liền kề tự tương quan do nhãn horizon chồng lấn.
 
 **Nguyên tắc thiết kế backtest/split:**
 - Split theo thời gian, không shuffle (walk-forward).
 - Backtest leak-safe (feature tại `as_of_date` chỉ dùng dữ liệu ≤ đúng thời điểm đó).
+- Embargo/purge cho retrain định kỳ (dùng ở Giai đoạn 4b): dòng ngày d chỉ dùng để train tại điểm retrain T nếu `d + horizon ≤ T` (không phải `d ≤ T`) — vì nhãn tại d dùng giá tại `d+horizon`, nếu d nằm trong `(T-horizon, T]` thì nhãn đó đã "nhìn thấy" thông tin thuộc giai đoạn dự đoán tiếp theo.
 - Baseline luôn lấy từ nhãn đa số của TRAIN (đóng băng, out-of-sample), tách bạch rõ với baseline hindsight/in-sample (chỉ tham khảo, không so ngang hàng).
 - Test set chỉ chạm ĐÚNG 1 LẦN cho mỗi hướng tiếp cận thật sự khác biệt; validation được lặp lại thoải mái (giới hạn 5–6 vòng/hướng).
-- Công thức kiểm định phải chốt TRƯỚC khi thấy kết quả test, không đổi sau khi thấy số.
+- Công thức kiểm định phải chốt TRƯỚC khi thấy kết quả test, không đổi sau khi thấy số. Áp dụng cả cho danh sách cấu hình cần thử (VD 5 arm window size ở Giai đoạn 4b) — chốt trước khi chạy, không mở thêm sau khi thấy kết quả.
 - Redo sau thất bại: phải giữ log kết quả cũ, có lý do rõ ràng dựa trên bài học rút ra — không thử nhiều cấu hình trên test rồi chọn cái tốt nhất (p-hacking).
+- Arm đối chứng (control arm) để tách bạch biến gây nhiễu: khi 1 thay đổi gộp nhiều biến (VD "rolling-window" gộp cả "cắt window" lẫn "retrain định kỳ"), thêm 1 arm chỉ đổi 1 biến (VD `expanding` — retrain định kỳ nhưng không cắt window) để biết chênh lệch quan sát được đến từ biến nào.
 
 ---
 
-## 7. Bài học chung xuyên suốt các giai đoạn
+## 8. Bài học chung xuyên suốt các giai đoạn
 
-1. **Regime shift là giới hạn cốt lõi, lặp lại ở mọi phương án đã thử.** Từ Giai đoạn 1.5 (mean-reversion học từ range-bound thất bại trên bull market) đến chẩn đoán Brier hiện tại (mọi thước đo đều "thưởng" cho sự thận trọng vì thiếu tín hiệu ổn định) — đây không phải lỗi của riêng 1 model hay 1 kỹ thuật, mà là đặc tính thật của dữ liệu trong khung thời gian đang xét.
-2. **Sửa đúng vấn đề kỹ thuật không đảm bảo cải thiện kết quả cuối.** VIF, interaction terms, EWMA đều là các fix hợp lý về mặt kỹ thuật, nhưng chỉ VIF và interaction terms có bằng chứng thật chứng minh giá trị — EWMA, dù có lý do thiết kế chính đáng lúc đề xuất, lại cho bằng chứng ngược lại khi đo trực tiếp.
+1. **Regime shift là giới hạn cốt lõi, lặp lại ở mọi phương án đã thử.** Từ Giai đoạn 1.5 (mean-reversion học từ range-bound thất bại trên bull market) đến chẩn đoán Brier (mọi thước đo đều "thưởng" cho sự thận trọng vì thiếu tín hiệu ổn định) đến Giai đoạn 4b (rolling-window retrain — nỗ lực trực tiếp đối phó regime shift — cũng không tách biệt được khỏi static) — đây không phải lỗi của riêng 1 model hay 1 kỹ thuật, mà là đặc tính thật của dữ liệu trong khung thời gian đang xét.
+2. **Sửa đúng vấn đề kỹ thuật không đảm bảo cải thiện kết quả cuối.** VIF, interaction terms, EWMA đều là các fix hợp lý về mặt kỹ thuật, nhưng chỉ VIF và interaction terms có bằng chứng thật chứng minh giá trị — EWMA, dù có lý do thiết kế chính đáng lúc đề xuất, lại cho bằng chứng ngược lại khi đo trực tiếp. Tương tự, "window ngắn hơn = ít ngoại suy hơn" (tiền đề của 4b) nghe hợp lý về lý thuyết nhưng bị chính dữ liệu phản bác (mục 6).
 3. **Thước đo tuning (accuracy vs Brier) ít ảnh hưởng hơn kỳ vọng ban đầu** — cả 2 đều đồng thuận ưu tiên regularization mạnh trên dữ liệu này, cho thấy vấn đề gốc không chỉ nằm ở việc chọn sai thước đo.
-4. **Tín hiệu khai thác được, nếu có, rất mỏng** — qua 144 tổ hợp đã thử (48 ở Giai đoạn 4a + 96 ở chẩn đoán Brier), chỉ một phần rất nhỏ vượt qua được baseline ngây thơ, và chưa với biên đủ lớn để chắc chắn không phải nhiễu.
+4. **Tín hiệu khai thác được, nếu có, rất mỏng** — qua 144 tổ hợp đã thử (48 ở Giai đoạn 4a + 96 ở chẩn đoán Brier) cộng 5 arm walk-forward ở Giai đoạn 4b, chỉ một phần rất nhỏ (2/96) vượt qua được baseline ngây thơ với biên ~1% chưa kiểm định, và không arm 4b nào tách biệt khỏi baseline/static — chưa ở đâu tìm được biên đủ lớn để chắc chắn không phải nhiễu.
+5. **Cỡ mẫu hiệu dụng (n_eff) là rào cản lặp lại, không phải chi tiết riêng của 1 giai đoạn.** Giai đoạn 3 (n=50 → n_eff≈25) và Giai đoạn 4b (n=303 → n_eff≈14, do cùng nguyên nhân: horizon 21 phiên chồng lấn) đều cho CI quá rộng để phân biệt các phương án — đây là giới hạn của chính cách đóng khung bài toán (horizon 21 ngày, dữ liệu bull-market post-2023 có hạn), không phải thứ 1 kỹ thuật tuning nào (window size, regularization, metric) có thể sửa được.
+6. **4 lần thử độc lập (Giai đoạn 3, 4a, chẩn đoán Brier, 4b) đều hội tụ về cùng 1 kết luận** — không có cấu hình định lượng hay LLM nào tách biệt khỏi baseline một cách có ý nghĩa thống kê. Đây là bằng chứng tích luỹ đủ mạnh để coi là finding về giới hạn bài toán (dự đoán xu hướng vàng 21 ngày từ 4 chỉ báo vĩ mô này), không phải "chưa tìm đúng tham số" — tiếp tục tinh chỉnh trong cùng không gian thiết kế (feature/model/window) có lợi tức kỳ vọng thấp; hướng có triển vọng hơn là xem lại framing bài toán hoặc chấp nhận đây là kết luận chính thức.
